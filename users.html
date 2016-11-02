@@ -66,13 +66,12 @@
 
   <h3>Object Tags</h3>
   <ui-select multiple tagging="tagTransform" ng-model="multipleDemo.selectedPeople" theme="bootstrap" ng-disabled="disabled" style="width: 800px;" title="Choose a person">
-    <ui-select-match placeholder="Select person...">{{$item.name}} &lt;{{$item.email}}&gt;</ui-select-match>
-    <ui-select-choices repeat="person in people | propsFilter: {name: $select.search, age: $select.search}">
-      <div ng-if="person.isTag" ng-bind-html="person.name +' <small>(new)</small>'| highlight: $select.search"></div>
-      <div ng-if="!person.isTag" ng-bind-html="person.name + person.isTag| highlight: $select.search"></div>
+    <ui-select-match placeholder="Select roles...">{{$item.displayName}} &lt;{{$item.id}}&gt;</ui-select-match>
+    <ui-select-choices repeat="person in roles | propsFilter: {displayName: $select.search, id: $select.search}">
+      <div ng-if="person.isTag" ng-bind-html="person.displayName +' <small>(new)</small>'| highlight: $select.search"></div>
+      <div ng-if="!person.isTag" ng-bind-html="person.displayName + person.isTag| highlight: $select.search"></div>
       <small>
-        email: {{person.email}}
-        age: <span ng-bind-html="''+person.age | highlight: $select.search"></span>
+        id: <span ng-bind-html="''+person.id | highlight: $select.search"></span>
       </small>
     </ui-select-choices>
   </ui-select>
