@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en" ng-app="demo">
+<html lang="en" ng-app="UsersApp">
 <head>
   <meta charset="utf-8">
   <title>AngularJS ui-select</title>
@@ -26,8 +26,6 @@
   <script src="https://cdn.rawgit.com/angular-ui/ui-select/master/dist/select.min.js"></script>
   <link rel="stylesheet" href="https://cdn.rawgit.com/angular-ui/ui-select/master/dist/select.min.css">
 
-  <script src="users.js"></script>
-
   <!-- Select2 theme -->
   <link rel="stylesheet" href="http://cdnjs.cloudflare.com/ajax/libs/select2/3.4.5/select2.css">
 
@@ -38,6 +36,8 @@
   <link rel="stylesheet" href="http://cdnjs.cloudflare.com/ajax/libs/selectize.js/0.8.5/css/selectize.default.css">
   <!-- <link rel="stylesheet" href="http://cdnjs.cloudflare.com/ajax/libs/selectize.js/0.8.5/css/selectize.bootstrap2.css"> -->
   <!-- <link rel="stylesheet" href="http://cdnjs.cloudflare.com/ajax/libs/selectize.js/0.8.5/css/selectize.bootstrap3.css"> -->
+
+  <script src="users.js"></script>
 
   <style>
     body {
@@ -55,28 +55,32 @@
   </style>
 </head>
 
-<body ng-controller="DemoCtrl">
+<body ng-controller="UsersCtrl">
   <script src="users.js"></script>
 
   <button class="btn btn-default btn-xs" ng-click="enable()">Enable ui-select</button>
   <button class="btn btn-default btn-xs" ng-click="disable()">Disable ui-select</button>
   <button class="btn btn-default btn-xs" ng-click="clear()">Clear ng-model</button>
 
-  <h1>Tagging Demos</h1>
-
-  <h3>Object Tags</h3>
-  <ui-select multiple tagging="tagTransform" ng-model="multipleDemo.selectedPeople" theme="bootstrap" ng-disabled="disabled" style="width: 800px;" title="Choose a person">
-    <ui-select-match placeholder="Select roles...">{{$item.displayName}} &lt;{{$item.id}}&gt;</ui-select-match>
-    <ui-select-choices repeat="person in roles | propsFilter: {displayName: $select.search, id: $select.search}">
-      <div ng-if="person.isTag" ng-bind-html="person.displayName +' <small>(new)</small>'| highlight: $select.search"></div>
-      <div ng-if="!person.isTag" ng-bind-html="person.displayName + person.isTag| highlight: $select.search"></div>
-      <small>
-        id: <span ng-bind-html="''+person.id | highlight: $select.search"></span>
-      </small>
-    </ui-select-choices>
-  </ui-select>
-  <p>Selected: {{multipleDemo.selectedPeople}}</p>
-  <hr>
+  <table id="users">
+    <tr>
+      <td width="25%">someuser@tabtale.com</td>
+      <td>
+        <ui-select multiple tagging="tagTransform" ng-model="multipleDemo.selectedPeople" theme="bootstrap" ng-disabled="disabled" style="width: 600px;" title="Assign roles">
+          <ui-select-match placeholder="Select roles...">{{$item.name}} &lt;{{$item.id}}&gt;</ui-select-match>
+          <ui-select-choices repeat="role in roles | propsFilter: {name: $select.search, id: $select.search}">
+            <div ng-if="role.isTag" ng-bind-html="role.name +' <small>(new)</small>'| highlight: $select.search"></div>
+            <div ng-if="!role.isTag" ng-bind-html="role.name + role.isTag| highlight: $select.search"></div>
+            <small>
+              id: <span ng-bind-html="''+role.id | highlight: $select.search"></span>
+            </small>
+          </ui-select-choices>
+        </ui-select>
+      </td>
+    </tr>
+  <!--<p>Selected: {{multipleDemo.selectedPeople}}</p>-->
+  <!--<hr>-->
+  </table>
 
 
   <div style="height:500px"></div>
