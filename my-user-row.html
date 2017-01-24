@@ -1,0 +1,15 @@
+<tr>
+  <td width="25%"> {{u.userName}} </td>
+  <td>
+    <ui-select multiple tagging="tagTransform" ng-model="u.roles" theme="bootstrap" ng-disabled="disabled" style="width: 600px;" title="Assign roles">
+      <ui-select-match placeholder="Select roles...">{{$item.roleName}} &lt;{{$item.roleId}}&gt;</ui-select-match>
+      <ui-select-choices repeat="role in roles | propsFilter: {roleName: $select.search, roleId: $select.search}">
+        <div ng-if="role.isTag" ng-bind-html="role.roleName +' <small>(new)</small>'| highlight: $select.search"></div>
+        <div ng-if="!role.isTag" ng-bind-html="role.roleName + role.isTag| highlight: $select.search"></div>
+        <small>
+          id: <span ng-bind-html="''+role.roleId | highlight: $select.search"></span>
+        </small>
+      </ui-select-choices>
+    </ui-select>
+  </td>
+</tr>

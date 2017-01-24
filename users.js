@@ -55,12 +55,6 @@ function main($scope, $http, $timeout){
 
 function fetchRoles(){
   loadJsonFile(args.http, 'http://localhost:8000/roles.json',initRoles);
-  //  $scope.roles = [
-  //    {name: 'GUEST', id: '1'},
-  //    {name: 'ADMIN', id: '2'},
-  //    {name: 'DEV', id: '3'},
-  //    {name: 'QA', id: '4'}
-  //  ];
 }
 
 function initRoles(data){
@@ -68,8 +62,8 @@ function initRoles(data){
   for  (var i=0 ; i < data.length ; i++){
     var r = data[i];
     var dict = {};
-    dict.id = r.id;
-    dict.name = r.name;
+    dict.roleId = r.id;
+    dict.roleName = r.name;
     args.scope.roles.push(dict);
   }
 
@@ -84,28 +78,23 @@ function fetchUsers(){
 }
 
 function initUsers(data){
-  args.scope.users = [];
-  for  (var i=0 ; i < data.length ; i++){
-    var u = data[i];
-    var dict = {};
-    dict.id = u.id;
-    dict.name = u.name;
-    args.scope.users.push(dict);
-  }
+  args.scope.users = data;
+  // args.scope.users = [];
+  // for  (var i=0 ; i < data.length ; i++){
+  //   var u = data[i];
+  //   var dict = {};
+  //   dict.id = u.id;
+  //   dict.userName = u.userName;
+  //   args.scope.users.push(dict);
+  // }
 
   //Continue to next methods
-  initControlButtons($scope);
-  initTagsControl($scope);
+  initControlButtons(args.scope);
+  initTagsControl(args.scope);
 }
 
-function addUserRow(user){
-  
-}
 
 function initTagsControl($scope){
-  $scope.multipleDemo = {};
-  $scope.multipleDemo.selectedPeople = [$scope.roles[0], $scope.roles[1]];
-
   $scope.addPerson = function(item, model){
     // if(item.hasOwnProperty('isTag')) {
     //   delete item.isTag;
@@ -149,7 +138,6 @@ function initTagsControl($scope){
 
 function initControlButtons($scope){
   $scope.disabled = undefined;
-  $scope.searchEnabled = undefined;
 
   $scope.enable = function() {
     $scope.disabled = false;
@@ -159,19 +147,6 @@ function initControlButtons($scope){
     $scope.disabled = true;
   };
 
-  $scope.enableSearch = function() {
-    $scope.searchEnabled = true;
-  }
-
-  $scope.disableSearch = function() {
-    $scope.searchEnabled = false;
-  }
-
-  $scope.clear = function() {
-    $scope.person.selected = undefined;
-    $scope.address.selected = undefined;
-    $scope.country.selected = undefined;
-  };
 }
 
 function loadJsonFile($http, filename, processResponse){
@@ -197,11 +172,17 @@ function loadJsonFile($http, filename, processResponse){
   });
 }
 
+app.directive('myUserRow', addUserRow);
+
+function addUserRow(){
+  return {
+    replace: 'true',
+    templateUrl: 'my-user-row.html'
+  };
+}
+
 
 //TODO
-//1. Load all APIs via json
-//  getAllRoles
-//  getAllUsers
-//  getUser
-//  updateUser
-//2. Get all roles via REST to create list of values for the tags
+// 1. Tweak the UI
+// 2. Add a save / update button
+// 3. Add a delete / remove access button ?

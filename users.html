@@ -60,26 +60,22 @@
 
   <button class="btn btn-default btn-xs" ng-click="enable()">Enable ui-select</button>
   <button class="btn btn-default btn-xs" ng-click="disable()">Disable ui-select</button>
-  <button class="btn btn-default btn-xs" ng-click="clear()">Clear ng-model</button>
 
   <table id="users">
-    <tr>
-      <td width="25%">someuser@tabtale.com</td>
-      <td>
-        <ui-select multiple tagging="tagTransform" ng-model="multipleDemo.selectedPeople" theme="bootstrap" ng-disabled="disabled" style="width: 600px;" title="Assign roles">
-          <ui-select-match placeholder="Select roles...">{{$item.name}} &lt;{{$item.id}}&gt;</ui-select-match>
-          <ui-select-choices repeat="role in roles | propsFilter: {name: $select.search, id: $select.search}">
-            <div ng-if="role.isTag" ng-bind-html="role.name +' <small>(new)</small>'| highlight: $select.search"></div>
-            <div ng-if="!role.isTag" ng-bind-html="role.name + role.isTag| highlight: $select.search"></div>
-            <small>
-              id: <span ng-bind-html="''+role.id | highlight: $select.search"></span>
-            </small>
-          </ui-select-choices>
-        </ui-select>
-      </td>
+    <x-my-user-row ng-repeat = "u in users"/>
+
+    <!--
+    <tr ng-repeat="(x, y) in users[0]">
+       <td>Key: {{x}}</td>
+       <td>Value: {{y}}</td>
     </tr>
-  <!--<p>Selected: {{multipleDemo.selectedPeople}}</p>-->
-  <!--<hr>-->
+    <tr ng-repeat= "u in users">
+      <td>User: {{u.id}}</td>
+      <td>email: {{u.userName}}</td>
+    </tr>
+    -->  
+    <!--<p>Selected: {{multipleDemo.selectedPeople}}</p>-->
+    <!--<hr>-->
   </table>
 
 
