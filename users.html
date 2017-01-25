@@ -61,7 +61,7 @@
   <button class="btn btn-default btn-xs" ng-click="enable()">Enable ui-select</button>
   <button class="btn btn-default btn-xs" ng-click="disable()">Disable ui-select</button>
 
-  <table id="users">
+  <table id="users" width="80%">
     <x-my-user-row ng-repeat = "u in users"/>
 
     <!--
@@ -69,17 +69,8 @@
        <td>Key: {{x}}</td>
        <td>Value: {{y}}</td>
     </tr>
-    <tr ng-repeat= "u in users">
-      <td>User: {{u.id}}</td>
-      <td>email: {{u.userName}}</td>
-    </tr>
-    -->  
-    <!--<p>Selected: {{multipleDemo.selectedPeople}}</p>-->
-    <!--<hr>-->
+    -->
   </table>
-
-
-  <div style="height:500px"></div>
 
 </body>
 </html>

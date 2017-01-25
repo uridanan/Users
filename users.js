@@ -91,8 +91,14 @@ function initUsers(data){
   //Continue to next methods
   initControlButtons(args.scope);
   initTagsControl(args.scope);
+  initUpdateButton(args.scope);
 }
 
+function initUpdateButton($scope){
+  $scope.updateUser = function(u){
+    console.log(u);
+  }
+}
 
 function initTagsControl($scope){
   $scope.addPerson = function(item, model){
@@ -149,6 +155,7 @@ function initControlButtons($scope){
 
 }
 
+
 function loadJsonFile($http, filename, processResponse){
   console.log("Load data from file: "+filename);
   $http.get(filename,
@@ -185,4 +192,8 @@ function addUserRow(){
 //TODO
 // 1. Tweak the UI
 // 2. Add a save / update button
+// 3. Enable update button when data is changed
 // 3. Add a delete / remove access button ?
+// 4. Add new User
+// 5. Highlight pending changes
+// 6. Highlight dead users
