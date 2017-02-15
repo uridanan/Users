@@ -45,16 +45,24 @@ app.filter('propsFilter', function() {
 });
 
 
+
+
 app.controller('UsersCtrl', main);
 
 function main($scope, $http, $timeout){
   args.scope = $scope;
   args.http = $http;
+
+  // args.scope.users = newResource('users', newUser, postInitUsers)
+  // args.scope.roles = newResource('roles', newRole, postInitRoles)
+  // args.scope.roles.getAll()
   fetchRoles();
+
 }
 
 function fetchRoles(){
-  loadJsonFile(args.http, 'http://localhost:8000/roles.json',initRoles);
+  //loadJsonFile(args.http, 'http://localhost:8000/roles.json',initRoles);
+  restGet(args.http, 'http://localhost:3000/roles',initRoles);
 }
 
 function initRoles(data){
@@ -74,7 +82,8 @@ function initRoles(data){
 }
 
 function fetchUsers(){
-  loadJsonFile(args.http, 'http://localhost:8000/users.json',initUsers);
+  //loadJsonFile(args.http, 'http://localhost:8000/users.json',initUsers);
+  restGet(args.http, 'http://localhost:3000/users',initUsers);
 }
 
 function initUsers(data){
@@ -95,8 +104,9 @@ function initUsers(data){
 }
 
 function initUpdateButton($scope){
-  $scope.updateUser = function(u){
+  $scope.onUpdateUser = function(u){
     console.log(u);
+    updateUser(u)
   }
 }
 
@@ -156,6 +166,105 @@ function initControlButtons($scope){
 }
 
 
+function postInitRoles(){
+  args.scope.roles = roles.db
+  users.getAll()
+}
+
+function postInitUsers(){
+  args.scope.users = users.db
+  initControlButtons(args.scope);
+  initTagsControl(args.scope);
+  initUpdateButton(args.scope);
+}
+
+function newRole(r){
+  return {
+    roleId: r.id,
+    roleName: r.name
+  }
+}
+
+function newUser(u){
+  return u
+}
+
+function newResource(type,newEntry,next){
+  return{
+    db: [],
+    //domain: 'http://localhost:3000/',
+    //resource: type,
+    baseUrl: 'http://localhost:3000/' + type,
+    init: function(data){
+      for  (var i=0 ; i < data.length ; i++){
+        db.push(newEntry(data[i]))
+      }
+      next()
+    },
+    getAll: function(){
+      var url = baseUrl;
+      restGet(args.http,url,init)
+    }
+  }
+}
+
+//   var db = []
+//   var localhost = 'http://localhost:3000/'
+//   var resource = type
+//   var baseUrl = localhost + resource
+//   function init(data){
+//     for  (var i=0 ; i < data.length ; i++){
+//       db.push(newEntry(data[i]))
+//     }
+//     next()
+//   }
+//   function getAll(){
+//     var url = baseUrl;
+//     restGet(args.http,url,init)
+//   }
+//   function get(id){
+//     var url = baseUrl + '/' + id;
+//     restGet(args.http,url,init)
+//   }
+//   function update(id){
+//     var url = baseUrl + '/' + id;
+//   }
+//   function remove(id){
+//     var url = baseUrl + '/' + id;
+//   }
+//   function create(role){
+//     var url = baseUrl;
+//   }
+// }
+function updateUser(u){
+  var url = 'http://localhost:3000/users/' + u.id
+  u.privileges = undefined
+  restPut(args.http,url,u,onSuccess, onError)
+}
+
+function restGet($http, url, processResponse){
+  console.log($http.defaults.headers.common['Authorization']);
+  //var url = 'http://localhost:3000/roles';
+  $http.get(url).then(function(response) {
+    var data = response.data;
+    console.log(data);
+    processResponse(data);
+  });
+}
+
+function restPut($http, url, data, onSuccess, onError){
+  console.log($http.defaults.headers.common['Authorization']);
+  $http.put(url, data).then(onSuccess, onError);
+}
+
+function onSuccess(response){
+  console.log("onSuccess: " + response);
+}
+
+function onError(response){
+  console.log("onError: " + response);
+}
+
 function loadJsonFile($http, filename, processResponse){
   console.log("Load data from file: "+filename);
   $http.get(filename,
@@ -188,12 +297,24 @@ function addUserRow(){
   };
 }
 
+function onUpdateUser(u){
+  console.console.log(u)
+  updateUser(u)
+}
 
 //TODO
-// 1. Tweak the UI
-// 2. Add a save / update button
-// 3. Enable update button when data is changed
-// 3. Add a delete / remove access button ?
 // 4. Add new User
+// 1. Tweak the UI
+// 3. Enable update button when data is changed
 // 5. Highlight pending changes
 // 6. Highlight dead users
+// 7. Refactor REST call, Extract all rest calls to separate module
+// 8. Use resource module for REST calls?
+// 3. Add a delete / remove access button ?
+
+
+
+//Createing a CRUD app: https://www.sitepoint.com/creating-crud-app-minutes-angulars-resource/
+//Another example with a REST Service Backend : http://draptik.github.io/blog/2013/07/28/restful-crud-with-angularjs/
+//Create a file based REST service to manage users using json-server (npm)
+//Rewrite front-end as a CRUD app

@@ -1,0 +1,4869 @@
+{
+  "Users": [
+    {
+      "id": 1,
+      "displayName": null,
+      "userName": "guyt@tabtale.com",
+      "roles": [
+        {
+          "roleName": "ADMIN",
+          "roleId": 1
+        },
+        {
+          "roleName": "READ_ONLY",
+          "roleId": 2
+        }
+      ],
+      "privileges": [
+        {
+          "resourceId": 1,
+          "resourceName": "APPSDB_MARKETING_OPS",
+          "access": "delete",
+          "accessNo": 3
+        },
+        {
+          "resourceId": 2,
+          "resourceName": "APPSDB_PRODUCTION",
+          "access": "delete",
+          "accessNo": 3
+        },
+        {
+          "resourceId": 3,
+          "resourceName": "APPSDB_MARKETING",
+          "access": "delete",
+          "accessNo": 3
+        },
+        {
+          "resourceId": 4,
+          "resourceName": "APPSDB_ANALYTICS",
+          "access": "read",
+          "accessNo": 0
+        },
+        {
+          "resourceId": 5,
+          "resourceName": "APPSDB_ADS",
+          "access": "read",
+          "accessNo": 0
+        },
+        {
+          "resourceId": 6,
+          "resourceName": "APPSDB_BUILD",
+          "access": "delete",
+          "accessNo": 3
+        },
+        {
+          "resourceId": 7,
+          "resourceName": "APPSDB_TEST_KEYS",
+          "access": "delete",
+          "accessNo": 3
+        },
+        {
+          "resourceId": 8,
+          "resourceName": "APPSDB_NOTES",
+          "access": "delete",
+          "accessNo": 3
+        },
+        {
+          "resourceId": 9,
+          "resourceName": "APPSDB",
+          "access": "delete",
+          "accessNo": 3
+        },
+        {
+          "resourceId": 10,
+          "resourceName": "ADMIN_CONSOLE",
+          "access": "delete",
+          "accessNo": 3
+        },
+        {
+          "resourceId": 11,
+          "resourceName": "PROMOTION",
+          "access": "delete",
+          "accessNo": 3
+        },
+        {
+          "resourceId": 12,
+          "resourceName": "ADS_SERVICE",
+          "access": "delete",
+          "accessNo": 3
+        },
+        {
+          "resourceId": 13,
+          "resourceName": "SERVICE_MASK",
+          "access": "delete",
+          "accessNo": 3
+        },
+        {
+          "resourceId": 14,
+          "resourceName": "ADS_SERVICE_NG",
+          "access": "delete",
+          "accessNo": 3
+        },
+        {
+          "resourceId": 15,
+          "resourceName": "ADS_SERVICE_NG_KEYS",
+          "access": "delete",
+          "accessNo": 3
+        },
+        {
+          "resourceId": 16,
+          "resourceName": "ADS_SERVICE_NG_KEYS_REMOVE",
+          "access": "delete",
+          "accessNo": 3
+        },
+        {
+          "resourceId": 17,
+          "resourceName": "APPSDB_SUPPORT",
+          "access": "delete",
+          "accessNo": 3
+        },
+        {
+          "resourceId": 18,
+          "resourceName": "APPSDB_SOCIAL",
+          "access": "read",
+          "accessNo": 0
+        },
+        {
+          "resourceId": 19,
+          "resourceName": "APPSDB_LICENSING",
+          "access": "read",
+          "accessNo": 0
+        }
+      ]
+    },
+    {
+      "id": 2,
+      "displayName": "Dana Cohen",
+      "userName": "danac@tabtale.com",
+      "roles": [
+        {
+          "roleId": 7,
+          "roleName": "ANALYST"
+        }
+      ]
+    },
+    {
+      "id": 3,
+      "displayName": null,
+      "userName": "urid@tabtale.com",
+      "roles": [
+        {
+          "roleName": "ADMIN",
+          "roleId": 1
+        },
+        {
+          "roleName": "READ_ONLY",
+          "roleId": 2
+        }
+      ],
+      "privileges": [
+        {
+          "resourceId": 1,
+          "resourceName": "APPSDB_MARKETING_OPS",
+          "access": "delete",
+          "accessNo": 3
+        },
+        {
+          "resourceId": 2,
+          "resourceName": "APPSDB_PRODUCTION",
+          "access": "delete",
+          "accessNo": 3
+        },
+        {
+          "resourceId": 3,
+          "resourceName": "APPSDB_MARKETING",
+          "access": "delete",
+          "accessNo": 3
+        },
+        {
+          "resourceId": 4,
+          "resourceName": "APPSDB_ANALYTICS",
+          "access": "read",
+          "accessNo": 0
+        },
+        {
+          "resourceId": 5,
+          "resourceName": "APPSDB_ADS",
+          "access": "read",
+          "accessNo": 0
+        },
+        {
+          "resourceId": 6,
+          "resourceName": "APPSDB_BUILD",
+          "access": "delete",
+          "accessNo": 3
+        },
+        {
+          "resourceId": 7,
+          "resourceName": "APPSDB_TEST_KEYS",
+          "access": "delete",
+          "accessNo": 3
+        },
+        {
+          "resourceId": 8,
+          "resourceName": "APPSDB_NOTES",
+          "access": "delete",
+          "accessNo": 3
+        },
+        {
+          "resourceId": 9,
+          "resourceName": "APPSDB",
+          "access": "delete",
+          "accessNo": 3
+        },
+        {
+          "resourceId": 10,
+          "resourceName": "ADMIN_CONSOLE",
+          "access": "delete",
+          "accessNo": 3
+        },
+        {
+          "resourceId": 11,
+          "resourceName": "PROMOTION",
+          "access": "delete",
+          "accessNo": 3
+        },
+        {
+          "resourceId": 12,
+          "resourceName": "ADS_SERVICE",
+          "access": "delete",
+          "accessNo": 3
+        },
+        {
+          "resourceId": 13,
+          "resourceName": "SERVICE_MASK",
+          "access": "delete",
+          "accessNo": 3
+        },
+        {
+          "resourceId": 14,
+          "resourceName": "ADS_SERVICE_NG",
+          "access": "delete",
+          "accessNo": 3
+        },
+        {
+          "resourceId": 15,
+          "resourceName": "ADS_SERVICE_NG_KEYS",
+          "access": "delete",
+          "accessNo": 3
+        },
+        {
+          "resourceId": 16,
+          "resourceName": "ADS_SERVICE_NG_KEYS_REMOVE",
+          "access": "delete",
+          "accessNo": 3
+        },
+        {
+          "resourceId": 17,
+          "resourceName": "APPSDB_SUPPORT",
+          "access": "delete",
+          "accessNo": 3
+        },
+        {
+          "resourceId": 18,
+          "resourceName": "APPSDB_SOCIAL",
+          "access": "read",
+          "accessNo": 0
+        },
+        {
+          "resourceId": 19,
+          "resourceName": "APPSDB_LICENSING",
+          "access": "read",
+          "accessNo": 0
+        }
+      ]
+    },
+    {
+      "id": 4,
+      "displayName": null,
+      "userName": "yonatang@tabtale.com",
+      "roles": [
+        {
+          "roleName": "ADMIN",
+          "roleId": 1
+        },
+        {
+          "roleName": "READ_ONLY",
+          "roleId": 2
+        }
+      ],
+      "privileges": [
+        {
+          "resourceId": 1,
+          "resourceName": "APPSDB_MARKETING_OPS",
+          "access": "delete",
+          "accessNo": 3
+        },
+        {
+          "resourceId": 2,
+          "resourceName": "APPSDB_PRODUCTION",
+          "access": "delete",
+          "accessNo": 3
+        },
+        {
+          "resourceId": 3,
+          "resourceName": "APPSDB_MARKETING",
+          "access": "delete",
+          "accessNo": 3
+        },
+        {
+          "resourceId": 4,
+          "resourceName": "APPSDB_ANALYTICS",
+          "access": "read",
+          "accessNo": 0
+        },
+        {
+          "resourceId": 5,
+          "resourceName": "APPSDB_ADS",
+          "access": "read",
+          "accessNo": 0
+        },
+        {
+          "resourceId": 6,
+          "resourceName": "APPSDB_BUILD",
+          "access": "delete",
+          "accessNo": 3
+        },
+        {
+          "resourceId": 7,
+          "resourceName": "APPSDB_TEST_KEYS",
+          "access": "delete",
+          "accessNo": 3
+        },
+        {
+          "resourceId": 8,
+          "resourceName": "APPSDB_NOTES",
+          "access": "delete",
+          "accessNo": 3
+        },
+        {
+          "resourceId": 9,
+          "resourceName": "APPSDB",
+          "access": "delete",
+          "accessNo": 3
+        },
+        {
+          "resourceId": 10,
+          "resourceName": "ADMIN_CONSOLE",
+          "access": "delete",
+          "accessNo": 3
+        },
+        {
+          "resourceId": 11,
+          "resourceName": "PROMOTION",
+          "access": "delete",
+          "accessNo": 3
+        },
+        {
+          "resourceId": 12,
+          "resourceName": "ADS_SERVICE",
+          "access": "delete",
+          "accessNo": 3
+        },
+        {
+          "resourceId": 13,
+          "resourceName": "SERVICE_MASK",
+          "access": "delete",
+          "accessNo": 3
+        },
+        {
+          "resourceId": 14,
+          "resourceName": "ADS_SERVICE_NG",
+          "access": "delete",
+          "accessNo": 3
+        },
+        {
+          "resourceId": 15,
+          "resourceName": "ADS_SERVICE_NG_KEYS",
+          "access": "delete",
+          "accessNo": 3
+        },
+        {
+          "resourceId": 16,
+          "resourceName": "ADS_SERVICE_NG_KEYS_REMOVE",
+          "access": "delete",
+          "accessNo": 3
+        },
+        {
+          "resourceId": 17,
+          "resourceName": "APPSDB_SUPPORT",
+          "access": "delete",
+          "accessNo": 3
+        },
+        {
+          "resourceId": 18,
+          "resourceName": "APPSDB_SOCIAL",
+          "access": "read",
+          "accessNo": 0
+        },
+        {
+          "resourceId": 19,
+          "resourceName": "APPSDB_LICENSING",
+          "access": "read",
+          "accessNo": 0
+        }
+      ]
+    },
+    {
+      "id": 6,
+      "displayName": "Keren Berger",
+      "userName": "kerenb@tabtale.com",
+      "roles": [
+        {
+          "roleName": "READ_ONLY",
+          "roleId": 2
+        },
+        {
+          "roleName": "MARKETING_OPS",
+          "roleId": 3
+        },
+        {
+          "roleName": "MARKETING",
+          "roleId": 5
+        }
+      ],
+      "privileges": [
+        {
+          "resourceId": 1,
+          "resourceName": "APPSDB_MARKETING_OPS",
+          "access": "delete",
+          "accessNo": 3
+        },
+        {
+          "resourceId": 2,
+          "resourceName": "APPSDB_PRODUCTION",
+          "access": "delete",
+          "accessNo": 3
+        },
+        {
+          "resourceId": 3,
+          "resourceName": "APPSDB_MARKETING",
+          "access": "delete",
+          "accessNo": 3
+        },
+        {
+          "resourceId": 4,
+          "resourceName": "APPSDB_ANALYTICS",
+          "access": "read",
+          "accessNo": 0
+        },
+        {
+          "resourceId": 5,
+          "resourceName": "APPSDB_ADS",
+          "access": "read",
+          "accessNo": 0
+        },
+        {
+          "resourceId": 6,
+          "resourceName": "APPSDB_BUILD",
+          "access": "read",
+          "accessNo": 0
+        },
+        {
+          "resourceId": 7,
+          "resourceName": "APPSDB_TEST_KEYS",
+          "access": "delete",
+          "accessNo": 3
+        },
+        {
+          "resourceId": 8,
+          "resourceName": "APPSDB_NOTES",
+          "access": "delete",
+          "accessNo": 3
+        },
+        {
+          "resourceId": 9,
+          "resourceName": "APPSDB",
+          "access": "delete",
+          "accessNo": 3
+        },
+        {
+          "resourceId": 10,
+          "resourceName": "ADMIN_CONSOLE",
+          "access": "read",
+          "accessNo": 0
+        },
+        {
+          "resourceId": 11,
+          "resourceName": "PROMOTION",
+          "access": "read",
+          "accessNo": 0
+        },
+        {
+          "resourceId": 12,
+          "resourceName": "ADS_SERVICE",
+          "access": "read",
+          "accessNo": 0
+        },
+        {
+          "resourceId": 13,
+          "resourceName": "SERVICE_MASK",
+          "access": "read",
+          "accessNo": 0
+        },
+        {
+          "resourceId": 14,
+          "resourceName": "ADS_SERVICE_NG",
+          "access": "delete",
+          "accessNo": 3
+        },
+        {
+          "resourceId": 15,
+          "resourceName": "ADS_SERVICE_NG_KEYS",
+          "access": "read",
+          "accessNo": 0
+        },
+        {
+          "resourceId": 16,
+          "resourceName": "ADS_SERVICE_NG_KEYS_REMOVE",
+          "access": "read",
+          "accessNo": 0
+        },
+        {
+          "resourceId": 17,
+          "resourceName": "APPSDB_SUPPORT",
+          "access": "delete",
+          "accessNo": 3
+        },
+        {
+          "resourceId": 18,
+          "resourceName": "APPSDB_SOCIAL",
+          "access": "read",
+          "accessNo": 0
+        },
+        {
+          "resourceId": 19,
+          "resourceName": "APPSDB_LICENSING",
+          "access": "read",
+          "accessNo": 0
+        }
+      ]
+    },
+    {
+      "id": 7,
+      "displayName": "Keren Shomer",
+      "userName": "kerens@tabtale.com",
+      "roles": [
+        {
+          "roleName": "READ_ONLY",
+          "roleId": 2
+        },
+        {
+          "roleName": "MARKETING_OPS",
+          "roleId": 3
+        },
+        {
+          "roleName": "APP_PRODUCER",
+          "roleId": 4
+        },
+        {
+          "roleName": "INTEGRATION",
+          "roleId": 8
+        }
+      ],
+      "privileges": [
+        {
+          "resourceId": 1,
+          "resourceName": "APPSDB_MARKETING_OPS",
+          "access": "delete",
+          "accessNo": 3
+        },
+        {
+          "resourceId": 2,
+          "resourceName": "APPSDB_PRODUCTION",
+          "access": "delete",
+          "accessNo": 3
+        },
+        {
+          "resourceId": 3,
+          "resourceName": "APPSDB_MARKETING",
+          "access": "delete",
+          "accessNo": 3
+        },
+        {
+          "resourceId": 4,
+          "resourceName": "APPSDB_ANALYTICS",
+          "access": "read",
+          "accessNo": 0
+        },
+        {
+          "resourceId": 5,
+          "resourceName": "APPSDB_ADS",
+          "access": "read",
+          "accessNo": 0
+        },
+        {
+          "resourceId": 6,
+          "resourceName": "APPSDB_BUILD",
+          "access": "delete",
+          "accessNo": 3
+        },
+        {
+          "resourceId": 7,
+          "resourceName": "APPSDB_TEST_KEYS",
+          "access": "delete",
+          "accessNo": 3
+        },
+        {
+          "resourceId": 8,
+          "resourceName": "APPSDB_NOTES",
+          "access": "delete",
+          "accessNo": 3
+        },
+        {
+          "resourceId": 9,
+          "resourceName": "APPSDB",
+          "access": "delete",
+          "accessNo": 3
+        },
+        {
+          "resourceId": 10,
+          "resourceName": "ADMIN_CONSOLE",
+          "access": "read",
+          "accessNo": 0
+        },
+        {
+          "resourceId": 11,
+          "resourceName": "PROMOTION",
+          "access": "read",
+          "accessNo": 0
+        },
+        {
+          "resourceId": 12,
+          "resourceName": "ADS_SERVICE",
+          "access": "read",
+          "accessNo": 0
+        },
+        {
+          "resourceId": 13,
+          "resourceName": "SERVICE_MASK",
+          "access": "read",
+          "accessNo": 0
+        },
+        {
+          "resourceId": 14,
+          "resourceName": "ADS_SERVICE_NG",
+          "access": "delete",
+          "accessNo": 3
+        },
+        {
+          "resourceId": 15,
+          "resourceName": "ADS_SERVICE_NG_KEYS",
+          "access": "read",
+          "accessNo": 0
+        },
+        {
+          "resourceId": 16,
+          "resourceName": "ADS_SERVICE_NG_KEYS_REMOVE",
+          "access": "read",
+          "accessNo": 0
+        },
+        {
+          "resourceId": 17,
+          "resourceName": "APPSDB_SUPPORT",
+          "access": "read",
+          "accessNo": 0
+        },
+        {
+          "resourceId": 18,
+          "resourceName": "APPSDB_SOCIAL",
+          "access": "read",
+          "accessNo": 0
+        },
+        {
+          "resourceId": 19,
+          "resourceName": "APPSDB_LICENSING",
+          "access": "read",
+          "accessNo": 0
+        }
+      ]
+    },
+    {
+      "id": 8,
+      "displayName": "Daniela Mishevska",
+      "userName": "danielam@tabtale.com",
+      "roles": [
+        {
+          "roleName": "READ_ONLY",
+          "roleId": 2
+        },
+        {
+          "roleName": "MARKETING_OPS",
+          "roleId": 3
+        },
+        {
+          "roleName": "APP_PRODUCER",
+          "roleId": 4
+        },
+        {
+          "roleName": "MARKETING",
+          "roleId": 5
+        },
+        {
+          "roleName": "INTEGRATION",
+          "roleId": 8
+        },
+        {
+          "roleName": "PROMOTION_MGR",
+          "roleId": 14
+        }
+      ],
+      "privileges": [
+        {
+          "resourceId": 1,
+          "resourceName": "APPSDB_MARKETING_OPS",
+          "access": "delete",
+          "accessNo": 3
+        },
+        {
+          "resourceId": 2,
+          "resourceName": "APPSDB_PRODUCTION",
+          "access": "delete",
+          "accessNo": 3
+        },
+        {
+          "resourceId": 3,
+          "resourceName": "APPSDB_MARKETING",
+          "access": "delete",
+          "accessNo": 3
+        },
+        {
+          "resourceId": 4,
+          "resourceName": "APPSDB_ANALYTICS",
+          "access": "read",
+          "accessNo": 0
+        },
+        {
+          "resourceId": 5,
+          "resourceName": "APPSDB_ADS",
+          "access": "read",
+          "accessNo": 0
+        },
+        {
+          "resourceId": 6,
+          "resourceName": "APPSDB_BUILD",
+          "access": "delete",
+          "accessNo": 3
+        },
+        {
+          "resourceId": 7,
+          "resourceName": "APPSDB_TEST_KEYS",
+          "access": "delete",
+          "accessNo": 3
+        },
+        {
+          "resourceId": 8,
+          "resourceName": "APPSDB_NOTES",
+          "access": "delete",
+          "accessNo": 3
+        },
+        {
+          "resourceId": 9,
+          "resourceName": "APPSDB",
+          "access": "delete",
+          "accessNo": 3
+        },
+        {
+          "resourceId": 10,
+          "resourceName": "ADMIN_CONSOLE",
+          "access": "read",
+          "accessNo": 0
+        },
+        {
+          "resourceId": 11,
+          "resourceName": "PROMOTION",
+          "access": "delete",
+          "accessNo": 3
+        },
+        {
+          "resourceId": 12,
+          "resourceName": "ADS_SERVICE",
+          "access": "read",
+          "accessNo": 0
+        },
+        {
+          "resourceId": 13,
+          "resourceName": "SERVICE_MASK",
+          "access": "read",
+          "accessNo": 0
+        },
+        {
+          "resourceId": 14,
+          "resourceName": "ADS_SERVICE_NG",
+          "access": "delete",
+          "accessNo": 3
+        },
+        {
+          "resourceId": 15,
+          "resourceName": "ADS_SERVICE_NG_KEYS",
+          "access": "read",
+          "accessNo": 0
+        },
+        {
+          "resourceId": 16,
+          "resourceName": "ADS_SERVICE_NG_KEYS_REMOVE",
+          "access": "read",
+          "accessNo": 0
+        },
+        {
+          "resourceId": 17,
+          "resourceName": "APPSDB_SUPPORT",
+          "access": "delete",
+          "accessNo": 3
+        },
+        {
+          "resourceId": 18,
+          "resourceName": "APPSDB_SOCIAL",
+          "access": "read",
+          "accessNo": 0
+        },
+        {
+          "resourceId": 19,
+          "resourceName": "APPSDB_LICENSING",
+          "access": "read",
+          "accessNo": 0
+        }
+      ]
+    },
+    {
+      "id": 9,
+      "displayName": "Cvetanka Trifunovska",
+      "userName": "cvetankat@tabtale.com",
+      "roles": [
+        {
+          "roleName": "READ_ONLY",
+          "roleId": 2
+        },
+        {
+          "roleName": "MARKETING_OPS",
+          "roleId": 3
+        },
+        {
+          "roleName": "APP_PRODUCER",
+          "roleId": 4
+        },
+        {
+          "roleName": "MARKETING",
+          "roleId": 5
+        },
+        {
+          "roleName": "INTEGRATION",
+          "roleId": 8
+        }
+      ],
+      "privileges": [
+        {
+          "resourceId": 1,
+          "resourceName": "APPSDB_MARKETING_OPS",
+          "access": "delete",
+          "accessNo": 3
+        },
+        {
+          "resourceId": 2,
+          "resourceName": "APPSDB_PRODUCTION",
+          "access": "delete",
+          "accessNo": 3
+        },
+        {
+          "resourceId": 3,
+          "resourceName": "APPSDB_MARKETING",
+          "access": "delete",
+          "accessNo": 3
+        },
+        {
+          "resourceId": 4,
+          "resourceName": "APPSDB_ANALYTICS",
+          "access": "read",
+          "accessNo": 0
+        },
+        {
+          "resourceId": 5,
+          "resourceName": "APPSDB_ADS",
+          "access": "read",
+          "accessNo": 0
+        },
+        {
+          "resourceId": 6,
+          "resourceName": "APPSDB_BUILD",
+          "access": "delete",
+          "accessNo": 3
+        },
+        {
+          "resourceId": 7,
+          "resourceName": "APPSDB_TEST_KEYS",
+          "access": "delete",
+          "accessNo": 3
+        },
+        {
+          "resourceId": 8,
+          "resourceName": "APPSDB_NOTES",
+          "access": "delete",
+          "accessNo": 3
+        },
+        {
+          "resourceId": 9,
+          "resourceName": "APPSDB",
+          "access": "delete",
+          "accessNo": 3
+        },
+        {
+          "resourceId": 10,
+          "resourceName": "ADMIN_CONSOLE",
+          "access": "read",
+          "accessNo": 0
+        },
+        {
+          "resourceId": 11,
+          "resourceName": "PROMOTION",
+          "access": "read",
+          "accessNo": 0
+        },
+        {
+          "resourceId": 12,
+          "resourceName": "ADS_SERVICE",
+          "access": "read",
+          "accessNo": 0
+        },
+        {
+          "resourceId": 13,
+          "resourceName": "SERVICE_MASK",
+          "access": "read",
+          "accessNo": 0
+        },
+        {
+          "resourceId": 14,
+          "resourceName": "ADS_SERVICE_NG",
+          "access": "delete",
+          "accessNo": 3
+        },
+        {
+          "resourceId": 15,
+          "resourceName": "ADS_SERVICE_NG_KEYS",
+          "access": "read",
+          "accessNo": 0
+        },
+        {
+          "resourceId": 16,
+          "resourceName": "ADS_SERVICE_NG_KEYS_REMOVE",
+          "access": "read",
+          "accessNo": 0
+        },
+        {
+          "resourceId": 17,
+          "resourceName": "APPSDB_SUPPORT",
+          "access": "delete",
+          "accessNo": 3
+        },
+        {
+          "resourceId": 18,
+          "resourceName": "APPSDB_SOCIAL",
+          "access": "read",
+          "accessNo": 0
+        },
+        {
+          "resourceId": 19,
+          "resourceName": "APPSDB_LICENSING",
+          "access": "read",
+          "accessNo": 0
+        }
+      ]
+    },
+    {
+      "id": 10,
+      "displayName": null,
+      "userName": "moriag@tabtale.com",
+      "roles": [
+        {
+          "roleName": "READ_ONLY",
+          "roleId": 2
+        },
+        {
+          "roleName": "APP_PRODUCER",
+          "roleId": 4
+        }
+      ],
+      "privileges": [
+        {
+          "resourceId": 1,
+          "resourceName": "APPSDB_MARKETING_OPS",
+          "access": "read",
+          "accessNo": 0
+        },
+        {
+          "resourceId": 2,
+          "resourceName": "APPSDB_PRODUCTION",
+          "access": "delete",
+          "accessNo": 3
+        },
+        {
+          "resourceId": 3,
+          "resourceName": "APPSDB_MARKETING",
+          "access": "read",
+          "accessNo": 0
+        },
+        {
+          "resourceId": 4,
+          "resourceName": "APPSDB_ANALYTICS",
+          "access": "read",
+          "accessNo": 0
+        },
+        {
+          "resourceId": 5,
+          "resourceName": "APPSDB_ADS",
+          "access": "read",
+          "accessNo": 0
+        },
+        {
+          "resourceId": 6,
+          "resourceName": "APPSDB_BUILD",
+          "access": "read",
+          "accessNo": 0
+        },
+        {
+          "resourceId": 7,
+          "resourceName": "APPSDB_TEST_KEYS",
+          "access": "read",
+          "accessNo": 0
+        },
+        {
+          "resourceId": 8,
+          "resourceName": "APPSDB_NOTES",
+          "access": "delete",
+          "accessNo": 3
+        },
+        {
+          "resourceId": 9,
+          "resourceName": "APPSDB",
+          "access": "delete",
+          "accessNo": 3
+        },
+        {
+          "resourceId": 10,
+          "resourceName": "ADMIN_CONSOLE",
+          "access": "read",
+          "accessNo": 0
+        },
+        {
+          "resourceId": 11,
+          "resourceName": "PROMOTION",
+          "access": "read",
+          "accessNo": 0
+        },
+        {
+          "resourceId": 12,
+          "resourceName": "ADS_SERVICE",
+          "access": "read",
+          "accessNo": 0
+        },
+        {
+          "resourceId": 13,
+          "resourceName": "SERVICE_MASK",
+          "access": "read",
+          "accessNo": 0
+        },
+        {
+          "resourceId": 14,
+          "resourceName": "ADS_SERVICE_NG",
+          "access": "delete",
+          "accessNo": 3
+        },
+        {
+          "resourceId": 15,
+          "resourceName": "ADS_SERVICE_NG_KEYS",
+          "access": "read",
+          "accessNo": 0
+        },
+        {
+          "resourceId": 16,
+          "resourceName": "ADS_SERVICE_NG_KEYS_REMOVE",
+          "access": "read",
+          "accessNo": 0
+        },
+        {
+          "resourceId": 17,
+          "resourceName": "APPSDB_SUPPORT",
+          "access": "read",
+          "accessNo": 0
+        },
+        {
+          "resourceId": 18,
+          "resourceName": "APPSDB_SOCIAL",
+          "access": "read",
+          "accessNo": 0
+        },
+        {
+          "resourceId": 19,
+          "resourceName": "APPSDB_LICENSING",
+          "access": "read",
+          "accessNo": 0
+        }
+      ]
+    },
+    {
+      "id": 11,
+      "displayName": "Eran Holzman",
+      "userName": "eranhz@tabtale.com",
+      "roles": [
+        {
+          "roleName": "NO_ACCESS",
+          "roleId": 13
+        }
+      ],
+      "privileges": [
+        {
+          "resourceId": 1,
+          "resourceName": "APPSDB_MARKETING_OPS",
+          "access": "read",
+          "accessNo": 0
+        },
+        {
+          "resourceId": 2,
+          "resourceName": "APPSDB_PRODUCTION",
+          "access": "read",
+          "accessNo": 0
+        },
+        {
+          "resourceId": 3,
+          "resourceName": "APPSDB_MARKETING",
+          "access": "read",
+          "accessNo": 0
+        },
+        {
+          "resourceId": 4,
+          "resourceName": "APPSDB_ANALYTICS",
+          "access": "read",
+          "accessNo": 0
+        },
+        {
+          "resourceId": 5,
+          "resourceName": "APPSDB_ADS",
+          "access": "read",
+          "accessNo": 0
+        },
+        {
+          "resourceId": 6,
+          "resourceName": "APPSDB_BUILD",
+          "access": "read",
+          "accessNo": 0
+        },
+        {
+          "resourceId": 7,
+          "resourceName": "APPSDB_TEST_KEYS",
+          "access": "read",
+          "accessNo": 0
+        },
+        {
+          "resourceId": 8,
+          "resourceName": "APPSDB_NOTES",
+          "access": "read",
+          "accessNo": 0
+        },
+        {
+          "resourceId": 9,
+          "resourceName": "APPSDB",
+          "access": "read",
+          "accessNo": 0
+        },
+        {
+          "resourceId": 10,
+          "resourceName": "ADMIN_CONSOLE",
+          "access": "read",
+          "accessNo": 0
+        },
+        {
+          "resourceId": 11,
+          "resourceName": "PROMOTION",
+          "access": "read",
+          "accessNo": 0
+        },
+        {
+          "resourceId": 12,
+          "resourceName": "ADS_SERVICE",
+          "access": "read",
+          "accessNo": 0
+        },
+        {
+          "resourceId": 13,
+          "resourceName": "SERVICE_MASK",
+          "access": "read",
+          "accessNo": 0
+        },
+        {
+          "resourceId": 14,
+          "resourceName": "ADS_SERVICE_NG",
+          "access": "read",
+          "accessNo": 0
+        },
+        {
+          "resourceId": 15,
+          "resourceName": "ADS_SERVICE_NG_KEYS",
+          "access": "read",
+          "accessNo": 0
+        },
+        {
+          "resourceId": 16,
+          "resourceName": "ADS_SERVICE_NG_KEYS_REMOVE",
+          "access": "read",
+          "accessNo": 0
+        },
+        {
+          "resourceId": 17,
+          "resourceName": "APPSDB_SUPPORT",
+          "access": "read",
+          "accessNo": 0
+        },
+        {
+          "resourceId": 18,
+          "resourceName": "APPSDB_SOCIAL",
+          "access": "read",
+          "accessNo": 0
+        },
+        {
+          "resourceId": 19,
+          "resourceName": "APPSDB_LICENSING",
+          "access": "read",
+          "accessNo": 0
+        }
+      ]
+    },
+    {
+      "id": 12,
+      "displayName": null,
+      "userName": "liori@tabtale.com",
+      "roles": [
+        {
+          "roleName": "READ_ONLY",
+          "roleId": 2
+        },
+        {
+          "roleName": "APP_PRODUCER",
+          "roleId": 4
+        }
+      ],
+      "privileges": [
+        {
+          "resourceId": 1,
+          "resourceName": "APPSDB_MARKETING_OPS",
+          "access": "read",
+          "accessNo": 0
+        },
+        {
+          "resourceId": 2,
+          "resourceName": "APPSDB_PRODUCTION",
+          "access": "delete",
+          "accessNo": 3
+        },
+        {
+          "resourceId": 3,
+          "resourceName": "APPSDB_MARKETING",
+          "access": "read",
+          "accessNo": 0
+        },
+        {
+          "resourceId": 4,
+          "resourceName": "APPSDB_ANALYTICS",
+          "access": "read",
+          "accessNo": 0
+        },
+        {
+          "resourceId": 5,
+          "resourceName": "APPSDB_ADS",
+          "access": "read",
+          "accessNo": 0
+        },
+        {
+          "resourceId": 6,
+          "resourceName": "APPSDB_BUILD",
+          "access": "read",
+          "accessNo": 0
+        },
+        {
+          "resourceId": 7,
+          "resourceName": "APPSDB_TEST_KEYS",
+          "access": "read",
+          "accessNo": 0
+        },
+        {
+          "resourceId": 8,
+          "resourceName": "APPSDB_NOTES",
+          "access": "delete",
+          "accessNo": 3
+        },
+        {
+          "resourceId": 9,
+          "resourceName": "APPSDB",
+          "access": "delete",
+          "accessNo": 3
+        },
+        {
+          "resourceId": 10,
+          "resourceName": "ADMIN_CONSOLE",
+          "access": "read",
+          "accessNo": 0
+        },
+        {
+          "resourceId": 11,
+          "resourceName": "PROMOTION",
+          "access": "read",
+          "accessNo": 0
+        },
+        {
+          "resourceId": 12,
+          "resourceName": "ADS_SERVICE",
+          "access": "read",
+          "accessNo": 0
+        },
+        {
+          "resourceId": 13,
+          "resourceName": "SERVICE_MASK",
+          "access": "read",
+          "accessNo": 0
+        },
+        {
+          "resourceId": 14,
+          "resourceName": "ADS_SERVICE_NG",
+          "access": "delete",
+          "accessNo": 3
+        },
+        {
+          "resourceId": 15,
+          "resourceName": "ADS_SERVICE_NG_KEYS",
+          "access": "read",
+          "accessNo": 0
+        },
+        {
+          "resourceId": 16,
+          "resourceName": "ADS_SERVICE_NG_KEYS_REMOVE",
+          "access": "read",
+          "accessNo": 0
+        },
+        {
+          "resourceId": 17,
+          "resourceName": "APPSDB_SUPPORT",
+          "access": "read",
+          "accessNo": 0
+        },
+        {
+          "resourceId": 18,
+          "resourceName": "APPSDB_SOCIAL",
+          "access": "read",
+          "accessNo": 0
+        },
+        {
+          "resourceId": 19,
+          "resourceName": "APPSDB_LICENSING",
+          "access": "read",
+          "accessNo": 0
+        }
+      ]
+    },
+    {
+      "id": 13,
+      "displayName": null,
+      "userName": "einavo@tabtale.com",
+      "roles": [
+        {
+          "roleName": "READ_ONLY",
+          "roleId": 2
+        },
+        {
+          "roleName": "APP_PRODUCER",
+          "roleId": 4
+        }
+      ],
+      "privileges": [
+        {
+          "resourceId": 1,
+          "resourceName": "APPSDB_MARKETING_OPS",
+          "access": "read",
+          "accessNo": 0
+        },
+        {
+          "resourceId": 2,
+          "resourceName": "APPSDB_PRODUCTION",
+          "access": "delete",
+          "accessNo": 3
+        },
+        {
+          "resourceId": 3,
+          "resourceName": "APPSDB_MARKETING",
+          "access": "read",
+          "accessNo": 0
+        },
+        {
+          "resourceId": 4,
+          "resourceName": "APPSDB_ANALYTICS",
+          "access": "read",
+          "accessNo": 0
+        },
+        {
+          "resourceId": 5,
+          "resourceName": "APPSDB_ADS",
+          "access": "read",
+          "accessNo": 0
+        },
+        {
+          "resourceId": 6,
+          "resourceName": "APPSDB_BUILD",
+          "access": "read",
+          "accessNo": 0
+        },
+        {
+          "resourceId": 7,
+          "resourceName": "APPSDB_TEST_KEYS",
+          "access": "read",
+          "accessNo": 0
+        },
+        {
+          "resourceId": 8,
+          "resourceName": "APPSDB_NOTES",
+          "access": "delete",
+          "accessNo": 3
+        },
+        {
+          "resourceId": 9,
+          "resourceName": "APPSDB",
+          "access": "delete",
+          "accessNo": 3
+        },
+        {
+          "resourceId": 10,
+          "resourceName": "ADMIN_CONSOLE",
+          "access": "read",
+          "accessNo": 0
+        },
+        {
+          "resourceId": 11,
+          "resourceName": "PROMOTION",
+          "access": "read",
+          "accessNo": 0
+        },
+        {
+          "resourceId": 12,
+          "resourceName": "ADS_SERVICE",
+          "access": "read",
+          "accessNo": 0
+        },
+        {
+          "resourceId": 13,
+          "resourceName": "SERVICE_MASK",
+          "access": "read",
+          "accessNo": 0
+        },
+        {
+          "resourceId": 14,
+          "resourceName": "ADS_SERVICE_NG",
+          "access": "delete",
+          "accessNo": 3
+        },
+        {
+          "resourceId": 15,
+          "resourceName": "ADS_SERVICE_NG_KEYS",
+          "access": "read",
+          "accessNo": 0
+        },
+        {
+          "resourceId": 16,
+          "resourceName": "ADS_SERVICE_NG_KEYS_REMOVE",
+          "access": "read",
+          "accessNo": 0
+        },
+        {
+          "resourceId": 17,
+          "resourceName": "APPSDB_SUPPORT",
+          "access": "read",
+          "accessNo": 0
+        },
+        {
+          "resourceId": 18,
+          "resourceName": "APPSDB_SOCIAL",
+          "access": "read",
+          "accessNo": 0
+        },
+        {
+          "resourceId": 19,
+          "resourceName": "APPSDB_LICENSING",
+          "access": "read",
+          "accessNo": 0
+        }
+      ]
+    },
+    {
+      "id": 14,
+      "displayName": null,
+      "userName": "yaelg@tabtale.com",
+      "roles": [
+        {
+          "roleName": "READ_ONLY",
+          "roleId": 2
+        },
+        {
+          "roleName": "APP_PRODUCER",
+          "roleId": 4
+        }
+      ],
+      "privileges": [
+        {
+          "resourceId": 1,
+          "resourceName": "APPSDB_MARKETING_OPS",
+          "access": "read",
+          "accessNo": 0
+        },
+        {
+          "resourceId": 2,
+          "resourceName": "APPSDB_PRODUCTION",
+          "access": "delete",
+          "accessNo": 3
+        },
+        {
+          "resourceId": 3,
+          "resourceName": "APPSDB_MARKETING",
+          "access": "read",
+          "accessNo": 0
+        },
+        {
+          "resourceId": 4,
+          "resourceName": "APPSDB_ANALYTICS",
+          "access": "read",
+          "accessNo": 0
+        },
+        {
+          "resourceId": 5,
+          "resourceName": "APPSDB_ADS",
+          "access": "read",
+          "accessNo": 0
+        },
+        {
+          "resourceId": 6,
+          "resourceName": "APPSDB_BUILD",
+          "access": "read",
+          "accessNo": 0
+        },
+        {
+          "resourceId": 7,
+          "resourceName": "APPSDB_TEST_KEYS",
+          "access": "read",
+          "accessNo": 0
+        },
+        {
+          "resourceId": 8,
+          "resourceName": "APPSDB_NOTES",
+          "access": "delete",
+          "accessNo": 3
+        },
+        {
+          "resourceId": 9,
+          "resourceName": "APPSDB",
+          "access": "delete",
+          "accessNo": 3
+        },
+        {
+          "resourceId": 10,
+          "resourceName": "ADMIN_CONSOLE",
+          "access": "read",
+          "accessNo": 0
+        },
+        {
+          "resourceId": 11,
+          "resourceName": "PROMOTION",
+          "access": "read",
+          "accessNo": 0
+        },
+        {
+          "resourceId": 12,
+          "resourceName": "ADS_SERVICE",
+          "access": "read",
+          "accessNo": 0
+        },
+        {
+          "resourceId": 13,
+          "resourceName": "SERVICE_MASK",
+          "access": "read",
+          "accessNo": 0
+        },
+        {
+          "resourceId": 14,
+          "resourceName": "ADS_SERVICE_NG",
+          "access": "delete",
+          "accessNo": 3
+        },
+        {
+          "resourceId": 15,
+          "resourceName": "ADS_SERVICE_NG_KEYS",
+          "access": "read",
+          "accessNo": 0
+        },
+        {
+          "resourceId": 16,
+          "resourceName": "ADS_SERVICE_NG_KEYS_REMOVE",
+          "access": "read",
+          "accessNo": 0
+        },
+        {
+          "resourceId": 17,
+          "resourceName": "APPSDB_SUPPORT",
+          "access": "read",
+          "accessNo": 0
+        },
+        {
+          "resourceId": 18,
+          "resourceName": "APPSDB_SOCIAL",
+          "access": "read",
+          "accessNo": 0
+        },
+        {
+          "resourceId": 19,
+          "resourceName": "APPSDB_LICENSING",
+          "access": "read",
+          "accessNo": 0
+        }
+      ]
+    },
+    {
+      "id": 15,
+      "displayName": null,
+      "userName": "gittits@tabtale.com",
+      "roles": [
+        {
+          "roleName": "READ_ONLY",
+          "roleId": 2
+        },
+        {
+          "roleName": "APP_PRODUCER",
+          "roleId": 4
+        }
+      ],
+      "privileges": [
+        {
+          "resourceId": 1,
+          "resourceName": "APPSDB_MARKETING_OPS",
+          "access": "read",
+          "accessNo": 0
+        },
+        {
+          "resourceId": 2,
+          "resourceName": "APPSDB_PRODUCTION",
+          "access": "delete",
+          "accessNo": 3
+        },
+        {
+          "resourceId": 3,
+          "resourceName": "APPSDB_MARKETING",
+          "access": "read",
+          "accessNo": 0
+        },
+        {
+          "resourceId": 4,
+          "resourceName": "APPSDB_ANALYTICS",
+          "access": "read",
+          "accessNo": 0
+        },
+        {
+          "resourceId": 5,
+          "resourceName": "APPSDB_ADS",
+          "access": "read",
+          "accessNo": 0
+        },
+        {
+          "resourceId": 6,
+          "resourceName": "APPSDB_BUILD",
+          "access": "read",
+          "accessNo": 0
+        },
+        {
+          "resourceId": 7,
+          "resourceName": "APPSDB_TEST_KEYS",
+          "access": "read",
+          "accessNo": 0
+        },
+        {
+          "resourceId": 8,
+          "resourceName": "APPSDB_NOTES",
+          "access": "delete",
+          "accessNo": 3
+        },
+        {
+          "resourceId": 9,
+          "resourceName": "APPSDB",
+          "access": "delete",
+          "accessNo": 3
+        },
+        {
+          "resourceId": 10,
+          "resourceName": "ADMIN_CONSOLE",
+          "access": "read",
+          "accessNo": 0
+        },
+        {
+          "resourceId": 11,
+          "resourceName": "PROMOTION",
+          "access": "read",
+          "accessNo": 0
+        },
+        {
+          "resourceId": 12,
+          "resourceName": "ADS_SERVICE",
+          "access": "read",
+          "accessNo": 0
+        },
+        {
+          "resourceId": 13,
+          "resourceName": "SERVICE_MASK",
+          "access": "read",
+          "accessNo": 0
+        },
+        {
+          "resourceId": 14,
+          "resourceName": "ADS_SERVICE_NG",
+          "access": "delete",
+          "accessNo": 3
+        },
+        {
+          "resourceId": 15,
+          "resourceName": "ADS_SERVICE_NG_KEYS",
+          "access": "read",
+          "accessNo": 0
+        },
+        {
+          "resourceId": 16,
+          "resourceName": "ADS_SERVICE_NG_KEYS_REMOVE",
+          "access": "read",
+          "accessNo": 0
+        },
+        {
+          "resourceId": 17,
+          "resourceName": "APPSDB_SUPPORT",
+          "access": "read",
+          "accessNo": 0
+        },
+        {
+          "resourceId": 18,
+          "resourceName": "APPSDB_SOCIAL",
+          "access": "read",
+          "accessNo": 0
+        },
+        {
+          "resourceId": 19,
+          "resourceName": "APPSDB_LICENSING",
+          "access": "read",
+          "accessNo": 0
+        }
+      ]
+    },
+    {
+      "id": 16,
+      "displayName": null,
+      "userName": "rans@tabtale.com",
+      "roles": [
+        {
+          "roleName": "READ_ONLY",
+          "roleId": 2
+        },
+        {
+          "roleName": "APP_PRODUCER",
+          "roleId": 4
+        }
+      ],
+      "privileges": [
+        {
+          "resourceId": 1,
+          "resourceName": "APPSDB_MARKETING_OPS",
+          "access": "read",
+          "accessNo": 0
+        },
+        {
+          "resourceId": 2,
+          "resourceName": "APPSDB_PRODUCTION",
+          "access": "delete",
+          "accessNo": 3
+        },
+        {
+          "resourceId": 3,
+          "resourceName": "APPSDB_MARKETING",
+          "access": "read",
+          "accessNo": 0
+        },
+        {
+          "resourceId": 4,
+          "resourceName": "APPSDB_ANALYTICS",
+          "access": "read",
+          "accessNo": 0
+        },
+        {
+          "resourceId": 5,
+          "resourceName": "APPSDB_ADS",
+          "access": "read",
+          "accessNo": 0
+        },
+        {
+          "resourceId": 6,
+          "resourceName": "APPSDB_BUILD",
+          "access": "read",
+          "accessNo": 0
+        },
+        {
+          "resourceId": 7,
+          "resourceName": "APPSDB_TEST_KEYS",
+          "access": "read",
+          "accessNo": 0
+        },
+        {
+          "resourceId": 8,
+          "resourceName": "APPSDB_NOTES",
+          "access": "delete",
+          "accessNo": 3
+        },
+        {
+          "resourceId": 9,
+          "resourceName": "APPSDB",
+          "access": "delete",
+          "accessNo": 3
+        },
+        {
+          "resourceId": 10,
+          "resourceName": "ADMIN_CONSOLE",
+          "access": "read",
+          "accessNo": 0
+        },
+        {
+          "resourceId": 11,
+          "resourceName": "PROMOTION",
+          "access": "read",
+          "accessNo": 0
+        },
+        {
+          "resourceId": 12,
+          "resourceName": "ADS_SERVICE",
+          "access": "read",
+          "accessNo": 0
+        },
+        {
+          "resourceId": 13,
+          "resourceName": "SERVICE_MASK",
+          "access": "read",
+          "accessNo": 0
+        },
+        {
+          "resourceId": 14,
+          "resourceName": "ADS_SERVICE_NG",
+          "access": "delete",
+          "accessNo": 3
+        },
+        {
+          "resourceId": 15,
+          "resourceName": "ADS_SERVICE_NG_KEYS",
+          "access": "read",
+          "accessNo": 0
+        },
+        {
+          "resourceId": 16,
+          "resourceName": "ADS_SERVICE_NG_KEYS_REMOVE",
+          "access": "read",
+          "accessNo": 0
+        },
+        {
+          "resourceId": 17,
+          "resourceName": "APPSDB_SUPPORT",
+          "access": "read",
+          "accessNo": 0
+        },
+        {
+          "resourceId": 18,
+          "resourceName": "APPSDB_SOCIAL",
+          "access": "read",
+          "accessNo": 0
+        },
+        {
+          "resourceId": 19,
+          "resourceName": "APPSDB_LICENSING",
+          "access": "read",
+          "accessNo": 0
+        }
+      ]
+    },
+    {
+      "id": 17,
+      "displayName": null,
+      "userName": "monicaw@tabtale.com",
+      "roles": [
+        {
+          "roleName": "READ_ONLY",
+          "roleId": 2
+        }
+      ],
+      "privileges": [
+        {
+          "resourceId": 1,
+          "resourceName": "APPSDB_MARKETING_OPS",
+          "access": "read",
+          "accessNo": 0
+        },
+        {
+          "resourceId": 2,
+          "resourceName": "APPSDB_PRODUCTION",
+          "access": "read",
+          "accessNo": 0
+        },
+        {
+          "resourceId": 3,
+          "resourceName": "APPSDB_MARKETING",
+          "access": "read",
+          "accessNo": 0
+        },
+        {
+          "resourceId": 4,
+          "resourceName": "APPSDB_ANALYTICS",
+          "access": "read",
+          "accessNo": 0
+        },
+        {
+          "resourceId": 5,
+          "resourceName": "APPSDB_ADS",
+          "access": "read",
+          "accessNo": 0
+        },
+        {
+          "resourceId": 6,
+          "resourceName": "APPSDB_BUILD",
+          "access": "read",
+          "accessNo": 0
+        },
+        {
+          "resourceId": 7,
+          "resourceName": "APPSDB_TEST_KEYS",
+          "access": "read",
+          "accessNo": 0
+        },
+        {
+          "resourceId": 8,
+          "resourceName": "APPSDB_NOTES",
+          "access": "read",
+          "accessNo": 0
+        },
+        {
+          "resourceId": 9,
+          "resourceName": "APPSDB",
+          "access": "delete",
+          "accessNo": 3
+        },
+        {
+          "resourceId": 10,
+          "resourceName": "ADMIN_CONSOLE",
+          "access": "read",
+          "accessNo": 0
+        },
+        {
+          "resourceId": 11,
+          "resourceName": "PROMOTION",
+          "access": "read",
+          "accessNo": 0
+        },
+        {
+          "resourceId": 12,
+          "resourceName": "ADS_SERVICE",
+          "access": "read",
+          "accessNo": 0
+        },
+        {
+          "resourceId": 13,
+          "resourceName": "SERVICE_MASK",
+          "access": "read",
+          "accessNo": 0
+        },
+        {
+          "resourceId": 14,
+          "resourceName": "ADS_SERVICE_NG",
+          "access": "delete",
+          "accessNo": 3
+        },
+        {
+          "resourceId": 15,
+          "resourceName": "ADS_SERVICE_NG_KEYS",
+          "access": "read",
+          "accessNo": 0
+        },
+        {
+          "resourceId": 16,
+          "resourceName": "ADS_SERVICE_NG_KEYS_REMOVE",
+          "access": "read",
+          "accessNo": 0
+        },
+        {
+          "resourceId": 17,
+          "resourceName": "APPSDB_SUPPORT",
+          "access": "read",
+          "accessNo": 0
+        },
+        {
+          "resourceId": 18,
+          "resourceName": "APPSDB_SOCIAL",
+          "access": "read",
+          "accessNo": 0
+        },
+        {
+          "resourceId": 19,
+          "resourceName": "APPSDB_LICENSING",
+          "access": "read",
+          "accessNo": 0
+        }
+      ]
+    },
+    {
+      "id": 18,
+      "displayName": "Andy Kushner",
+      "userName": "andyk@tabtale.com",
+      "roles": [
+        {
+          "roleName": "NO_ACCESS",
+          "roleId": 13
+        }
+      ],
+      "privileges": [
+        {
+          "resourceId": 1,
+          "resourceName": "APPSDB_MARKETING_OPS",
+          "access": "read",
+          "accessNo": 0
+        },
+        {
+          "resourceId": 2,
+          "resourceName": "APPSDB_PRODUCTION",
+          "access": "read",
+          "accessNo": 0
+        },
+        {
+          "resourceId": 3,
+          "resourceName": "APPSDB_MARKETING",
+          "access": "read",
+          "accessNo": 0
+        },
+        {
+          "resourceId": 4,
+          "resourceName": "APPSDB_ANALYTICS",
+          "access": "read",
+          "accessNo": 0
+        },
+        {
+          "resourceId": 5,
+          "resourceName": "APPSDB_ADS",
+          "access": "read",
+          "accessNo": 0
+        },
+        {
+          "resourceId": 6,
+          "resourceName": "APPSDB_BUILD",
+          "access": "read",
+          "accessNo": 0
+        },
+        {
+          "resourceId": 7,
+          "resourceName": "APPSDB_TEST_KEYS",
+          "access": "read",
+          "accessNo": 0
+        },
+        {
+          "resourceId": 8,
+          "resourceName": "APPSDB_NOTES",
+          "access": "read",
+          "accessNo": 0
+        },
+        {
+          "resourceId": 9,
+          "resourceName": "APPSDB",
+          "access": "read",
+          "accessNo": 0
+        },
+        {
+          "resourceId": 10,
+          "resourceName": "ADMIN_CONSOLE",
+          "access": "read",
+          "accessNo": 0
+        },
+        {
+          "resourceId": 11,
+          "resourceName": "PROMOTION",
+          "access": "read",
+          "accessNo": 0
+        },
+        {
+          "resourceId": 12,
+          "resourceName": "ADS_SERVICE",
+          "access": "read",
+          "accessNo": 0
+        },
+        {
+          "resourceId": 13,
+          "resourceName": "SERVICE_MASK",
+          "access": "read",
+          "accessNo": 0
+        },
+        {
+          "resourceId": 14,
+          "resourceName": "ADS_SERVICE_NG",
+          "access": "read",
+          "accessNo": 0
+        },
+        {
+          "resourceId": 15,
+          "resourceName": "ADS_SERVICE_NG_KEYS",
+          "access": "read",
+          "accessNo": 0
+        },
+        {
+          "resourceId": 16,
+          "resourceName": "ADS_SERVICE_NG_KEYS_REMOVE",
+          "access": "read",
+          "accessNo": 0
+        },
+        {
+          "resourceId": 17,
+          "resourceName": "APPSDB_SUPPORT",
+          "access": "read",
+          "accessNo": 0
+        },
+        {
+          "resourceId": 18,
+          "resourceName": "APPSDB_SOCIAL",
+          "access": "read",
+          "accessNo": 0
+        },
+        {
+          "resourceId": 19,
+          "resourceName": "APPSDB_LICENSING",
+          "access": "read",
+          "accessNo": 0
+        }
+      ]
+    },
+    {
+      "id": 19,
+      "displayName": null,
+      "userName": "sarahk@tabtale.com",
+      "roles": [
+        {
+          "roleName": "READ_ONLY",
+          "roleId": 2
+        }
+      ],
+      "privileges": [
+        {
+          "resourceId": 1,
+          "resourceName": "APPSDB_MARKETING_OPS",
+          "access": "read",
+          "accessNo": 0
+        },
+        {
+          "resourceId": 2,
+          "resourceName": "APPSDB_PRODUCTION",
+          "access": "read",
+          "accessNo": 0
+        },
+        {
+          "resourceId": 3,
+          "resourceName": "APPSDB_MARKETING",
+          "access": "read",
+          "accessNo": 0
+        },
+        {
+          "resourceId": 4,
+          "resourceName": "APPSDB_ANALYTICS",
+          "access": "read",
+          "accessNo": 0
+        },
+        {
+          "resourceId": 5,
+          "resourceName": "APPSDB_ADS",
+          "access": "read",
+          "accessNo": 0
+        },
+        {
+          "resourceId": 6,
+          "resourceName": "APPSDB_BUILD",
+          "access": "read",
+          "accessNo": 0
+        },
+        {
+          "resourceId": 7,
+          "resourceName": "APPSDB_TEST_KEYS",
+          "access": "read",
+          "accessNo": 0
+        },
+        {
+          "resourceId": 8,
+          "resourceName": "APPSDB_NOTES",
+          "access": "read",
+          "accessNo": 0
+        },
+        {
+          "resourceId": 9,
+          "resourceName": "APPSDB",
+          "access": "delete",
+          "accessNo": 3
+        },
+        {
+          "resourceId": 10,
+          "resourceName": "ADMIN_CONSOLE",
+          "access": "read",
+          "accessNo": 0
+        },
+        {
+          "resourceId": 11,
+          "resourceName": "PROMOTION",
+          "access": "read",
+          "accessNo": 0
+        },
+        {
+          "resourceId": 12,
+          "resourceName": "ADS_SERVICE",
+          "access": "read",
+          "accessNo": 0
+        },
+        {
+          "resourceId": 13,
+          "resourceName": "SERVICE_MASK",
+          "access": "read",
+          "accessNo": 0
+        },
+        {
+          "resourceId": 14,
+          "resourceName": "ADS_SERVICE_NG",
+          "access": "delete",
+          "accessNo": 3
+        },
+        {
+          "resourceId": 15,
+          "resourceName": "ADS_SERVICE_NG_KEYS",
+          "access": "read",
+          "accessNo": 0
+        },
+        {
+          "resourceId": 16,
+          "resourceName": "ADS_SERVICE_NG_KEYS_REMOVE",
+          "access": "read",
+          "accessNo": 0
+        },
+        {
+          "resourceId": 17,
+          "resourceName": "APPSDB_SUPPORT",
+          "access": "read",
+          "accessNo": 0
+        },
+        {
+          "resourceId": 18,
+          "resourceName": "APPSDB_SOCIAL",
+          "access": "read",
+          "accessNo": 0
+        },
+        {
+          "resourceId": 19,
+          "resourceName": "APPSDB_LICENSING",
+          "access": "read",
+          "accessNo": 0
+        }
+      ]
+    },
+    {
+      "id": 20,
+      "displayName": null,
+      "userName": "nogah@tabtale.com",
+      "roles": [
+        {
+          "roleName": "READ_ONLY",
+          "roleId": 2
+        }
+      ],
+      "privileges": [
+        {
+          "resourceId": 1,
+          "resourceName": "APPSDB_MARKETING_OPS",
+          "access": "read",
+          "accessNo": 0
+        },
+        {
+          "resourceId": 2,
+          "resourceName": "APPSDB_PRODUCTION",
+          "access": "read",
+          "accessNo": 0
+        },
+        {
+          "resourceId": 3,
+          "resourceName": "APPSDB_MARKETING",
+          "access": "read",
+          "accessNo": 0
+        },
+        {
+          "resourceId": 4,
+          "resourceName": "APPSDB_ANALYTICS",
+          "access": "read",
+          "accessNo": 0
+        },
+        {
+          "resourceId": 5,
+          "resourceName": "APPSDB_ADS",
+          "access": "read",
+          "accessNo": 0
+        },
+        {
+          "resourceId": 6,
+          "resourceName": "APPSDB_BUILD",
+          "access": "read",
+          "accessNo": 0
+        },
+        {
+          "resourceId": 7,
+          "resourceName": "APPSDB_TEST_KEYS",
+          "access": "read",
+          "accessNo": 0
+        },
+        {
+          "resourceId": 8,
+          "resourceName": "APPSDB_NOTES",
+          "access": "read",
+          "accessNo": 0
+        },
+        {
+          "resourceId": 9,
+          "resourceName": "APPSDB",
+          "access": "delete",
+          "accessNo": 3
+        },
+        {
+          "resourceId": 10,
+          "resourceName": "ADMIN_CONSOLE",
+          "access": "read",
+          "accessNo": 0
+        },
+        {
+          "resourceId": 11,
+          "resourceName": "PROMOTION",
+          "access": "read",
+          "accessNo": 0
+        },
+        {
+          "resourceId": 12,
+          "resourceName": "ADS_SERVICE",
+          "access": "read",
+          "accessNo": 0
+        },
+        {
+          "resourceId": 13,
+          "resourceName": "SERVICE_MASK",
+          "access": "read",
+          "accessNo": 0
+        },
+        {
+          "resourceId": 14,
+          "resourceName": "ADS_SERVICE_NG",
+          "access": "delete",
+          "accessNo": 3
+        },
+        {
+          "resourceId": 15,
+          "resourceName": "ADS_SERVICE_NG_KEYS",
+          "access": "read",
+          "accessNo": 0
+        },
+        {
+          "resourceId": 16,
+          "resourceName": "ADS_SERVICE_NG_KEYS_REMOVE",
+          "access": "read",
+          "accessNo": 0
+        },
+        {
+          "resourceId": 17,
+          "resourceName": "APPSDB_SUPPORT",
+          "access": "read",
+          "accessNo": 0
+        },
+        {
+          "resourceId": 18,
+          "resourceName": "APPSDB_SOCIAL",
+          "access": "read",
+          "accessNo": 0
+        },
+        {
+          "resourceId": 19,
+          "resourceName": "APPSDB_LICENSING",
+          "access": "read",
+          "accessNo": 0
+        }
+      ]
+    },
+    {
+      "id": 21,
+      "displayName": null,
+      "userName": "yarona@tabtale.com",
+      "roles": [
+        {
+          "roleName": "READ_ONLY",
+          "roleId": 2
+        },
+        {
+          "roleName": "ADS_MANAGER",
+          "roleId": 6
+        }
+      ],
+      "privileges": [
+        {
+          "resourceId": 1,
+          "resourceName": "APPSDB_MARKETING_OPS",
+          "access": "read",
+          "accessNo": 0
+        },
+        {
+          "resourceId": 2,
+          "resourceName": "APPSDB_PRODUCTION",
+          "access": "read",
+          "accessNo": 0
+        },
+        {
+          "resourceId": 3,
+          "resourceName": "APPSDB_MARKETING",
+          "access": "read",
+          "accessNo": 0
+        },
+        {
+          "resourceId": 4,
+          "resourceName": "APPSDB_ANALYTICS",
+          "access": "read",
+          "accessNo": 0
+        },
+        {
+          "resourceId": 5,
+          "resourceName": "APPSDB_ADS",
+          "access": "read",
+          "accessNo": 0
+        },
+        {
+          "resourceId": 6,
+          "resourceName": "APPSDB_BUILD",
+          "access": "read",
+          "accessNo": 0
+        },
+        {
+          "resourceId": 7,
+          "resourceName": "APPSDB_TEST_KEYS",
+          "access": "read",
+          "accessNo": 0
+        },
+        {
+          "resourceId": 8,
+          "resourceName": "APPSDB_NOTES",
+          "access": "delete",
+          "accessNo": 3
+        },
+        {
+          "resourceId": 9,
+          "resourceName": "APPSDB",
+          "access": "delete",
+          "accessNo": 3
+        },
+        {
+          "resourceId": 10,
+          "resourceName": "ADMIN_CONSOLE",
+          "access": "read",
+          "accessNo": 0
+        },
+        {
+          "resourceId": 11,
+          "resourceName": "PROMOTION",
+          "access": "delete",
+          "accessNo": 3
+        },
+        {
+          "resourceId": 12,
+          "resourceName": "ADS_SERVICE",
+          "access": "read",
+          "accessNo": 0
+        },
+        {
+          "resourceId": 13,
+          "resourceName": "SERVICE_MASK",
+          "access": "read",
+          "accessNo": 0
+        },
+        {
+          "resourceId": 14,
+          "resourceName": "ADS_SERVICE_NG",
+          "access": "delete",
+          "accessNo": 3
+        },
+        {
+          "resourceId": 15,
+          "resourceName": "ADS_SERVICE_NG_KEYS",
+          "access": "delete",
+          "accessNo": 3
+        },
+        {
+          "resourceId": 16,
+          "resourceName": "ADS_SERVICE_NG_KEYS_REMOVE",
+          "access": "delete",
+          "accessNo": 3
+        },
+        {
+          "resourceId": 17,
+          "resourceName": "APPSDB_SUPPORT",
+          "access": "read",
+          "accessNo": 0
+        },
+        {
+          "resourceId": 18,
+          "resourceName": "APPSDB_SOCIAL",
+          "access": "read",
+          "accessNo": 0
+        },
+        {
+          "resourceId": 19,
+          "resourceName": "APPSDB_LICENSING",
+          "access": "read",
+          "accessNo": 0
+        }
+      ]
+    },
+    {
+      "id": 22,
+      "displayName": "Nimrod Goldberg",
+      "userName": "nimrodg@tabtale.com",
+      "roles": [
+        {
+          "roleName": "NO_ACCESS",
+          "roleId": 13
+        }
+      ],
+      "privileges": [
+        {
+          "resourceId": 1,
+          "resourceName": "APPSDB_MARKETING_OPS",
+          "access": "read",
+          "accessNo": 0
+        },
+        {
+          "resourceId": 2,
+          "resourceName": "APPSDB_PRODUCTION",
+          "access": "read",
+          "accessNo": 0
+        },
+        {
+          "resourceId": 3,
+          "resourceName": "APPSDB_MARKETING",
+          "access": "read",
+          "accessNo": 0
+        },
+        {
+          "resourceId": 4,
+          "resourceName": "APPSDB_ANALYTICS",
+          "access": "read",
+          "accessNo": 0
+        },
+        {
+          "resourceId": 5,
+          "resourceName": "APPSDB_ADS",
+          "access": "read",
+          "accessNo": 0
+        },
+        {
+          "resourceId": 6,
+          "resourceName": "APPSDB_BUILD",
+          "access": "read",
+          "accessNo": 0
+        },
+        {
+          "resourceId": 7,
+          "resourceName": "APPSDB_TEST_KEYS",
+          "access": "read",
+          "accessNo": 0
+        },
+        {
+          "resourceId": 8,
+          "resourceName": "APPSDB_NOTES",
+          "access": "read",
+          "accessNo": 0
+        },
+        {
+          "resourceId": 9,
+          "resourceName": "APPSDB",
+          "access": "read",
+          "accessNo": 0
+        },
+        {
+          "resourceId": 10,
+          "resourceName": "ADMIN_CONSOLE",
+          "access": "read",
+          "accessNo": 0
+        },
+        {
+          "resourceId": 11,
+          "resourceName": "PROMOTION",
+          "access": "read",
+          "accessNo": 0
+        },
+        {
+          "resourceId": 12,
+          "resourceName": "ADS_SERVICE",
+          "access": "read",
+          "accessNo": 0
+        },
+        {
+          "resourceId": 13,
+          "resourceName": "SERVICE_MASK",
+          "access": "read",
+          "accessNo": 0
+        },
+        {
+          "resourceId": 14,
+          "resourceName": "ADS_SERVICE_NG",
+          "access": "read",
+          "accessNo": 0
+        },
+        {
+          "resourceId": 15,
+          "resourceName": "ADS_SERVICE_NG_KEYS",
+          "access": "read",
+          "accessNo": 0
+        },
+        {
+          "resourceId": 16,
+          "resourceName": "ADS_SERVICE_NG_KEYS_REMOVE",
+          "access": "read",
+          "accessNo": 0
+        },
+        {
+          "resourceId": 17,
+          "resourceName": "APPSDB_SUPPORT",
+          "access": "read",
+          "accessNo": 0
+        },
+        {
+          "resourceId": 18,
+          "resourceName": "APPSDB_SOCIAL",
+          "access": "read",
+          "accessNo": 0
+        },
+        {
+          "resourceId": 19,
+          "resourceName": "APPSDB_LICENSING",
+          "access": "read",
+          "accessNo": 0
+        }
+      ]
+    },
+    {
+      "id": 23,
+      "displayName": "Morin Chubook",
+      "userName": "morinc@tabtale.com",
+      "roles": [
+        {
+          "roleName": "NO_ACCESS",
+          "roleId": 13
+        }
+      ],
+      "privileges": [
+        {
+          "resourceId": 1,
+          "resourceName": "APPSDB_MARKETING_OPS",
+          "access": "read",
+          "accessNo": 0
+        },
+        {
+          "resourceId": 2,
+          "resourceName": "APPSDB_PRODUCTION",
+          "access": "read",
+          "accessNo": 0
+        },
+        {
+          "resourceId": 3,
+          "resourceName": "APPSDB_MARKETING",
+          "access": "read",
+          "accessNo": 0
+        },
+        {
+          "resourceId": 4,
+          "resourceName": "APPSDB_ANALYTICS",
+          "access": "read",
+          "accessNo": 0
+        },
+        {
+          "resourceId": 5,
+          "resourceName": "APPSDB_ADS",
+          "access": "read",
+          "accessNo": 0
+        },
+        {
+          "resourceId": 6,
+          "resourceName": "APPSDB_BUILD",
+          "access": "read",
+          "accessNo": 0
+        },
+        {
+          "resourceId": 7,
+          "resourceName": "APPSDB_TEST_KEYS",
+          "access": "read",
+          "accessNo": 0
+        },
+        {
+          "resourceId": 8,
+          "resourceName": "APPSDB_NOTES",
+          "access": "read",
+          "accessNo": 0
+        },
+        {
+          "resourceId": 9,
+          "resourceName": "APPSDB",
+          "access": "read",
+          "accessNo": 0
+        },
+        {
+          "resourceId": 10,
+          "resourceName": "ADMIN_CONSOLE",
+          "access": "read",
+          "accessNo": 0
+        },
+        {
+          "resourceId": 11,
+          "resourceName": "PROMOTION",
+          "access": "read",
+          "accessNo": 0
+        },
+        {
+          "resourceId": 12,
+          "resourceName": "ADS_SERVICE",
+          "access": "read",
+          "accessNo": 0
+        },
+        {
+          "resourceId": 13,
+          "resourceName": "SERVICE_MASK",
+          "access": "read",
+          "accessNo": 0
+        },
+        {
+          "resourceId": 14,
+          "resourceName": "ADS_SERVICE_NG",
+          "access": "read",
+          "accessNo": 0
+        },
+        {
+          "resourceId": 15,
+          "resourceName": "ADS_SERVICE_NG_KEYS",
+          "access": "read",
+          "accessNo": 0
+        },
+        {
+          "resourceId": 16,
+          "resourceName": "ADS_SERVICE_NG_KEYS_REMOVE",
+          "access": "read",
+          "accessNo": 0
+        },
+        {
+          "resourceId": 17,
+          "resourceName": "APPSDB_SUPPORT",
+          "access": "read",
+          "accessNo": 0
+        },
+        {
+          "resourceId": 18,
+          "resourceName": "APPSDB_SOCIAL",
+          "access": "read",
+          "accessNo": 0
+        },
+        {
+          "resourceId": 19,
+          "resourceName": "APPSDB_LICENSING",
+          "access": "read",
+          "accessNo": 0
+        }
+      ]
+    },
+    {
+      "id": 24,
+      "displayName": "Noga Laron",
+      "userName": "nogal@tabtale.com",
+      "roles": [
+        {
+          "roleName": "NO_ACCESS",
+          "roleId": 13
+        }
+      ],
+      "privileges": [
+        {
+          "resourceId": 1,
+          "resourceName": "APPSDB_MARKETING_OPS",
+          "access": "read",
+          "accessNo": 0
+        },
+        {
+          "resourceId": 2,
+          "resourceName": "APPSDB_PRODUCTION",
+          "access": "read",
+          "accessNo": 0
+        },
+        {
+          "resourceId": 3,
+          "resourceName": "APPSDB_MARKETING",
+          "access": "read",
+          "accessNo": 0
+        },
+        {
+          "resourceId": 4,
+          "resourceName": "APPSDB_ANALYTICS",
+          "access": "read",
+          "accessNo": 0
+        },
+        {
+          "resourceId": 5,
+          "resourceName": "APPSDB_ADS",
+          "access": "read",
+          "accessNo": 0
+        },
+        {
+          "resourceId": 6,
+          "resourceName": "APPSDB_BUILD",
+          "access": "read",
+          "accessNo": 0
+        },
+        {
+          "resourceId": 7,
+          "resourceName": "APPSDB_TEST_KEYS",
+          "access": "read",
+          "accessNo": 0
+        },
+        {
+          "resourceId": 8,
+          "resourceName": "APPSDB_NOTES",
+          "access": "read",
+          "accessNo": 0
+        },
+        {
+          "resourceId": 9,
+          "resourceName": "APPSDB",
+          "access": "read",
+          "accessNo": 0
+        },
+        {
+          "resourceId": 10,
+          "resourceName": "ADMIN_CONSOLE",
+          "access": "read",
+          "accessNo": 0
+        },
+        {
+          "resourceId": 11,
+          "resourceName": "PROMOTION",
+          "access": "read",
+          "accessNo": 0
+        },
+        {
+          "resourceId": 12,
+          "resourceName": "ADS_SERVICE",
+          "access": "read",
+          "accessNo": 0
+        },
+        {
+          "resourceId": 13,
+          "resourceName": "SERVICE_MASK",
+          "access": "read",
+          "accessNo": 0
+        },
+        {
+          "resourceId": 14,
+          "resourceName": "ADS_SERVICE_NG",
+          "access": "read",
+          "accessNo": 0
+        },
+        {
+          "resourceId": 15,
+          "resourceName": "ADS_SERVICE_NG_KEYS",
+          "access": "read",
+          "accessNo": 0
+        },
+        {
+          "resourceId": 16,
+          "resourceName": "ADS_SERVICE_NG_KEYS_REMOVE",
+          "access": "read",
+          "accessNo": 0
+        },
+        {
+          "resourceId": 17,
+          "resourceName": "APPSDB_SUPPORT",
+          "access": "read",
+          "accessNo": 0
+        },
+        {
+          "resourceId": 18,
+          "resourceName": "APPSDB_SOCIAL",
+          "access": "read",
+          "accessNo": 0
+        },
+        {
+          "resourceId": 19,
+          "resourceName": "APPSDB_LICENSING",
+          "access": "read",
+          "accessNo": 0
+        }
+      ]
+    },
+    {
+      "id": 25,
+      "displayName": null,
+      "userName": "davida@tabtale.com",
+      "roles": [
+        {
+          "roleName": "READ_ONLY",
+          "roleId": 2
+        },
+        {
+          "roleName": "ANALYST",
+          "roleId": 7
+        }
+      ],
+      "privileges": [
+        {
+          "resourceId": 1,
+          "resourceName": "APPSDB_MARKETING_OPS",
+          "access": "read",
+          "accessNo": 0
+        },
+        {
+          "resourceId": 2,
+          "resourceName": "APPSDB_PRODUCTION",
+          "access": "read",
+          "accessNo": 0
+        },
+        {
+          "resourceId": 3,
+          "resourceName": "APPSDB_MARKETING",
+          "access": "read",
+          "accessNo": 0
+        },
+        {
+          "resourceId": 4,
+          "resourceName": "APPSDB_ANALYTICS",
+          "access": "read",
+          "accessNo": 0
+        },
+        {
+          "resourceId": 5,
+          "resourceName": "APPSDB_ADS",
+          "access": "read",
+          "accessNo": 0
+        },
+        {
+          "resourceId": 6,
+          "resourceName": "APPSDB_BUILD",
+          "access": "read",
+          "accessNo": 0
+        },
+        {
+          "resourceId": 7,
+          "resourceName": "APPSDB_TEST_KEYS",
+          "access": "delete",
+          "accessNo": 3
+        },
+        {
+          "resourceId": 8,
+          "resourceName": "APPSDB_NOTES",
+          "access": "delete",
+          "accessNo": 3
+        },
+        {
+          "resourceId": 9,
+          "resourceName": "APPSDB",
+          "access": "delete",
+          "accessNo": 3
+        },
+        {
+          "resourceId": 10,
+          "resourceName": "ADMIN_CONSOLE",
+          "access": "read",
+          "accessNo": 0
+        },
+        {
+          "resourceId": 11,
+          "resourceName": "PROMOTION",
+          "access": "read",
+          "accessNo": 0
+        },
+        {
+          "resourceId": 12,
+          "resourceName": "ADS_SERVICE",
+          "access": "read",
+          "accessNo": 0
+        },
+        {
+          "resourceId": 13,
+          "resourceName": "SERVICE_MASK",
+          "access": "read",
+          "accessNo": 0
+        },
+        {
+          "resourceId": 14,
+          "resourceName": "ADS_SERVICE_NG",
+          "access": "delete",
+          "accessNo": 3
+        },
+        {
+          "resourceId": 15,
+          "resourceName": "ADS_SERVICE_NG_KEYS",
+          "access": "delete",
+          "accessNo": 3
+        },
+        {
+          "resourceId": 16,
+          "resourceName": "ADS_SERVICE_NG_KEYS_REMOVE",
+          "access": "delete",
+          "accessNo": 3
+        },
+        {
+          "resourceId": 17,
+          "resourceName": "APPSDB_SUPPORT",
+          "access": "read",
+          "accessNo": 0
+        },
+        {
+          "resourceId": 18,
+          "resourceName": "APPSDB_SOCIAL",
+          "access": "read",
+          "accessNo": 0
+        },
+        {
+          "resourceId": 19,
+          "resourceName": "APPSDB_LICENSING",
+          "access": "read",
+          "accessNo": 0
+        }
+      ]
+    },
+    {
+      "id": 26,
+      "displayName": null,
+      "userName": "liorb@tabtale.com",
+      "roles": [
+        {
+          "roleName": "READ_ONLY",
+          "roleId": 2
+        },
+        {
+          "roleName": "ANALYST",
+          "roleId": 7
+        }
+      ],
+      "privileges": [
+        {
+          "resourceId": 1,
+          "resourceName": "APPSDB_MARKETING_OPS",
+          "access": "read",
+          "accessNo": 0
+        },
+        {
+          "resourceId": 2,
+          "resourceName": "APPSDB_PRODUCTION",
+          "access": "read",
+          "accessNo": 0
+        },
+        {
+          "resourceId": 3,
+          "resourceName": "APPSDB_MARKETING",
+          "access": "read",
+          "accessNo": 0
+        },
+        {
+          "resourceId": 4,
+          "resourceName": "APPSDB_ANALYTICS",
+          "access": "read",
+          "accessNo": 0
+        },
+        {
+          "resourceId": 5,
+          "resourceName": "APPSDB_ADS",
+          "access": "read",
+          "accessNo": 0
+        },
+        {
+          "resourceId": 6,
+          "resourceName": "APPSDB_BUILD",
+          "access": "read",
+          "accessNo": 0
+        },
+        {
+          "resourceId": 7,
+          "resourceName": "APPSDB_TEST_KEYS",
+          "access": "delete",
+          "accessNo": 3
+        },
+        {
+          "resourceId": 8,
+          "resourceName": "APPSDB_NOTES",
+          "access": "delete",
+          "accessNo": 3
+        },
+        {
+          "resourceId": 9,
+          "resourceName": "APPSDB",
+          "access": "delete",
+          "accessNo": 3
+        },
+        {
+          "resourceId": 10,
+          "resourceName": "ADMIN_CONSOLE",
+          "access": "read",
+          "accessNo": 0
+        },
+        {
+          "resourceId": 11,
+          "resourceName": "PROMOTION",
+          "access": "read",
+          "accessNo": 0
+        },
+        {
+          "resourceId": 12,
+          "resourceName": "ADS_SERVICE",
+          "access": "read",
+          "accessNo": 0
+        },
+        {
+          "resourceId": 13,
+          "resourceName": "SERVICE_MASK",
+          "access": "read",
+          "accessNo": 0
+        },
+        {
+          "resourceId": 14,
+          "resourceName": "ADS_SERVICE_NG",
+          "access": "delete",
+          "accessNo": 3
+        },
+        {
+          "resourceId": 15,
+          "resourceName": "ADS_SERVICE_NG_KEYS",
+          "access": "delete",
+          "accessNo": 3
+        },
+        {
+          "resourceId": 16,
+          "resourceName": "ADS_SERVICE_NG_KEYS_REMOVE",
+          "access": "delete",
+          "accessNo": 3
+        },
+        {
+          "resourceId": 17,
+          "resourceName": "APPSDB_SUPPORT",
+          "access": "read",
+          "accessNo": 0
+        },
+        {
+          "resourceId": 18,
+          "resourceName": "APPSDB_SOCIAL",
+          "access": "read",
+          "accessNo": 0
+        },
+        {
+          "resourceId": 19,
+          "resourceName": "APPSDB_LICENSING",
+          "access": "read",
+          "accessNo": 0
+        }
+      ]
+    },
+    {
+      "id": 27,
+      "displayName": "Barak Ben Rachel",
+      "userName": "barakb@tabtale.com",
+      "roles": [
+        {
+          "roleName": "NO_ACCESS",
+          "roleId": 13
+        }
+      ],
+      "privileges": [
+        {
+          "resourceId": 1,
+          "resourceName": "APPSDB_MARKETING_OPS",
+          "access": "read",
+          "accessNo": 0
+        },
+        {
+          "resourceId": 2,
+          "resourceName": "APPSDB_PRODUCTION",
+          "access": "read",
+          "accessNo": 0
+        },
+        {
+          "resourceId": 3,
+          "resourceName": "APPSDB_MARKETING",
+          "access": "read",
+          "accessNo": 0
+        },
+        {
+          "resourceId": 4,
+          "resourceName": "APPSDB_ANALYTICS",
+          "access": "read",
+          "accessNo": 0
+        },
+        {
+          "resourceId": 5,
+          "resourceName": "APPSDB_ADS",
+          "access": "read",
+          "accessNo": 0
+        },
+        {
+          "resourceId": 6,
+          "resourceName": "APPSDB_BUILD",
+          "access": "read",
+          "accessNo": 0
+        },
+        {
+          "resourceId": 7,
+          "resourceName": "APPSDB_TEST_KEYS",
+          "access": "read",
+          "accessNo": 0
+        },
+        {
+          "resourceId": 8,
+          "resourceName": "APPSDB_NOTES",
+          "access": "read",
+          "accessNo": 0
+        },
+        {
+          "resourceId": 9,
+          "resourceName": "APPSDB",
+          "access": "read",
+          "accessNo": 0
+        },
+        {
+          "resourceId": 10,
+          "resourceName": "ADMIN_CONSOLE",
+          "access": "read",
+          "accessNo": 0
+        },
+        {
+          "resourceId": 11,
+          "resourceName": "PROMOTION",
+          "access": "read",
+          "accessNo": 0
+        },
+        {
+          "resourceId": 12,
+          "resourceName": "ADS_SERVICE",
+          "access": "read",
+          "accessNo": 0
+        },
+        {
+          "resourceId": 13,
+          "resourceName": "SERVICE_MASK",
+          "access": "read",
+          "accessNo": 0
+        },
+        {
+          "resourceId": 14,
+          "resourceName": "ADS_SERVICE_NG",
+          "access": "read",
+          "accessNo": 0
+        },
+        {
+          "resourceId": 15,
+          "resourceName": "ADS_SERVICE_NG_KEYS",
+          "access": "read",
+          "accessNo": 0
+        },
+        {
+          "resourceId": 16,
+          "resourceName": "ADS_SERVICE_NG_KEYS_REMOVE",
+          "access": "read",
+          "accessNo": 0
+        },
+        {
+          "resourceId": 17,
+          "resourceName": "APPSDB_SUPPORT",
+          "access": "read",
+          "accessNo": 0
+        },
+        {
+          "resourceId": 18,
+          "resourceName": "APPSDB_SOCIAL",
+          "access": "read",
+          "accessNo": 0
+        },
+        {
+          "resourceId": 19,
+          "resourceName": "APPSDB_LICENSING",
+          "access": "read",
+          "accessNo": 0
+        }
+      ]
+    },
+    {
+      "id": 28,
+      "displayName": "Ljupco Bebevski",
+      "userName": "ljupcob@tabtale.com",
+      "roles": [
+        {
+          "roleName": "READ_ONLY",
+          "roleId": 2
+        },
+        {
+          "roleName": "INTEGRATION",
+          "roleId": 8
+        },
+        {
+          "roleName": "PUBLISHING_QA",
+          "roleId": 11
+        },
+        {
+          "roleName": "PROMOTIONS_MGR",
+          "roleId": 12
+        }
+      ],
+      "privileges": [
+        {
+          "resourceId": 1,
+          "resourceName": "APPSDB_MARKETING_OPS",
+          "access": "delete",
+          "accessNo": 3
+        },
+        {
+          "resourceId": 2,
+          "resourceName": "APPSDB_PRODUCTION",
+          "access": "delete",
+          "accessNo": 3
+        },
+        {
+          "resourceId": 3,
+          "resourceName": "APPSDB_MARKETING",
+          "access": "delete",
+          "accessNo": 3
+        },
+        {
+          "resourceId": 4,
+          "resourceName": "APPSDB_ANALYTICS",
+          "access": "read",
+          "accessNo": 0
+        },
+        {
+          "resourceId": 5,
+          "resourceName": "APPSDB_ADS",
+          "access": "read",
+          "accessNo": 0
+        },
+        {
+          "resourceId": 6,
+          "resourceName": "APPSDB_BUILD",
+          "access": "delete",
+          "accessNo": 3
+        },
+        {
+          "resourceId": 7,
+          "resourceName": "APPSDB_TEST_KEYS",
+          "access": "delete",
+          "accessNo": 3
+        },
+        {
+          "resourceId": 8,
+          "resourceName": "APPSDB_NOTES",
+          "access": "delete",
+          "accessNo": 3
+        },
+        {
+          "resourceId": 9,
+          "resourceName": "APPSDB",
+          "access": "delete",
+          "accessNo": 3
+        },
+        {
+          "resourceId": 10,
+          "resourceName": "ADMIN_CONSOLE",
+          "access": "delete",
+          "accessNo": 3
+        },
+        {
+          "resourceId": 11,
+          "resourceName": "PROMOTION",
+          "access": "delete",
+          "accessNo": 3
+        },
+        {
+          "resourceId": 12,
+          "resourceName": "ADS_SERVICE",
+          "access": "delete",
+          "accessNo": 3
+        },
+        {
+          "resourceId": 13,
+          "resourceName": "SERVICE_MASK",
+          "access": "delete",
+          "accessNo": 3
+        },
+        {
+          "resourceId": 14,
+          "resourceName": "ADS_SERVICE_NG",
+          "access": "delete",
+          "accessNo": 3
+        },
+        {
+          "resourceId": 15,
+          "resourceName": "ADS_SERVICE_NG_KEYS",
+          "access": "delete",
+          "accessNo": 3
+        },
+        {
+          "resourceId": 16,
+          "resourceName": "ADS_SERVICE_NG_KEYS_REMOVE",
+          "access": "read",
+          "accessNo": 0
+        },
+        {
+          "resourceId": 17,
+          "resourceName": "APPSDB_SUPPORT",
+          "access": "delete",
+          "accessNo": 3
+        },
+        {
+          "resourceId": 18,
+          "resourceName": "APPSDB_SOCIAL",
+          "access": "read",
+          "accessNo": 0
+        },
+        {
+          "resourceId": 19,
+          "resourceName": "APPSDB_LICENSING",
+          "access": "read",
+          "accessNo": 0
+        }
+      ]
+    }
+  ],
+  "Roles": [
+    {
+      "id": 1,
+      "name": "ADMIN",
+      "privileges": [
+        {
+          "resourceId": 16,
+          "resourceName": "ADS_SERVICE_NG_KEYS_REMOVE",
+          "access": "delete",
+          "accessNo": 3
+        },
+        {
+          "resourceId": 1,
+          "resourceName": "APPSDB_MARKETING_OPS",
+          "access": "delete",
+          "accessNo": 3
+        },
+        {
+          "resourceId": 2,
+          "resourceName": "APPSDB_PRODUCTION",
+          "access": "delete",
+          "accessNo": 3
+        },
+        {
+          "resourceId": 3,
+          "resourceName": "APPSDB_MARKETING",
+          "access": "delete",
+          "accessNo": 3
+        },
+        {
+          "resourceId": 4,
+          "resourceName": "APPSDB_ANALYTICS",
+          "access": "read",
+          "accessNo": 0
+        },
+        {
+          "resourceId": 5,
+          "resourceName": "APPSDB_ADS",
+          "access": "read",
+          "accessNo": 0
+        },
+        {
+          "resourceId": 6,
+          "resourceName": "APPSDB_BUILD",
+          "access": "delete",
+          "accessNo": 3
+        },
+        {
+          "resourceId": 7,
+          "resourceName": "APPSDB_TEST_KEYS",
+          "access": "delete",
+          "accessNo": 3
+        },
+        {
+          "resourceId": 8,
+          "resourceName": "APPSDB_NOTES",
+          "access": "delete",
+          "accessNo": 3
+        },
+        {
+          "resourceId": 9,
+          "resourceName": "APPSDB",
+          "access": "delete",
+          "accessNo": 3
+        },
+        {
+          "resourceId": 10,
+          "resourceName": "ADMIN_CONSOLE",
+          "access": "delete",
+          "accessNo": 3
+        },
+        {
+          "resourceId": 11,
+          "resourceName": "PROMOTION",
+          "access": "delete",
+          "accessNo": 3
+        },
+        {
+          "resourceId": 12,
+          "resourceName": "ADS_SERVICE",
+          "access": "delete",
+          "accessNo": 3
+        },
+        {
+          "resourceId": 13,
+          "resourceName": "SERVICE_MASK",
+          "access": "delete",
+          "accessNo": 3
+        },
+        {
+          "resourceId": 14,
+          "resourceName": "ADS_SERVICE_NG",
+          "access": "delete",
+          "accessNo": 3
+        },
+        {
+          "resourceId": 15,
+          "resourceName": "ADS_SERVICE_NG_KEYS",
+          "access": "delete",
+          "accessNo": 3
+        },
+        {
+          "resourceId": 17,
+          "resourceName": "APPSDB_SUPPORT",
+          "access": "delete",
+          "accessNo": 3
+        }
+      ]
+    },
+    {
+      "id": 6,
+      "name": "ADS_MANAGER",
+      "privileges": [
+        {
+          "resourceId": 9,
+          "resourceName": "APPSDB",
+          "access": "delete",
+          "accessNo": 3
+        },
+        {
+          "resourceId": 10,
+          "resourceName": "ADMIN_CONSOLE",
+          "access": "read",
+          "accessNo": 0
+        },
+        {
+          "resourceId": 16,
+          "resourceName": "ADS_SERVICE_NG_KEYS_REMOVE",
+          "access": "delete",
+          "accessNo": 3
+        },
+        {
+          "resourceId": 11,
+          "resourceName": "PROMOTION",
+          "access": "delete",
+          "accessNo": 3
+        },
+        {
+          "resourceId": 15,
+          "resourceName": "ADS_SERVICE_NG_KEYS",
+          "access": "delete",
+          "accessNo": 3
+        },
+        {
+          "resourceId": 14,
+          "resourceName": "ADS_SERVICE_NG",
+          "access": "delete",
+          "accessNo": 3
+        },
+        {
+          "resourceId": 17,
+          "resourceName": "APPSDB_SUPPORT",
+          "access": "read",
+          "accessNo": 0
+        },
+        {
+          "resourceId": 1,
+          "resourceName": "APPSDB_MARKETING_OPS",
+          "access": "read",
+          "accessNo": 0
+        },
+        {
+          "resourceId": 2,
+          "resourceName": "APPSDB_PRODUCTION",
+          "access": "read",
+          "accessNo": 0
+        },
+        {
+          "resourceId": 3,
+          "resourceName": "APPSDB_MARKETING",
+          "access": "read",
+          "accessNo": 0
+        },
+        {
+          "resourceId": 4,
+          "resourceName": "APPSDB_ANALYTICS",
+          "access": "read",
+          "accessNo": 0
+        },
+        {
+          "resourceId": 5,
+          "resourceName": "APPSDB_ADS",
+          "access": "read",
+          "accessNo": 0
+        },
+        {
+          "resourceId": 6,
+          "resourceName": "APPSDB_BUILD",
+          "access": "read",
+          "accessNo": 0
+        },
+        {
+          "resourceId": 7,
+          "resourceName": "APPSDB_TEST_KEYS",
+          "access": "read",
+          "accessNo": 0
+        },
+        {
+          "resourceId": 8,
+          "resourceName": "APPSDB_NOTES",
+          "access": "delete",
+          "accessNo": 3
+        }
+      ]
+    },
+    {
+      "id": 7,
+      "name": "ANALYST",
+      "privileges": [
+        {
+          "resourceId": 16,
+          "resourceName": "ADS_SERVICE_NG_KEYS_REMOVE",
+          "access": "delete",
+          "accessNo": 3
+        },
+        {
+          "resourceId": 1,
+          "resourceName": "APPSDB_MARKETING_OPS",
+          "access": "read",
+          "accessNo": 0
+        },
+        {
+          "resourceId": 2,
+          "resourceName": "APPSDB_PRODUCTION",
+          "access": "read",
+          "accessNo": 0
+        },
+        {
+          "resourceId": 3,
+          "resourceName": "APPSDB_MARKETING",
+          "access": "read",
+          "accessNo": 0
+        },
+        {
+          "resourceId": 4,
+          "resourceName": "APPSDB_ANALYTICS",
+          "access": "read",
+          "accessNo": 0
+        },
+        {
+          "resourceId": 5,
+          "resourceName": "APPSDB_ADS",
+          "access": "read",
+          "accessNo": 0
+        },
+        {
+          "resourceId": 6,
+          "resourceName": "APPSDB_BUILD",
+          "access": "read",
+          "accessNo": 0
+        },
+        {
+          "resourceId": 7,
+          "resourceName": "APPSDB_TEST_KEYS",
+          "access": "delete",
+          "accessNo": 3
+        },
+        {
+          "resourceId": 8,
+          "resourceName": "APPSDB_NOTES",
+          "access": "delete",
+          "accessNo": 3
+        },
+        {
+          "resourceId": 9,
+          "resourceName": "APPSDB",
+          "access": "delete",
+          "accessNo": 3
+        },
+        {
+          "resourceId": 10,
+          "resourceName": "ADMIN_CONSOLE",
+          "access": "read",
+          "accessNo": 0
+        },
+        {
+          "resourceId": 11,
+          "resourceName": "PROMOTION",
+          "access": "read",
+          "accessNo": 0
+        },
+        {
+          "resourceId": 15,
+          "resourceName": "ADS_SERVICE_NG_KEYS",
+          "access": "delete",
+          "accessNo": 3
+        },
+        {
+          "resourceId": 17,
+          "resourceName": "APPSDB_SUPPORT",
+          "access": "read",
+          "accessNo": 0
+        },
+        {
+          "resourceId": 14,
+          "resourceName": "ADS_SERVICE_NG",
+          "access": "delete",
+          "accessNo": 3
+        }
+      ]
+    },
+    {
+      "id": 10,
+      "name": "APP_DEVELOPER",
+      "privileges": [
+        {
+          "resourceId": 3,
+          "resourceName": "APPSDB_MARKETING",
+          "access": "read",
+          "accessNo": 0
+        },
+        {
+          "resourceId": 6,
+          "resourceName": "APPSDB_BUILD",
+          "access": "delete",
+          "accessNo": 3
+        },
+        {
+          "resourceId": 8,
+          "resourceName": "APPSDB_NOTES",
+          "access": "read",
+          "accessNo": 0
+        },
+        {
+          "resourceId": 5,
+          "resourceName": "APPSDB_ADS",
+          "access": "read",
+          "accessNo": 0
+        },
+        {
+          "resourceId": 10,
+          "resourceName": "ADMIN_CONSOLE",
+          "access": "read",
+          "accessNo": 0
+        },
+        {
+          "resourceId": 11,
+          "resourceName": "PROMOTION",
+          "access": "read",
+          "accessNo": 0
+        },
+        {
+          "resourceId": 9,
+          "resourceName": "APPSDB",
+          "access": "delete",
+          "accessNo": 3
+        },
+        {
+          "resourceId": 4,
+          "resourceName": "APPSDB_ANALYTICS",
+          "access": "read",
+          "accessNo": 0
+        },
+        {
+          "resourceId": 2,
+          "resourceName": "APPSDB_PRODUCTION",
+          "access": "read",
+          "accessNo": 0
+        },
+        {
+          "resourceId": 1,
+          "resourceName": "APPSDB_MARKETING_OPS",
+          "access": "read",
+          "accessNo": 0
+        },
+        {
+          "resourceId": 7,
+          "resourceName": "APPSDB_TEST_KEYS",
+          "access": "read",
+          "accessNo": 0
+        },
+        {
+          "resourceId": 17,
+          "resourceName": "APPSDB_SUPPORT",
+          "access": "read",
+          "accessNo": 0
+        },
+        {
+          "resourceId": 14,
+          "resourceName": "ADS_SERVICE_NG",
+          "access": "delete",
+          "accessNo": 3
+        },
+        {
+          "resourceId": 15,
+          "resourceName": "ADS_SERVICE_NG_KEYS",
+          "access": "read",
+          "accessNo": 0
+        }
+      ]
+    },
+    {
+      "id": 4,
+      "name": "APP_PRODUCER",
+      "privileges": [
+        {
+          "resourceId": 1,
+          "resourceName": "APPSDB_MARKETING_OPS",
+          "access": "read",
+          "accessNo": 0
+        },
+        {
+          "resourceId": 2,
+          "resourceName": "APPSDB_PRODUCTION",
+          "access": "delete",
+          "accessNo": 3
+        },
+        {
+          "resourceId": 3,
+          "resourceName": "APPSDB_MARKETING",
+          "access": "read",
+          "accessNo": 0
+        },
+        {
+          "resourceId": 4,
+          "resourceName": "APPSDB_ANALYTICS",
+          "access": "read",
+          "accessNo": 0
+        },
+        {
+          "resourceId": 5,
+          "resourceName": "APPSDB_ADS",
+          "access": "read",
+          "accessNo": 0
+        },
+        {
+          "resourceId": 6,
+          "resourceName": "APPSDB_BUILD",
+          "access": "read",
+          "accessNo": 0
+        },
+        {
+          "resourceId": 7,
+          "resourceName": "APPSDB_TEST_KEYS",
+          "access": "read",
+          "accessNo": 0
+        },
+        {
+          "resourceId": 8,
+          "resourceName": "APPSDB_NOTES",
+          "access": "delete",
+          "accessNo": 3
+        },
+        {
+          "resourceId": 9,
+          "resourceName": "APPSDB",
+          "access": "delete",
+          "accessNo": 3
+        },
+        {
+          "resourceId": 10,
+          "resourceName": "ADMIN_CONSOLE",
+          "access": "read",
+          "accessNo": 0
+        },
+        {
+          "resourceId": 11,
+          "resourceName": "PROMOTION",
+          "access": "read",
+          "accessNo": 0
+        },
+        {
+          "resourceId": 17,
+          "resourceName": "APPSDB_SUPPORT",
+          "access": "read",
+          "accessNo": 0
+        },
+        {
+          "resourceId": 15,
+          "resourceName": "ADS_SERVICE_NG_KEYS",
+          "access": "read",
+          "accessNo": 0
+        },
+        {
+          "resourceId": 14,
+          "resourceName": "ADS_SERVICE_NG",
+          "access": "delete",
+          "accessNo": 3
+        }
+      ]
+    },
+    {
+      "id": 8,
+      "name": "INTEGRATION",
+      "privileges": [
+        {
+          "resourceId": 1,
+          "resourceName": "APPSDB_MARKETING_OPS",
+          "access": "read",
+          "accessNo": 0
+        },
+        {
+          "resourceId": 2,
+          "resourceName": "APPSDB_PRODUCTION",
+          "access": "read",
+          "accessNo": 0
+        },
+        {
+          "resourceId": 3,
+          "resourceName": "APPSDB_MARKETING",
+          "access": "read",
+          "accessNo": 0
+        },
+        {
+          "resourceId": 4,
+          "resourceName": "APPSDB_ANALYTICS",
+          "access": "read",
+          "accessNo": 0
+        },
+        {
+          "resourceId": 5,
+          "resourceName": "APPSDB_ADS",
+          "access": "read",
+          "accessNo": 0
+        },
+        {
+          "resourceId": 6,
+          "resourceName": "APPSDB_BUILD",
+          "access": "delete",
+          "accessNo": 3
+        },
+        {
+          "resourceId": 7,
+          "resourceName": "APPSDB_TEST_KEYS",
+          "access": "delete",
+          "accessNo": 3
+        },
+        {
+          "resourceId": 8,
+          "resourceName": "APPSDB_NOTES",
+          "access": "delete",
+          "accessNo": 3
+        },
+        {
+          "resourceId": 9,
+          "resourceName": "APPSDB",
+          "access": "delete",
+          "accessNo": 3
+        },
+        {
+          "resourceId": 10,
+          "resourceName": "ADMIN_CONSOLE",
+          "access": "read",
+          "accessNo": 0
+        },
+        {
+          "resourceId": 17,
+          "resourceName": "APPSDB_SUPPORT",
+          "access": "read",
+          "accessNo": 0
+        },
+        {
+          "resourceId": 11,
+          "resourceName": "PROMOTION",
+          "access": "read",
+          "accessNo": 0
+        },
+        {
+          "resourceId": 15,
+          "resourceName": "ADS_SERVICE_NG_KEYS",
+          "access": "read",
+          "accessNo": 0
+        },
+        {
+          "resourceId": 14,
+          "resourceName": "ADS_SERVICE_NG",
+          "access": "delete",
+          "accessNo": 3
+        }
+      ]
+    },
+    {
+      "id": 15,
+      "name": "LICENSING",
+      "privileges": [
+        {
+          "resourceId": 1,
+          "resourceName": "APPSDB_MARKETING_OPS",
+          "access": "read",
+          "accessNo": 0
+        },
+        {
+          "resourceId": 7,
+          "resourceName": "APPSDB_TEST_KEYS",
+          "access": "read",
+          "accessNo": 0
+        },
+        {
+          "resourceId": 8,
+          "resourceName": "APPSDB_NOTES",
+          "access": "read",
+          "accessNo": 0
+        },
+        {
+          "resourceId": 4,
+          "resourceName": "APPSDB_ANALYTICS",
+          "access": "read",
+          "accessNo": 0
+        },
+        {
+          "resourceId": 15,
+          "resourceName": "ADS_SERVICE_NG_KEYS",
+          "access": "read",
+          "accessNo": 0
+        },
+        {
+          "resourceId": 19,
+          "resourceName": "APPSDB_LICENSING",
+          "access": "delete",
+          "accessNo": 3
+        },
+        {
+          "resourceId": 9,
+          "resourceName": "APPSDB",
+          "access": "delete",
+          "accessNo": 3
+        },
+        {
+          "resourceId": 5,
+          "resourceName": "APPSDB_ADS",
+          "access": "read",
+          "accessNo": 0
+        },
+        {
+          "resourceId": 11,
+          "resourceName": "PROMOTION",
+          "access": "read",
+          "accessNo": 0
+        },
+        {
+          "resourceId": 14,
+          "resourceName": "ADS_SERVICE_NG",
+          "access": "read",
+          "accessNo": 0
+        },
+        {
+          "resourceId": 3,
+          "resourceName": "APPSDB_MARKETING",
+          "access": "read",
+          "accessNo": 0
+        },
+        {
+          "resourceId": 10,
+          "resourceName": "ADMIN_CONSOLE",
+          "access": "read",
+          "accessNo": 0
+        },
+        {
+          "resourceId": 6,
+          "resourceName": "APPSDB_BUILD",
+          "access": "read",
+          "accessNo": 0
+        },
+        {
+          "resourceId": 2,
+          "resourceName": "APPSDB_PRODUCTION",
+          "access": "read",
+          "accessNo": 0
+        },
+        {
+          "resourceId": 17,
+          "resourceName": "APPSDB_SUPPORT",
+          "access": "read",
+          "accessNo": 0
+        }
+      ]
+    },
+    {
+      "id": 5,
+      "name": "MARKETING",
+      "privileges": [
+        {
+          "resourceId": 1,
+          "resourceName": "APPSDB_MARKETING_OPS",
+          "access": "read",
+          "accessNo": 0
+        },
+        {
+          "resourceId": 2,
+          "resourceName": "APPSDB_PRODUCTION",
+          "access": "read",
+          "accessNo": 0
+        },
+        {
+          "resourceId": 3,
+          "resourceName": "APPSDB_MARKETING",
+          "access": "delete",
+          "accessNo": 3
+        },
+        {
+          "resourceId": 4,
+          "resourceName": "APPSDB_ANALYTICS",
+          "access": "read",
+          "accessNo": 0
+        },
+        {
+          "resourceId": 5,
+          "resourceName": "APPSDB_ADS",
+          "access": "read",
+          "accessNo": 0
+        },
+        {
+          "resourceId": 6,
+          "resourceName": "APPSDB_BUILD",
+          "access": "read",
+          "accessNo": 0
+        },
+        {
+          "resourceId": 7,
+          "resourceName": "APPSDB_TEST_KEYS",
+          "access": "read",
+          "accessNo": 0
+        },
+        {
+          "resourceId": 8,
+          "resourceName": "APPSDB_NOTES",
+          "access": "delete",
+          "accessNo": 3
+        },
+        {
+          "resourceId": 9,
+          "resourceName": "APPSDB",
+          "access": "delete",
+          "accessNo": 3
+        },
+        {
+          "resourceId": 10,
+          "resourceName": "ADMIN_CONSOLE",
+          "access": "read",
+          "accessNo": 0
+        },
+        {
+          "resourceId": 11,
+          "resourceName": "PROMOTION",
+          "access": "read",
+          "accessNo": 0
+        },
+        {
+          "resourceId": 17,
+          "resourceName": "APPSDB_SUPPORT",
+          "access": "delete",
+          "accessNo": 3
+        },
+        {
+          "resourceId": 15,
+          "resourceName": "ADS_SERVICE_NG_KEYS",
+          "access": "read",
+          "accessNo": 0
+        },
+        {
+          "resourceId": 14,
+          "resourceName": "ADS_SERVICE_NG",
+          "access": "delete",
+          "accessNo": 3
+        }
+      ]
+    },
+    {
+      "id": 3,
+      "name": "MARKETING_OPS",
+      "privileges": [
+        {
+          "resourceId": 10,
+          "resourceName": "ADMIN_CONSOLE",
+          "access": "read",
+          "accessNo": 0
+        },
+        {
+          "resourceId": 15,
+          "resourceName": "ADS_SERVICE_NG_KEYS",
+          "access": "read",
+          "accessNo": 0
+        },
+        {
+          "resourceId": 11,
+          "resourceName": "PROMOTION",
+          "access": "read",
+          "accessNo": 0
+        },
+        {
+          "resourceId": 1,
+          "resourceName": "APPSDB_MARKETING_OPS",
+          "access": "delete",
+          "accessNo": 3
+        },
+        {
+          "resourceId": 2,
+          "resourceName": "APPSDB_PRODUCTION",
+          "access": "delete",
+          "accessNo": 3
+        },
+        {
+          "resourceId": 3,
+          "resourceName": "APPSDB_MARKETING",
+          "access": "delete",
+          "accessNo": 3
+        },
+        {
+          "resourceId": 4,
+          "resourceName": "APPSDB_ANALYTICS",
+          "access": "read",
+          "accessNo": 0
+        },
+        {
+          "resourceId": 17,
+          "resourceName": "APPSDB_SUPPORT",
+          "access": "read",
+          "accessNo": 0
+        },
+        {
+          "resourceId": 5,
+          "resourceName": "APPSDB_ADS",
+          "access": "read",
+          "accessNo": 0
+        },
+        {
+          "resourceId": 6,
+          "resourceName": "APPSDB_BUILD",
+          "access": "read",
+          "accessNo": 0
+        },
+        {
+          "resourceId": 7,
+          "resourceName": "APPSDB_TEST_KEYS",
+          "access": "delete",
+          "accessNo": 3
+        },
+        {
+          "resourceId": 8,
+          "resourceName": "APPSDB_NOTES",
+          "access": "delete",
+          "accessNo": 3
+        },
+        {
+          "resourceId": 14,
+          "resourceName": "ADS_SERVICE_NG",
+          "access": "delete",
+          "accessNo": 3
+        },
+        {
+          "resourceId": 9,
+          "resourceName": "APPSDB",
+          "access": "delete",
+          "accessNo": 3
+        }
+      ]
+    },
+    {
+      "id": 13,
+      "name": "NO_ACCESS",
+      "privileges": [
+        {
+          "resourceId": 2,
+          "resourceName": "APPSDB_PRODUCTION",
+          "access": "read",
+          "accessNo": 0
+        },
+        {
+          "resourceId": 13,
+          "resourceName": "SERVICE_MASK",
+          "access": "read",
+          "accessNo": 0
+        },
+        {
+          "resourceId": 6,
+          "resourceName": "APPSDB_BUILD",
+          "access": "read",
+          "accessNo": 0
+        },
+        {
+          "resourceId": 8,
+          "resourceName": "APPSDB_NOTES",
+          "access": "read",
+          "accessNo": 0
+        },
+        {
+          "resourceId": 4,
+          "resourceName": "APPSDB_ANALYTICS",
+          "access": "read",
+          "accessNo": 0
+        },
+        {
+          "resourceId": 12,
+          "resourceName": "ADS_SERVICE",
+          "access": "read",
+          "accessNo": 0
+        },
+        {
+          "resourceId": 14,
+          "resourceName": "ADS_SERVICE_NG",
+          "access": "read",
+          "accessNo": 0
+        },
+        {
+          "resourceId": 16,
+          "resourceName": "ADS_SERVICE_NG_KEYS_REMOVE",
+          "access": "read",
+          "accessNo": 0
+        },
+        {
+          "resourceId": 15,
+          "resourceName": "ADS_SERVICE_NG_KEYS",
+          "access": "read",
+          "accessNo": 0
+        },
+        {
+          "resourceId": 1,
+          "resourceName": "APPSDB_MARKETING_OPS",
+          "access": "read",
+          "accessNo": 0
+        },
+        {
+          "resourceId": 3,
+          "resourceName": "APPSDB_MARKETING",
+          "access": "read",
+          "accessNo": 0
+        },
+        {
+          "resourceId": 9,
+          "resourceName": "APPSDB",
+          "access": "read",
+          "accessNo": 0
+        },
+        {
+          "resourceId": 10,
+          "resourceName": "ADMIN_CONSOLE",
+          "access": "read",
+          "accessNo": 0
+        },
+        {
+          "resourceId": 5,
+          "resourceName": "APPSDB_ADS",
+          "access": "read",
+          "accessNo": 0
+        },
+        {
+          "resourceId": 11,
+          "resourceName": "PROMOTION",
+          "access": "read",
+          "accessNo": 0
+        },
+        {
+          "resourceId": 7,
+          "resourceName": "APPSDB_TEST_KEYS",
+          "access": "read",
+          "accessNo": 0
+        },
+        {
+          "resourceId": 17,
+          "resourceName": "APPSDB_SUPPORT",
+          "access": "read",
+          "accessNo": 0
+        }
+      ]
+    },
+    {
+      "id": 12,
+      "name": "PROMOTIONS_MGR",
+      "privileges": [
+        {
+          "resourceId": 10,
+          "resourceName": "ADMIN_CONSOLE",
+          "access": "read",
+          "accessNo": 0
+        },
+        {
+          "resourceId": 9,
+          "resourceName": "APPSDB",
+          "access": "delete",
+          "accessNo": 3
+        },
+        {
+          "resourceId": 14,
+          "resourceName": "ADS_SERVICE_NG",
+          "access": "delete",
+          "accessNo": 3
+        },
+        {
+          "resourceId": 7,
+          "resourceName": "APPSDB_TEST_KEYS",
+          "access": "read",
+          "accessNo": 0
+        },
+        {
+          "resourceId": 2,
+          "resourceName": "APPSDB_PRODUCTION",
+          "access": "read",
+          "accessNo": 0
+        },
+        {
+          "resourceId": 4,
+          "resourceName": "APPSDB_ANALYTICS",
+          "access": "read",
+          "accessNo": 0
+        },
+        {
+          "resourceId": 11,
+          "resourceName": "PROMOTION",
+          "access": "delete",
+          "accessNo": 3
+        },
+        {
+          "resourceId": 6,
+          "resourceName": "APPSDB_BUILD",
+          "access": "read",
+          "accessNo": 0
+        },
+        {
+          "resourceId": 3,
+          "resourceName": "APPSDB_MARKETING",
+          "access": "read",
+          "accessNo": 0
+        },
+        {
+          "resourceId": 8,
+          "resourceName": "APPSDB_NOTES",
+          "access": "read",
+          "accessNo": 0
+        },
+        {
+          "resourceId": 17,
+          "resourceName": "APPSDB_SUPPORT",
+          "access": "read",
+          "accessNo": 0
+        },
+        {
+          "resourceId": 5,
+          "resourceName": "APPSDB_ADS",
+          "access": "read",
+          "accessNo": 0
+        },
+        {
+          "resourceId": 15,
+          "resourceName": "ADS_SERVICE_NG_KEYS",
+          "access": "read",
+          "accessNo": 0
+        },
+        {
+          "resourceId": 1,
+          "resourceName": "APPSDB_MARKETING_OPS",
+          "access": "read",
+          "accessNo": 0
+        }
+      ]
+    },
+    {
+      "id": 14,
+      "name": "PROMOTION_MGR",
+      "privileges": [
+        {
+          "resourceId": 6,
+          "resourceName": "APPSDB_BUILD",
+          "access": "read",
+          "accessNo": 0
+        },
+        {
+          "resourceId": 13,
+          "resourceName": "SERVICE_MASK",
+          "access": "read",
+          "accessNo": 0
+        },
+        {
+          "resourceId": 12,
+          "resourceName": "ADS_SERVICE",
+          "access": "read",
+          "accessNo": 0
+        },
+        {
+          "resourceId": 1,
+          "resourceName": "APPSDB_MARKETING_OPS",
+          "access": "read",
+          "accessNo": 0
+        },
+        {
+          "resourceId": 5,
+          "resourceName": "APPSDB_ADS",
+          "access": "read",
+          "accessNo": 0
+        },
+        {
+          "resourceId": 14,
+          "resourceName": "ADS_SERVICE_NG",
+          "access": "delete",
+          "accessNo": 3
+        },
+        {
+          "resourceId": 17,
+          "resourceName": "APPSDB_SUPPORT",
+          "access": "read",
+          "accessNo": 0
+        },
+        {
+          "resourceId": 3,
+          "resourceName": "APPSDB_MARKETING",
+          "access": "read",
+          "accessNo": 0
+        },
+        {
+          "resourceId": 2,
+          "resourceName": "APPSDB_PRODUCTION",
+          "access": "read",
+          "accessNo": 0
+        },
+        {
+          "resourceId": 15,
+          "resourceName": "ADS_SERVICE_NG_KEYS",
+          "access": "read",
+          "accessNo": 0
+        },
+        {
+          "resourceId": 7,
+          "resourceName": "APPSDB_TEST_KEYS",
+          "access": "read",
+          "accessNo": 0
+        },
+        {
+          "resourceId": 8,
+          "resourceName": "APPSDB_NOTES",
+          "access": "read",
+          "accessNo": 0
+        },
+        {
+          "resourceId": 10,
+          "resourceName": "ADMIN_CONSOLE",
+          "access": "read",
+          "accessNo": 0
+        },
+        {
+          "resourceId": 11,
+          "resourceName": "PROMOTION",
+          "access": "delete",
+          "accessNo": 3
+        },
+        {
+          "resourceId": 16,
+          "resourceName": "ADS_SERVICE_NG_KEYS_REMOVE",
+          "access": "read",
+          "accessNo": 0
+        },
+        {
+          "resourceId": 9,
+          "resourceName": "APPSDB",
+          "access": "delete",
+          "accessNo": 3
+        },
+        {
+          "resourceId": 4,
+          "resourceName": "APPSDB_ANALYTICS",
+          "access": "read",
+          "accessNo": 0
+        }
+      ]
+    },
+    {
+      "id": 11,
+      "name": "PUBLISHING_QA",
+      "privileges": [
+        {
+          "resourceId": 10,
+          "resourceName": "ADMIN_CONSOLE",
+          "access": "delete",
+          "accessNo": 3
+        },
+        {
+          "resourceId": 13,
+          "resourceName": "SERVICE_MASK",
+          "access": "delete",
+          "accessNo": 3
+        },
+        {
+          "resourceId": 7,
+          "resourceName": "APPSDB_TEST_KEYS",
+          "access": "delete",
+          "accessNo": 3
+        },
+        {
+          "resourceId": 5,
+          "resourceName": "APPSDB_ADS",
+          "access": "read",
+          "accessNo": 0
+        },
+        {
+          "resourceId": 9,
+          "resourceName": "APPSDB",
+          "access": "delete",
+          "accessNo": 3
+        },
+        {
+          "resourceId": 2,
+          "resourceName": "APPSDB_PRODUCTION",
+          "access": "delete",
+          "accessNo": 3
+        },
+        {
+          "resourceId": 11,
+          "resourceName": "PROMOTION",
+          "access": "delete",
+          "accessNo": 3
+        },
+        {
+          "resourceId": 3,
+          "resourceName": "APPSDB_MARKETING",
+          "access": "delete",
+          "accessNo": 3
+        },
+        {
+          "resourceId": 4,
+          "resourceName": "APPSDB_ANALYTICS",
+          "access": "read",
+          "accessNo": 0
+        },
+        {
+          "resourceId": 14,
+          "resourceName": "ADS_SERVICE_NG",
+          "access": "delete",
+          "accessNo": 3
+        },
+        {
+          "resourceId": 15,
+          "resourceName": "ADS_SERVICE_NG_KEYS",
+          "access": "delete",
+          "accessNo": 3
+        },
+        {
+          "resourceId": 6,
+          "resourceName": "APPSDB_BUILD",
+          "access": "delete",
+          "accessNo": 3
+        },
+        {
+          "resourceId": 1,
+          "resourceName": "APPSDB_MARKETING_OPS",
+          "access": "delete",
+          "accessNo": 3
+        },
+        {
+          "resourceId": 8,
+          "resourceName": "APPSDB_NOTES",
+          "access": "delete",
+          "accessNo": 3
+        },
+        {
+          "resourceId": 12,
+          "resourceName": "ADS_SERVICE",
+          "access": "delete",
+          "accessNo": 3
+        },
+        {
+          "resourceId": 17,
+          "resourceName": "APPSDB_SUPPORT",
+          "access": "delete",
+          "accessNo": 3
+        }
+      ]
+    },
+    {
+      "id": 9,
+      "name": "QA",
+      "privileges": [
+        {
+          "resourceId": 8,
+          "resourceName": "APPSDB_NOTES",
+          "access": "delete",
+          "accessNo": 3
+        },
+        {
+          "resourceId": 14,
+          "resourceName": "ADS_SERVICE_NG",
+          "access": "delete",
+          "accessNo": 3
+        },
+        {
+          "resourceId": 9,
+          "resourceName": "APPSDB",
+          "access": "delete",
+          "accessNo": 3
+        },
+        {
+          "resourceId": 10,
+          "resourceName": "ADMIN_CONSOLE",
+          "access": "read",
+          "accessNo": 0
+        },
+        {
+          "resourceId": 15,
+          "resourceName": "ADS_SERVICE_NG_KEYS",
+          "access": "read",
+          "accessNo": 0
+        },
+        {
+          "resourceId": 11,
+          "resourceName": "PROMOTION",
+          "access": "read",
+          "accessNo": 0
+        },
+        {
+          "resourceId": 1,
+          "resourceName": "APPSDB_MARKETING_OPS",
+          "access": "read",
+          "accessNo": 0
+        },
+        {
+          "resourceId": 2,
+          "resourceName": "APPSDB_PRODUCTION",
+          "access": "read",
+          "accessNo": 0
+        },
+        {
+          "resourceId": 3,
+          "resourceName": "APPSDB_MARKETING",
+          "access": "read",
+          "accessNo": 0
+        },
+        {
+          "resourceId": 4,
+          "resourceName": "APPSDB_ANALYTICS",
+          "access": "read",
+          "accessNo": 0
+        },
+        {
+          "resourceId": 5,
+          "resourceName": "APPSDB_ADS",
+          "access": "read",
+          "accessNo": 0
+        },
+        {
+          "resourceId": 6,
+          "resourceName": "APPSDB_BUILD",
+          "access": "delete",
+          "accessNo": 3
+        },
+        {
+          "resourceId": 17,
+          "resourceName": "APPSDB_SUPPORT",
+          "access": "read",
+          "accessNo": 0
+        },
+        {
+          "resourceId": 7,
+          "resourceName": "APPSDB_TEST_KEYS",
+          "access": "read",
+          "accessNo": 0
+        }
+      ]
+    },
+    {
+      "id": 2,
+      "name": "READ_ONLY",
+      "privileges": [
+        {
+          "resourceId": 15,
+          "resourceName": "ADS_SERVICE_NG_KEYS",
+          "access": "read",
+          "accessNo": 0
+        },
+        {
+          "resourceId": 14,
+          "resourceName": "ADS_SERVICE_NG",
+          "access": "delete",
+          "accessNo": 3
+        },
+        {
+          "resourceId": 1,
+          "resourceName": "APPSDB_MARKETING_OPS",
+          "access": "read",
+          "accessNo": 0
+        },
+        {
+          "resourceId": 2,
+          "resourceName": "APPSDB_PRODUCTION",
+          "access": "read",
+          "accessNo": 0
+        },
+        {
+          "resourceId": 3,
+          "resourceName": "APPSDB_MARKETING",
+          "access": "read",
+          "accessNo": 0
+        },
+        {
+          "resourceId": 4,
+          "resourceName": "APPSDB_ANALYTICS",
+          "access": "read",
+          "accessNo": 0
+        },
+        {
+          "resourceId": 5,
+          "resourceName": "APPSDB_ADS",
+          "access": "read",
+          "accessNo": 0
+        },
+        {
+          "resourceId": 6,
+          "resourceName": "APPSDB_BUILD",
+          "access": "read",
+          "accessNo": 0
+        },
+        {
+          "resourceId": 7,
+          "resourceName": "APPSDB_TEST_KEYS",
+          "access": "read",
+          "accessNo": 0
+        },
+        {
+          "resourceId": 8,
+          "resourceName": "APPSDB_NOTES",
+          "access": "read",
+          "accessNo": 0
+        },
+        {
+          "resourceId": 9,
+          "resourceName": "APPSDB",
+          "access": "delete",
+          "accessNo": 3
+        },
+        {
+          "resourceId": 10,
+          "resourceName": "ADMIN_CONSOLE",
+          "access": "read",
+          "accessNo": 0
+        },
+        {
+          "resourceId": 11,
+          "resourceName": "PROMOTION",
+          "access": "read",
+          "accessNo": 0
+        },
+        {
+          "resourceId": 17,
+          "resourceName": "APPSDB_SUPPORT",
+          "access": "read",
+          "accessNo": 0
+        }
+      ]
+    }
+  ]
+}
