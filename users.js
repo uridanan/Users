@@ -52,12 +52,19 @@ app.controller('UsersCtrl', main);
 function main($scope, $http, $timeout){
   args.scope = $scope;
   args.http = $http;
+  initNewUserForm()
 
   // args.scope.users = newResource('users', newUser, postInitUsers)
   // args.scope.roles = newResource('roles', newRole, postInitRoles)
   // args.scope.roles.getAll()
   fetchRoles();
 
+}
+
+
+function initNewUserForm(){
+  var user = {name: "Display Name", email: "username@tabtale.com"}
+  args.scope.newUser = user
 }
 
 function fetchRoles(){
@@ -101,12 +108,20 @@ function initUsers(data){
   initControlButtons(args.scope);
   initTagsControl(args.scope);
   initUpdateButton(args.scope);
+  initAddButton(args.scope);
 }
 
 function initUpdateButton($scope){
   $scope.onUpdateUser = function(u){
     console.log(u);
     updateUser(u)
+  }
+}
+
+function initAddButton($scope){
+  $scope.onAddUser = function(u){
+    console.log(u);
+    createUser(u)
   }
 }
 
@@ -242,6 +257,26 @@ function updateUser(u){
   restPut(args.http,url,u,onSuccess, onError)
 }
 
+function user(u){
+  return {
+    displayName: u.name,
+    userName: u.email,
+    roles: [
+      {
+        roleName: "READ_ONLY",
+        roleId: 2
+      }
+    ]
+  }
+}
+
+function createUser(u){
+  var url = 'http://localhost:3000/users/'
+  u.privileges = undefined
+
+  restPost(args.http,url,user(u),onSuccess, onError)
+}
+
 function restGet($http, url, processResponse){
   console.log($http.defaults.headers.common['Authorization']);
   //var url = 'http://localhost:3000/roles';
@@ -255,6 +290,11 @@ function restGet($http, url, processResponse){
 function restPut($http, url, data, onSuccess, onError){
   console.log($http.defaults.headers.common['Authorization']);
   $http.put(url, data).then(onSuccess, onError);
+}
+
+function restPost($http, url, data, onSuccess, onError){
+  console.log($http.defaults.headers.common['Authorization']);
+  $http.post(url, data).then(onSuccess, onError);
 }
 
 function onSuccess(response){
@@ -303,7 +343,6 @@ function onUpdateUser(u){
 }
 
 //TODO
-// 4. Add new User
 // 1. Tweak the UI
 // 3. Enable update button when data is changed
 // 5. Highlight pending changes
@@ -311,6 +350,9 @@ function onUpdateUser(u){
 // 7. Refactor REST call, Extract all rest calls to separate module
 // 8. Use resource module for REST calls?
 // 3. Add a delete / remove access button ?
+// Add format validation to email
+// Add alerts on on invalid input
+// Add new user to users without refreshing the page from REST?
 
 
 

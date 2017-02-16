@@ -1,5 +1,5 @@
 <tr>
-  <td width="25%"> {{u.userName}} </td>
+  <td width="30%" align="left"> {{u.userName}} </td>
   <td>
     <ui-select multiple tagging="tagTransform" ng-model="u.roles" theme="bootstrap" ng-disabled="disabled" style="width: 600px;" title="Assign roles">
       <ui-select-match placeholder="Select roles...">{{$item.roleName}} &lt;{{$item.roleId}}&gt;</ui-select-match>
@@ -12,5 +12,5 @@
       </ui-select-choices>
     </ui-select>
   </td>
-  <td><button class="btn btn-default btn-xs" ng-click="onUpdateUser(u)"><image src="icon-update.png" height="32px" width="32px"></button></td>
+  <td align="right"><button class="btn btn-default btn-xs" ng-click="onUpdateUser(u)"><image src="icon-update.png" height="25px" width="25px"></button></td>
 </tr>

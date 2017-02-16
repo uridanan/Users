@@ -58,10 +58,19 @@
 <body ng-controller="UsersCtrl">
   <script src="users.js"></script>
 
+<div align="center" width=60%>
   <button class="btn btn-default btn-xs" ng-click="enable()">Enable ui-select</button>
   <button class="btn btn-default btn-xs" ng-click="disable()">Disable ui-select</button>
 
-  <table id="users" width="80%">
+  <table id="adduser" border="1" align="right">
+    <tr>
+      <td><input ng-model="newUser.name"></td>
+      <td><input ng-model="newUser.email"></td>
+      <td align="right"><button class="btn btn-default btn-xs" ng-click="onAddUser(newUser)"><image src="icon-add.png" height="25px" width="25px"></button></td>
+    </tr>
+  </table>
+
+  <table id="users" border="1" align="right">
     <x-my-user-row ng-repeat = "u in users"/>
 
     <!--
@@ -71,6 +80,7 @@
     </tr>
     -->
   </table>
+</div>
 
 </body>
 </html>
