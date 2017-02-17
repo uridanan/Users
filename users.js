@@ -343,7 +343,6 @@ function onUpdateUser(u){
 }
 
 //TODO
-// 1. Tweak the UI
 // 3. Enable update button when data is changed
 // 5. Highlight pending changes
 // 6. Highlight dead users
