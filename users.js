@@ -107,6 +107,7 @@ function initUsers(data){
   for (var i=0; i< data.length ; i++){
     var u = data[i]
     u.enableUpdate = false
+    setUserColor(u)
   }
 
   //Continue to next methods
@@ -349,17 +350,30 @@ function addUserRow(){
 function onUpdateUser(u){
   console.log(u)
   u.enableUpdate = false
-  u.userStyle={'background-color':'white'}
+  //u.userStyle={'background-color':'white'}
+  setUserColor(u)
   updateUser(u)
 }
 
 function onSelect(u){
   u.enableUpdate=true
-  u.userStyle={'background-color':'#64d0f4'}
+  //u.userStyle={'background-color':'#64d0f4'}
+  setUserColor(u)
+}
+
+function setUserColor(u){
+  if(u.enableUpdate==true){
+    u.userStyle={'background-color':'#64d0f4'}
+  }
+  else if (u.roles.length==1 && u.roles[0].roleName=="NO_ACCESS") {
+    u.userStyle={'background-color':'grey'}
+  }
+  else{
+    u.userStyle={'background-color':'white'}
+  }
 }
 
 //TODO
-// 5. Highlight pending changes
 // 6. Highlight dead users
 // 7. Refactor REST call, Extract all rest calls to separate module
 // 8. Use resource module for REST calls?
@@ -374,3 +388,6 @@ function onSelect(u){
 //Another example with a REST Service Backend : http://draptik.github.io/blog/2013/07/28/restful-crud-with-angularjs/
 //Create a file based REST service to manage users using json-server (npm)
 //Rewrite front-end as a CRUD app
+
+// Demo
+// https://angular-ui.github.io/ui-select/demo-multiple-selection.html
