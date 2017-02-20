@@ -104,6 +104,11 @@ function initUsers(data){
   //   args.scope.users.push(dict);
   // }
 
+  for (var i=0; i< data.length ; i++){
+    var u = data[i]
+    u.enableUpdate = false
+  }
+
   //Continue to next methods
   initControlButtons(args.scope);
   initTagsControl(args.scope);
@@ -254,6 +259,8 @@ function newResource(type,newEntry,next){
 function updateUser(u){
   var url = 'http://localhost:3000/users/' + u.id
   u.privileges = undefined
+  u.enableUpdate = false
+  //Not good enough. make a copy with only the relevant data
   restPut(args.http,url,u,onSuccess, onError)
 }
 
@@ -343,7 +350,7 @@ function onUpdateUser(u){
 }
 
 //TODO
-// 3. Enable update button when data is changed
+// Fix update user by using a copy of the user instead of the user itself
 // 5. Highlight pending changes
 // 6. Highlight dead users
 // 7. Refactor REST call, Extract all rest calls to separate module
