@@ -117,10 +117,8 @@ function initUsers(data){
 }
 
 function initUpdateButton($scope){
-  $scope.onUpdateUser = function(u){
-    console.log(u);
-    updateUser(u)
-  }
+  $scope.onUpdateUser = onUpdateUser
+  $scope.onSelect = onSelect
 }
 
 function initAddButton($scope){
@@ -258,7 +256,6 @@ function newResource(type,newEntry,next){
 // }
 function updateUser(u){
   var url = 'http://localhost:3000/users/' + u.id
-  u.enableUpdate = false
 
   var copyOfU = {
         id: u.id,
@@ -350,8 +347,15 @@ function addUserRow(){
 }
 
 function onUpdateUser(u){
-  console.console.log(u)
+  console.log(u)
+  u.enableUpdate = false
+  u.userStyle={'background-color':'white'}
   updateUser(u)
+}
+
+function onSelect(u){
+  u.enableUpdate=true
+  u.userStyle={'background-color':'#64d0f4'}
 }
 
 //TODO
