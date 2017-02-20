@@ -258,10 +258,15 @@ function newResource(type,newEntry,next){
 // }
 function updateUser(u){
   var url = 'http://localhost:3000/users/' + u.id
-  u.privileges = undefined
   u.enableUpdate = false
-  //Not good enough. make a copy with only the relevant data
-  restPut(args.http,url,u,onSuccess, onError)
+
+  var copyOfU = {
+        id: u.id,
+        displayName: u.displayName,
+        userName: u.userName,
+        roles: u.roles
+  }
+  restPut(args.http,url,copyOfU,onSuccess, onError)
 }
 
 function user(u){
@@ -350,7 +355,6 @@ function onUpdateUser(u){
 }
 
 //TODO
-// Fix update user by using a copy of the user instead of the user itself
 // 5. Highlight pending changes
 // 6. Highlight dead users
 // 7. Refactor REST call, Extract all rest calls to separate module
