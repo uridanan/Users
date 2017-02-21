@@ -191,7 +191,7 @@ function newUser(u){
 
 function postInitUsers(){
   //Update scope data
-  args.scope.users = users.db;
+  args.scope.users = args.scope.myusers.db;
 
   //Continue to next methods
   initControlButtons(args.scope);
@@ -208,8 +208,8 @@ function newRole(r){
 }
 
 function postInitRoles(){
-  args.scope.roles = roles.db;
-  users.getAll();
+  args.scope.roles = args.scope.myroles.db;
+  args.scope.myusers.getAll();
 }
 
 //-----------------------------------------------------------------------------
@@ -224,16 +224,16 @@ function Resource(resUrl, newEntry, postInit){
 
 Resource.prototype = {
   constructor: Resource,
-  init:function(data){
+  init:function(data, param){
     //this is called as a static callback outside of the scope of the object.
     //Refer to the global instance or pass the object in the callback
     for(var i=0 ; i < data.length ; i++){
-      this.db.push(this.newEntry(data[i]));
+      param.db.push(param.newEntry(data[i]));
     }
-    this.postInit();
+    param.postInit();
   },
   getAll(){
-    restGet(args.http,this.resUrl,this.init);
+    restGet(args.http,this.resUrl,this.init,this);
   },
   update(u){
 
@@ -247,12 +247,12 @@ Resource.prototype = {
 //-----------------------------------------------------------------------------
 //Wrappers for http methods
 //Export to module together with the Resource class
-function restGet($http, url, processResponse){
+function restGet($http, url, processResponse, param){
   console.log($http.defaults.headers.common['Authorization']);
   $http.get(url).then(function(response) {
     var data = response.data;
     console.log(data);
-    processResponse(data);
+    processResponse(data, param);
   });
 }
 
