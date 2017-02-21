@@ -55,13 +55,11 @@ function main($scope, $http, $timeout){
   // args.scope.users = newResource('users', newUser, postInitUsers)
   // args.scope.roles = newResource('roles', newRole, postInitRoles)
   // args.scope.roles.getAll()
-  fetchRoles();
-}
+  // fetchRoles();
 
-
-function initNewUserForm(){
-  var user = {name: "Display Name", email: "username@tabtale.com"};
-  args.scope.newUser = user;
+  args.scope.myusers = new Resource(args.domain + 'users', newUser, postInitUsers);
+  args.scope.myroles = new Resource(args.domain + 'roles', newRole, postInitRoles);
+  args.scope.myroles.getAll();
 }
 
 function fetchRoles(){
@@ -79,9 +77,6 @@ function initRoles(data){
     args.scope.roles.push(dict);
   }
 
-  //Continue to next methods
-  // initControlButtons(args.scope);
-  // initTagsControl(args.scope);
   fetchUsers();
 }
 
@@ -114,6 +109,14 @@ function initUsers(data){
   initAddButton(args.scope);
 }
 
+//------------------------------------------------------------------------------
+//Init interative elements
+
+function initNewUserForm(){
+  var user = {name: "Display Name", email: "username@tabtale.com"};
+  args.scope.newUser = user;
+}
+
 function initUpdateButton($scope){
   $scope.onUpdateUser = onUpdateUser;
   $scope.onSelect = onSelect;
@@ -127,12 +130,6 @@ function initAddButton($scope){
 }
 
 function initTagsControl($scope){
-  $scope.addPerson = function(item, model){
-    // if(item.hasOwnProperty('isTag')) {
-    //   delete item.isTag;
-    //   $scope.roles.push(item);
-    // }
-  };
 
   $scope.someGroupFn = function (item){
 
@@ -165,7 +162,6 @@ function initTagsControl($scope){
 
     return item;
   };
-
 }
 
 function initControlButtons($scope){
@@ -180,18 +176,28 @@ function initControlButtons($scope){
   };
 
 }
+//------------------------------------------------------------------------------
 
 
-function postInitRoles(){
-  args.scope.roles = roles.db;
-  users.getAll();
+//-----------------------------------------------------------------------------
+//Instantiate resources for users and roles
+//Think of using services for this
+
+function newUser(u){
+  u.enableUpdate = false;
+  setUserColor(u);
+  return u;
 }
 
 function postInitUsers(){
+  //Update scope data
   args.scope.users = users.db;
+
+  //Continue to next methods
   initControlButtons(args.scope);
   initTagsControl(args.scope);
   initUpdateButton(args.scope);
+  initAddButton(args.scope);
 }
 
 function newRole(r){
@@ -201,21 +207,17 @@ function newRole(r){
   };
 }
 
-function newUser(u){
-  return u;
+function postInitRoles(){
+  args.scope.roles = roles.db;
+  users.getAll();
 }
-
-//-----------------------------------------------------------------------------
-//Instantiate resources for users and roles
-//Think of using services for this
-var users = new Resource(args.domain + 'users');
 
 //-----------------------------------------------------------------------------
 //Define resource class
 //Think of exporting this to a seperate module
 function Resource(resUrl, newEntry, postInit){
   this.resUrl = resUrl;
-  this.data = [];
+  this.db = [];
   this.newEntry = newEntry;
   this.postInit = postInit;
 }
@@ -223,8 +225,10 @@ function Resource(resUrl, newEntry, postInit){
 Resource.prototype = {
   constructor: Resource,
   init:function(data){
+    //this is called as a static callback outside of the scope of the object.
+    //Refer to the global instance or pass the object in the callback
     for(var i=0 ; i < data.length ; i++){
-      db.push(this.newEntry(data[i]));
+      this.db.push(this.newEntry(data[i]));
     }
     this.postInit();
   },
@@ -245,7 +249,6 @@ Resource.prototype = {
 //Export to module together with the Resource class
 function restGet($http, url, processResponse){
   console.log($http.defaults.headers.common['Authorization']);
-  //var url = 'http://localhost:3000/roles';
   $http.get(url).then(function(response) {
     var data = response.data;
     console.log(data);
@@ -262,6 +265,24 @@ function restPost($http, url, data, onSuccess, onError){
   console.log($http.defaults.headers.common['Authorization']);
   $http.post(url, data).then(onSuccess, onError);
 }
+
+function onSuccess(response){
+  console.log("onSuccess: " + response);
+}
+
+function onError(response){
+  console.log("onError: " + response);
+}
+
+// var myRest = new Rest(args.http);
+//
+// function Rest($http){
+//   this.http = $http;
+// }
+//
+// Rest.prototype = {
+//
+// };
 
 function loadJsonFile($http, filename, processResponse){
   console.log("Load data from file: "+filename);
@@ -320,13 +341,7 @@ function createUser(u){
 }
 
 
-function onSuccess(response){
-  console.log("onSuccess: " + response);
-}
 
-function onError(response){
-  console.log("onError: " + response);
-}
 
 
 //-----------------------------------------------------------------------------
