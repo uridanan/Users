@@ -50,71 +50,19 @@ app.controller('UsersCtrl', main);
 function main($scope, $http, $timeout){
   args.scope = $scope;
   args.http = $http;
-  initNewUserForm();
-
-  // args.scope.users = newResource('users', newUser, postInitUsers)
-  // args.scope.roles = newResource('roles', newRole, postInitRoles)
-  // args.scope.roles.getAll()
-  // fetchRoles();
 
   args.scope.myusers = new Resource(args.domain + 'users', newUser, postInitUsers);
   args.scope.myroles = new Resource(args.domain + 'roles', newRole, postInitRoles);
   args.scope.myroles.getAll();
 }
 
-function fetchRoles(){
-  //loadJsonFile(args.http, 'http://localhost:8000/roles.json',initRoles);
-  restGet(args.http, 'http://localhost:3000/roles',initRoles);
-}
-
-function initRoles(data){
-  args.scope.roles = [];
-  for  (var i=0 ; i < data.length ; i++){
-    var r = data[i];
-    var dict = {};
-    dict.roleId = r.id;
-    dict.roleName = r.name;
-    args.scope.roles.push(dict);
-  }
-
-  fetchUsers();
-}
-
-function fetchUsers(){
-  //loadJsonFile(args.http, 'http://localhost:8000/users.json',initUsers);
-  restGet(args.http, 'http://localhost:3000/users',initUsers);
-}
-
-function initUsers(data){
-  args.scope.users = data;
-  // args.scope.users = [];
-  // for  (var i=0 ; i < data.length ; i++){
-  //   var u = data[i];
-  //   var dict = {};
-  //   dict.id = u.id;
-  //   dict.userName = u.userName;
-  //   args.scope.users.push(dict);
-  // }
-
-  for (var i=0; i< data.length ; i++){
-    var u = data[i];
-    u.enableUpdate = false;
-    setUserColor(u);
-  }
-
-  //Continue to next methods
-  initControlButtons(args.scope);
-  initTagsControl(args.scope);
-  initUpdateButton(args.scope);
-  initAddButton(args.scope);
-}
 
 //------------------------------------------------------------------------------
 //Init interative elements
 
-function initNewUserForm(){
-  var user = {name: "Display Name", email: "username@tabtale.com"};
-  args.scope.newUser = user;
+function initNewUserForm($scope){
+  var user = {displayName: "Display Name", userName: "username@tabtale.com"};
+  $scope.newUser = user;
 }
 
 function initUpdateButton($scope){
@@ -125,7 +73,7 @@ function initUpdateButton($scope){
 function initAddButton($scope){
   $scope.onAddUser = function(u){
     console.log(u);
-    createUser(u);
+    args.scope.myusers.create(new User(u));
   }
 }
 
@@ -180,8 +128,26 @@ function initControlButtons($scope){
 
 
 //-----------------------------------------------------------------------------
-//Instantiate resources for users and roles
+//EXtend Resource behavior for users and roles
 //Think of using services for this
+function User(u){
+  if(u.id != undefined && u.id > 0){
+    this.id = u.id;
+  }
+  this.displayName = u.displayName;
+  this.userName = u.userName;
+  if(u.roles == undefined || u.roles.length == 0){
+    this.roles = [
+      {
+        roleName: "READ_ONLY",
+        roleId: 2
+      }
+    ];
+  }
+  else{
+    this.roles = u.roles;
+  }
+}
 
 function newUser(u){
   u.enableUpdate = false;
@@ -198,6 +164,7 @@ function postInitUsers(){
   initTagsControl(args.scope);
   initUpdateButton(args.scope);
   initAddButton(args.scope);
+  initNewUserForm(args.scope);
 }
 
 function newRole(r){
@@ -235,13 +202,15 @@ Resource.prototype = {
   getAll(){
     restGet(args.http,this.resUrl,this.init,this);
   },
-  update(u){
-
+  update(entry){
+    var url = this.resUrl + '/' + entry.id;
+    restPut(args.http,url,entry,onSuccess,onError);
   },
-  create(u){
-
+  create(entry){
+    restPost(args.http,this.resUrl,entry,onSuccess,onError);
   }
 };
+
 //-----------------------------------------------------------------------------
 
 //-----------------------------------------------------------------------------
@@ -305,42 +274,13 @@ function loadJsonFile($http, filename, processResponse){
       console.log(data);
       processResponse(data);
   });
+
+  //Example
+  // function fetchUsers(){
+  //   loadJsonFile(args.http, 'http://localhost:8000/users.json',initUsers);
+  // }
 }
 //-----------------------------------------------------------------------------
-
-function updateUser(u){
-  var url = 'http://localhost:3000/users/' + u.id;
-
-  var copyOfU = {
-        id: u.id,
-        displayName: u.displayName,
-        userName: u.userName,
-        roles: u.roles
-  };
-  restPut(args.http,url,copyOfU,onSuccess, onError);
-}
-
-function user(u){
-  return {
-    displayName: u.name,
-    userName: u.email,
-    roles: [
-      {
-        roleName: "READ_ONLY",
-        roleId: 2
-      }
-    ]
-  };
-}
-
-function createUser(u){
-  var url = 'http://localhost:3000/users/';
-  u.privileges = undefined;
-
-  restPost(args.http,url,user(u),onSuccess, onError);
-}
-
-
 
 
 
@@ -359,7 +299,7 @@ function onUpdateUser(u){
   console.log(u);
   u.enableUpdate = false;
   setUserColor(u);
-  updateUser(u);
+  args.scope.myusers.update(new User(u));
 }
 
 function onSelect(u){
@@ -396,6 +336,8 @@ function setUserColor(u){
 // Add new user to users without refreshing the page from REST?
 // Use module and service patterns?
 // Define styles in CSS?
+// Add disable control to the add user form
+// Use factory for Resource and Services for users and roles?
 
 
 
