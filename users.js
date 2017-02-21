@@ -4,8 +4,9 @@ var app = angular.module('UsersApp', ['ngSanitize', 'ui.select']);
 
 var args = {
   scope:  null,
-  http: null
-}
+  http: null,
+  domain: 'http://localhost:3000/'
+};
 
 /**
  * AngularJS default filter with the following expression:
@@ -44,27 +45,23 @@ app.filter('propsFilter', function() {
   };
 });
 
-
-
-
 app.controller('UsersCtrl', main);
 
 function main($scope, $http, $timeout){
   args.scope = $scope;
   args.http = $http;
-  initNewUserForm()
+  initNewUserForm();
 
   // args.scope.users = newResource('users', newUser, postInitUsers)
   // args.scope.roles = newResource('roles', newRole, postInitRoles)
   // args.scope.roles.getAll()
   fetchRoles();
-
 }
 
 
 function initNewUserForm(){
-  var user = {name: "Display Name", email: "username@tabtale.com"}
-  args.scope.newUser = user
+  var user = {name: "Display Name", email: "username@tabtale.com"};
+  args.scope.newUser = user;
 }
 
 function fetchRoles(){
@@ -105,9 +102,9 @@ function initUsers(data){
   // }
 
   for (var i=0; i< data.length ; i++){
-    var u = data[i]
-    u.enableUpdate = false
-    setUserColor(u)
+    var u = data[i];
+    u.enableUpdate = false;
+    setUserColor(u);
   }
 
   //Continue to next methods
@@ -118,14 +115,14 @@ function initUsers(data){
 }
 
 function initUpdateButton($scope){
-  $scope.onUpdateUser = onUpdateUser
-  $scope.onSelect = onSelect
+  $scope.onUpdateUser = onUpdateUser;
+  $scope.onSelect = onSelect;
 }
 
 function initAddButton($scope){
   $scope.onAddUser = function(u){
     console.log(u);
-    createUser(u)
+    createUser(u);
   }
 }
 
@@ -135,7 +132,7 @@ function initTagsControl($scope){
     //   delete item.isTag;
     //   $scope.roles.push(item);
     // }
-  }
+  };
 
   $scope.someGroupFn = function (item){
 
@@ -186,12 +183,12 @@ function initControlButtons($scope){
 
 
 function postInitRoles(){
-  args.scope.roles = roles.db
-  users.getAll()
+  args.scope.roles = roles.db;
+  users.getAll();
 }
 
 function postInitUsers(){
-  args.scope.users = users.db
+  args.scope.users = users.db;
   initControlButtons(args.scope);
   initTagsControl(args.scope);
   initUpdateButton(args.scope);
@@ -201,92 +198,51 @@ function newRole(r){
   return {
     roleId: r.id,
     roleName: r.name
-  }
+  };
 }
 
 function newUser(u){
-  return u
+  return u;
 }
 
-function newResource(type,newEntry,next){
-  return{
-    db: [],
-    //domain: 'http://localhost:3000/',
-    //resource: type,
-    baseUrl: 'http://localhost:3000/' + type,
-    init: function(data){
-      for  (var i=0 ; i < data.length ; i++){
-        db.push(newEntry(data[i]))
-      }
-      next()
-    },
-    getAll: function(){
-      var url = baseUrl;
-      restGet(args.http,url,init)
+//-----------------------------------------------------------------------------
+//Instantiate resources for users and roles
+//Think of using services for this
+var users = new Resource(args.domain + 'users');
+
+//-----------------------------------------------------------------------------
+//Define resource class
+//Think of exporting this to a seperate module
+function Resource(resUrl, newEntry, postInit){
+  this.resUrl = resUrl;
+  this.data = [];
+  this.newEntry = newEntry;
+  this.postInit = postInit;
+}
+
+Resource.prototype = {
+  constructor: Resource,
+  init:function(data){
+    for(var i=0 ; i < data.length ; i++){
+      db.push(this.newEntry(data[i]));
     }
+    this.postInit();
+  },
+  getAll(){
+    restGet(args.http,this.resUrl,this.init);
+  },
+  update(u){
+
+  },
+  create(u){
+
   }
-}
+};
+//-----------------------------------------------------------------------------
 
-//   var db = []
-//   var localhost = 'http://localhost:3000/'
-//   var resource = type
-//   var baseUrl = localhost + resource
-//   function init(data){
-//     for  (var i=0 ; i < data.length ; i++){
-//       db.push(newEntry(data[i]))
-//     }
-//     next()
-//   }
-//   function getAll(){
-//     var url = baseUrl;
-//     restGet(args.http,url,init)
-//   }
-//   function get(id){
-//     var url = baseUrl + '/' + id;
-//     restGet(args.http,url,init)
-//   }
-//   function update(id){
-//     var url = baseUrl + '/' + id;
-//   }
-//   function remove(id){
-//     var url = baseUrl + '/' + id;
-//   }
-//   function create(role){
-//     var url = baseUrl;
-//   }
-// }
-function updateUser(u){
-  var url = 'http://localhost:3000/users/' + u.id
-
-  var copyOfU = {
-        id: u.id,
-        displayName: u.displayName,
-        userName: u.userName,
-        roles: u.roles
-  }
-  restPut(args.http,url,copyOfU,onSuccess, onError)
-}
-
-function user(u){
-  return {
-    displayName: u.name,
-    userName: u.email,
-    roles: [
-      {
-        roleName: "READ_ONLY",
-        roleId: 2
-      }
-    ]
-  }
-}
-
-function createUser(u){
-  var url = 'http://localhost:3000/users/'
-  u.privileges = undefined
-
-  restPost(args.http,url,user(u),onSuccess, onError)
-}
-
+//-----------------------------------------------------------------------------
+//Wrappers for http methods
+//Export to module together with the Resource class
 function restGet($http, url, processResponse){
   console.log($http.defaults.headers.common['Authorization']);
   //var url = 'http://localhost:3000/roles';
@@ -305,14 +261,6 @@ function restPut($http, url, data, onSuccess, onError){
 function restPost($http, url, data, onSuccess, onError){
   console.log($http.defaults.headers.common['Authorization']);
   $http.post(url, data).then(onSuccess, onError);
-}
-
-function onSuccess(response){
-  console.log("onSuccess: " + response);
-}
-
-function onError(response){
-  console.log("onError: " + response);
 }
 
 function loadJsonFile($http, filename, processResponse){
@@ -337,7 +285,52 @@ function loadJsonFile($http, filename, processResponse){
       processResponse(data);
   });
 }
+//-----------------------------------------------------------------------------
 
+function updateUser(u){
+  var url = 'http://localhost:3000/users/' + u.id;
+
+  var copyOfU = {
+        id: u.id,
+        displayName: u.displayName,
+        userName: u.userName,
+        roles: u.roles
+  };
+  restPut(args.http,url,copyOfU,onSuccess, onError);
+}
+
+function user(u){
+  return {
+    displayName: u.name,
+    userName: u.email,
+    roles: [
+      {
+        roleName: "READ_ONLY",
+        roleId: 2
+      }
+    ]
+  };
+}
+
+function createUser(u){
+  var url = 'http://localhost:3000/users/';
+  u.privileges = undefined;
+
+  restPost(args.http,url,user(u),onSuccess, onError);
+}
+
+
+function onSuccess(response){
+  console.log("onSuccess: " + response);
+}
+
+function onError(response){
+  console.log("onError: " + response);
+}
+
+
+//-----------------------------------------------------------------------------
+//Directive for ng-repeat and supporting methods
 app.directive('myUserRow', addUserRow);
 
 function addUserRow(){
@@ -348,39 +341,46 @@ function addUserRow(){
 }
 
 function onUpdateUser(u){
-  console.log(u)
-  u.enableUpdate = false
-  //u.userStyle={'background-color':'white'}
-  setUserColor(u)
-  updateUser(u)
+  console.log(u);
+  u.enableUpdate = false;
+  setUserColor(u);
+  updateUser(u);
 }
 
 function onSelect(u){
-  u.enableUpdate=true
-  //u.userStyle={'background-color':'#64d0f4'}
-  setUserColor(u)
+  u.enableUpdate=true;
+  setUserColor(u);
 }
 
 function setUserColor(u){
+  //Move myStyles to CSS?
+  var myStyles = {
+    uptodate:{'background-color':'white'},
+    pending:{'background-color':'#64d0f4'},
+    noaccess:{'background-color':'grey'}
+  };
+
   if(u.enableUpdate==true){
-    u.userStyle={'background-color':'#64d0f4'}
+    u.userStyle=myStyles.pending;
   }
   else if (u.roles.length==1 && u.roles[0].roleName=="NO_ACCESS") {
-    u.userStyle={'background-color':'grey'}
+    u.userStyle=myStyles.noaccess;
   }
   else{
-    u.userStyle={'background-color':'white'}
+    u.userStyle=myStyles.uptodate;
   }
 }
+//-----------------------------------------------------------------------------
 
 //TODO
-// 6. Highlight dead users
 // 7. Refactor REST call, Extract all rest calls to separate module
 // 8. Use resource module for REST calls?
 // 3. Add a delete / remove access button ?
 // Add format validation to email
 // Add alerts on on invalid input
 // Add new user to users without refreshing the page from REST?
+// Use module and service patterns?
+// Define styles in CSS?
 
 
 
