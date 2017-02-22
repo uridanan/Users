@@ -329,15 +329,13 @@ function setUserColor(u){
 
 //TODO
 // 7. Refactor REST call, Extract all rest calls to separate module
-// 8. Use resource module for REST calls?
-// 3. Add a delete / remove access button ?
+// Use factory for Resource and Services for users and roles?
 // Add format validation to email
 // Add alerts on on invalid input
 // Add new user to users without refreshing the page from REST?
-// Use module and service patterns?
 // Define styles in CSS?
 // Add disable control to the add user form
-// Use factory for Resource and Services for users and roles?
+// 3. Add a delete / remove access button ?
 
 
 
