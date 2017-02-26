@@ -1,18 +1,12 @@
 'use strict';
 
-//------------------------------------------------------------------------------
-//Define app module
 var app = angular.module('UsersApp', ['ngSanitize', 'ui.select']);
 
-//Get rid of this
 var args = {
   scope:  null,
   http: null,
   domain: 'http://localhost:3000/'
 };
-
-//------------------------------------------------------------------------------
-//Define filter
 
 /**
  * AngularJS default filter with the following expression:
@@ -51,14 +45,6 @@ app.filter('propsFilter', function() {
   };
 });
 
-//------------------------------------------------------------------------------
-//Define services for Users and Roles
-app.service('ServiceUsers',function(){
-
-});
-
-//------------------------------------------------------------------------------
-//Define Controller
 app.controller('UsersCtrl', main);
 
 function main($scope, $http, $timeout){
