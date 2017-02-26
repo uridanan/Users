@@ -99,23 +99,20 @@ app.factory('ResourceFactory',function(url, entry, next){
   Resource.prototype = {
     constructor: Resource,
     callback:function(data){
-      //Called from within RestService, where the Resource object is passed as parameter
+      //Called from within RestService, the Resource object is passed as arg
       for(var i=0 ; i < data.length ; i++){
         this.db.push(this.newEntry(data[i]));
       }
       this.postInit();
     },
     getAll(){
-
       RestService.get(this.resUrl, this);
     },
     update(entry){
       var url = this.resUrl + '/' + entry.id;
-      //restPut(args.http,url,entry,onSuccess,onError);
       RestService.put(url,entry);
     },
     create(entry){
-      //restPost(args.http,this.resUrl,entry,onSuccess,onError);
       RestService.post(this.resUrl,entry);
     }
   };
