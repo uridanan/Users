@@ -1,10 +1,5 @@
 'use strict';
 
-var Filters = require('filters');
-
-var myFiltersInstance = new Filters();
-
-
 var app = angular.module('UsersApp', ['ngSanitize', 'ui.select']);
 
 var args = {
@@ -19,7 +14,7 @@ var args = {
  * performs a AND between 'name: $select.search' and 'age: $select.search'.
  * We want to perform a OR.
  */
-app.filter('propsFilter', myFiltersInstance.getUISelectFilter());
+app.filter('propsFilter', getUISelectFilter);
 
 //-----------------------------------------------------------------------------
 //Encapsulate REST calls functionality in a service
