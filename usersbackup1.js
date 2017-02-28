@@ -1,17 +1,18 @@
 'use strict';
 
-var Filters = require('filters');
-
-var myFiltersInstance = new Filters();
-
-
+//------------------------------------------------------------------------------
+//Define app module
 var app = angular.module('UsersApp', ['ngSanitize', 'ui.select']);
 
+//Get rid of this
 var args = {
   scope:  null,
   http: null,
   domain: 'http://localhost:3000/'
 };
+
+//------------------------------------------------------------------------------
+//Define filter
 
 /**
  * AngularJS default filter with the following expression:
@@ -19,7 +20,36 @@ var args = {
  * performs a AND between 'name: $select.search' and 'age: $select.search'.
  * We want to perform a OR.
  */
-app.filter('propsFilter', myFiltersInstance.getUISelectFilter());
+app.filter('propsFilter', function() {
+  return function(items, props) {
+    var out = [];
+
+    if (angular.isArray(items)) {
+      items.forEach(function(item) {
+        var itemMatches = false;
+
+        var keys = Object.keys(props);
+        for (var i = 0; i < keys.length; i++) {
+          var prop = keys[i];
+          var text = props[prop].toLowerCase();
+          if (item[prop].toString().toLowerCase().indexOf(text) !== -1) {
+            itemMatches = true;
+            break;
+          }
+        }
+
+        if (itemMatches) {
+          out.push(item);
+        }
+      });
+    } else {
+      // Let the output be the input untouched
+      out = items;
+    }
+
+    return out;
+  };
+});
 
 //-----------------------------------------------------------------------------
 //Encapsulate REST calls functionality in a service
@@ -53,14 +83,138 @@ app.service('RestService',function($http){
 //-----------------------------------------------------------------------------
 
 
+//------------------------------------------------------------------------------
+//Define a factory for Resource
+app.factory('ResourceFactory',function(url, entry, next){
+  //Define resource class
+  //Think of exporting this to a seperate module
+  function Resource(resUrl, newEntry, postInit){
+    this.resUrl = resUrl;
+    this.db = [];
+    this.newEntry = newEntry;
+    this.postInit = postInit;
+  }
+
+  //Must implement method callback(data)
+  Resource.prototype = {
+    constructor: Resource,
+    callback:function(data){
+      //Called from within RestService, the Resource object is passed as arg
+      for(var i=0 ; i < data.length ; i++){
+        this.db.push(this.newEntry(data[i]));
+      }
+      this.postInit();
+    },
+    getAll(){
+      RestService.get(this.resUrl, this);
+    },
+    update(entry){
+      var url = this.resUrl + '/' + entry.id;
+      RestService.put(url,entry);
+    },
+    create(entry){
+      RestService.post(this.resUrl,entry);
+    }
+  };
+
+  return new Resource(url, entry, next);
+
+});
+//------------------------------------------------------------------------------
+
+//------------------------------------------------------------------------------
+//Define services for Users and Roles
+//Pass $scope as parameter or assign to scope in controller?
+app.service('UserService',function(domain, postInit){
+  var url = domain + 'users';
+  this.users = ResourceFactory(url, this.newUser, postInit);
+
+  this.newUser = function(u){
+    u.enableUpdate = false;
+    setUserColor(u);
+    return u;
+  };
+
+  this.User = function(u){
+    if(u.id != undefined && u.id > 0){
+      this.id = u.id;
+    }
+    this.displayName = u.displayName;
+    this.userName = u.userName;
+    if(u.roles == undefined || u.roles.length == 0){
+      this.roles = [
+        {
+          roleName: "READ_ONLY",
+          roleId: 2
+        }
+      ];
+    }
+    else{
+      this.roles = u.roles;
+    }
+  };
+
+});
+
+function onCreateUser(u){
+  console.log(u);
+  UserService.users.create(new User(u));
+}
+
+function onUpdateUser(u){
+  console.log(u);
+  u.enableUpdate = false;
+  setUserColor(u);
+  UserService.users.update(new User(u));
+}
+
+function onSelect(u){
+  u.enableUpdate=true;
+  setUserColor(u);
+}
+
+function setUserColor(u){
+  //Move myStyles to CSS?
+  var myStyles = {
+    uptodate:{'background-color':'white'},
+    pending:{'background-color':'#64d0f4'},
+    noaccess:{'background-color':'grey'}
+  };
+
+  if(u.enableUpdate==true){
+    u.userStyle=myStyles.pending;
+  }
+  else if (u.roles.length==1 && u.roles[0].roleName=="NO_ACCESS") {
+    u.userStyle=myStyles.noaccess;
+  }
+  else{
+    u.userStyle=myStyles.uptodate;
+  }
+
+function postInitUsers(){
+  //Update scope data
+  args.scope.users = args.scope.myusers.db;
+
+  //Continue to next methods
+  initControlButtons(args.scope);
+  initTagsControl(args.scope);
+  initUpdateButton(args.scope);
+  initAddButton(args.scope);
+  initNewUserForm(args.scope);
+}
+
+//------------------------------------------------------------------------------
+//Define Controller
 app.controller('UsersCtrl', main);
 
-function main($scope, $http, $timeout,RestService){
+function main($scope, $http, $timeout){
   args.scope = $scope;
   args.http = $http;
 
-  args.scope.myusers = new Resource(RestService, args.domain + 'users', newUser, postInitUsers);
-  args.scope.myroles = new Resource(RestService, args.domain + 'roles', newRole, postInitRoles);
+  //args.scope.myusers = new Resource(args.domain + 'users', newUser, postInitUsers);
+  args.scope.myusers = ResourceFactory(args.domain + 'users', newUser, postInitUsers);
+  //args.scope.myroles = new Resource(args.domain + 'roles', newRole, postInitRoles);
+  args.scope.myroles = ResourceFactory(args.domain + 'roles', newRole, postInitRoles);
   args.scope.myroles.getAll();
 }
 
@@ -79,10 +233,7 @@ function initUpdateButton($scope){
 }
 
 function initAddButton($scope){
-  $scope.onAddUser = function(u){
-    console.log(u);
-    args.scope.myusers.create(new User(u));
-  }
+  $scope.onAddUser = onCreateUser;
 }
 
 function initTagsControl($scope){
@@ -120,6 +271,8 @@ function initTagsControl($scope){
   };
 }
 
+
+
 function initControlButtons($scope){
   $scope.disabled = undefined;
 
@@ -138,42 +291,7 @@ function initControlButtons($scope){
 //-----------------------------------------------------------------------------
 //EXtend Resource behavior for users and roles
 //Think of using services for this
-function User(u){
-  if(u.id != undefined && u.id > 0){
-    this.id = u.id;
-  }
-  this.displayName = u.displayName;
-  this.userName = u.userName;
-  if(u.roles == undefined || u.roles.length == 0){
-    this.roles = [
-      {
-        roleName: "READ_ONLY",
-        roleId: 2
-      }
-    ];
-  }
-  else{
-    this.roles = u.roles;
-  }
-}
 
-function newUser(u){
-  u.enableUpdate = false;
-  setUserColor(u);
-  return u;
-}
-
-function postInitUsers(){
-  //Update scope data
-  args.scope.users = args.scope.myusers.db;
-
-  //Continue to next methods
-  initControlButtons(args.scope);
-  initTagsControl(args.scope);
-  initUpdateButton(args.scope);
-  initAddButton(args.scope);
-  initNewUserForm(args.scope);
-}
 
 function newRole(r){
   return {
@@ -187,49 +305,6 @@ function postInitRoles(){
   args.scope.myusers.getAll();
 }
 
-//-----------------------------------------------------------------------------
-//Define resource class
-//Think of exporting this to a seperate module
-function Resource(RestService, resUrl, newEntry, postInit){
-  this.resUrl = resUrl;
-  this.db = [];
-  this.newEntry = newEntry;
-  this.postInit = postInit;
-  this.RestService = RestService;
-}
-
-Resource.prototype = {
-  constructor: Resource,
-  init:function(data, param){
-    //this is called as a static callback outside of the scope of the object.
-    //Refer to the global instance or pass the object in the callback
-    for(var i=0 ; i < data.length ; i++){
-      param.db.push(param.newEntry(data[i]));
-    }
-    param.postInit();
-  },
-  callback:function(data){
-    //this is called as a static callback outside of the scope of the object.
-    //Refer to the global instance or pass the object in the callback
-    for(var i=0 ; i < data.length ; i++){
-      this.db.push(this.newEntry(data[i]));
-    }
-    this.postInit();
-  },
-  getAll:function(){
-    //restGet(args.http,this.resUrl,this.init,this);
-    this.RestService.get(this.resUrl,this);
-  },
-  update:function(entry){
-    var url = this.resUrl + '/' + entry.id;
-    restPut(args.http,url,entry,onSuccess,onError);
-  },
-  create:function(entry){
-    restPost(args.http,this.resUrl,entry,onSuccess,onError);
-  }
-};
-
-//-----------------------------------------------------------------------------
 
 //-----------------------------------------------------------------------------
 //Wrappers for http methods
@@ -313,35 +388,7 @@ function addUserRow(){
   };
 }
 
-function onUpdateUser(u){
-  console.log(u);
-  u.enableUpdate = false;
-  setUserColor(u);
-  args.scope.myusers.update(new User(u));
-}
 
-function onSelect(u){
-  u.enableUpdate=true;
-  setUserColor(u);
-}
-
-function setUserColor(u){
-  //Move myStyles to CSS?
-  var myStyles = {
-    uptodate:{'background-color':'white'},
-    pending:{'background-color':'#64d0f4'},
-    noaccess:{'background-color':'grey'}
-  };
-
-  if(u.enableUpdate==true){
-    u.userStyle=myStyles.pending;
-  }
-  else if (u.roles.length==1 && u.roles[0].roleName=="NO_ACCESS") {
-    u.userStyle=myStyles.noaccess;
-  }
-  else{
-    u.userStyle=myStyles.uptodate;
-  }
 }
 //-----------------------------------------------------------------------------
 
