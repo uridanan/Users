@@ -18,41 +18,15 @@ app.filter('propsFilter', getUISelectFilter);
 
 //-----------------------------------------------------------------------------
 //Encapsulate REST calls functionality in a service
-app.service('RestService',function($http){
+app.service('RestService',restService);
 
-  this.get = function(url, target){
-    $http.get(url).then(function(response) {
-      var data = response.data;
-      console.log(data);
-      target.callback(data);
-    });
-  };
-
-  this.put = function(url, data){
-    $http.put(url, data).then(this.onSuccess, this.onError);
-  };
-
-  this.post = function(url, data){
-    $http.post(url, data).then(this.onSuccess, this.onError);
-  };
-
-  this.onSuccess = function(response){
-    console.log("onSuccess: " + response);
-  };
-
-  this.onError = function(response){
-    console.log("onError: " + response);
-  };
-
-});
 //-----------------------------------------------------------------------------
-
-
 app.controller('UsersCtrl', main);
 
 function main($scope, $http, $timeout,RestService){
   args.scope = $scope;
   args.http = $http;
+
 
   args.scope.myusers = new Resource(RestService, args.domain + 'users', newUser, postInitUsers);
   args.scope.myroles = new Resource(RestService, args.domain + 'roles', newRole, postInitRoles);
@@ -182,89 +156,8 @@ function postInitRoles(){
   args.scope.myusers.getAll();
 }
 
-//-----------------------------------------------------------------------------
-//Define resource class
-//Think of exporting this to a seperate module
-function Resource(RestService, resUrl, newEntry, postInit){
-  this.resUrl = resUrl;
-  this.db = [];
-  this.newEntry = newEntry;
-  this.postInit = postInit;
-  this.RestService = RestService;
-}
-
-Resource.prototype = {
-  constructor: Resource,
-  init:function(data, param){
-    //this is called as a static callback outside of the scope of the object.
-    //Refer to the global instance or pass the object in the callback
-    for(var i=0 ; i < data.length ; i++){
-      param.db.push(param.newEntry(data[i]));
-    }
-    param.postInit();
-  },
-  callback:function(data){
-    //this is called as a static callback outside of the scope of the object.
-    //Refer to the global instance or pass the object in the callback
-    for(var i=0 ; i < data.length ; i++){
-      this.db.push(this.newEntry(data[i]));
-    }
-    this.postInit();
-  },
-  getAll:function(){
-    //restGet(args.http,this.resUrl,this.init,this);
-    this.RestService.get(this.resUrl,this);
-  },
-  update:function(entry){
-    var url = this.resUrl + '/' + entry.id;
-    restPut(args.http,url,entry,onSuccess,onError);
-  },
-  create:function(entry){
-    restPost(args.http,this.resUrl,entry,onSuccess,onError);
-  }
-};
 
 //-----------------------------------------------------------------------------
-
-//-----------------------------------------------------------------------------
-//Wrappers for http methods
-//Export to module together with the Resource class
-function restGet($http, url, processResponse, param){
-  console.log($http.defaults.headers.common['Authorization']);
-  $http.get(url).then(function(response) {
-    var data = response.data;
-    console.log(data);
-    processResponse(data, param);
-  });
-}
-
-function restPut($http, url, data, onSuccess, onError){
-  console.log($http.defaults.headers.common['Authorization']);
-  $http.put(url, data).then(onSuccess, onError);
-}
-
-function restPost($http, url, data, onSuccess, onError){
-  console.log($http.defaults.headers.common['Authorization']);
-  $http.post(url, data).then(onSuccess, onError);
-}
-
-function onSuccess(response){
-  console.log("onSuccess: " + response);
-}
-
-function onError(response){
-  console.log("onError: " + response);
-}
-
-// var myRest = new Rest(args.http);
-//
-// function Rest($http){
-//   this.http = $http;
-// }
-//
-// Rest.prototype = {
-//
-// };
 
 function loadJsonFile($http, filename, processResponse){
   console.log("Load data from file: "+filename);
