@@ -7,25 +7,6 @@ function userService(RestService){
   var domain = 'http://localhost:3000/';
   this.next = postInitUsers;
   this.url = domain + 'users';
-  this.users = new Resource(RestService, this.url, this.newUser, this.next);
-
-  this.newUser = function(u){
-    u.enableUpdate = false;
-    setUserColor(u);
-    return u;
-  };
-
-  this.onUpdateUser = function(u){
-    console.log(u);
-    u.enableUpdate = false;
-    setUserColor(u);
-    this.users.update(new User(u));
-  };
-
-  this.onSelect = function(u){
-    u.enableUpdate=true;
-    setUserColor(u);
-  };
 
   this.setUserColor = function(u){
     //Move myStyles to CSS?
@@ -45,6 +26,26 @@ function userService(RestService){
       u.userStyle=myStyles.uptodate;
     }
   };
+
+  this.newUser = function(u){
+    u.enableUpdate = false;
+    setUserColor(u);
+    return u;
+  };
+
+  this.onUpdateUser = function(u){
+    console.log(u);
+    u.enableUpdate = false;
+    setUserColor(u);
+    this.users.update(new User(u));
+  };
+
+  this.onSelect = function(u){
+    u.enableUpdate=true;
+    setUserColor(u);
+  };
+
+  this.users = new Resource(RestService, this.url, this.newUser, this.next);
 
 }
 

@@ -31,10 +31,17 @@ function main($scope, $http, $timeout,RestService,UserService){
   args.scope = $scope;
   args.http = $http;
 
+  var postInitRoles = function(){
+    args.scope.roles = args.scope.myroles.db;
+    //args.scope.myusers.getAll();
+    UserService.users.getAll();
+  };
 
   //args.scope.myusers = new Resource(RestService, args.domain + 'users', newUser, postInitUsers);
   args.scope.myroles = new Resource(RestService, args.domain + 'roles', newRole, postInitRoles);
   args.scope.myroles.getAll();
+
+
 }
 
 // function postInitUsers(){
@@ -129,11 +136,11 @@ function newRole(r){
   };
 }
 
-function postInitRoles(){
-  args.scope.roles = args.scope.myroles.db;
-  //args.scope.myusers.getAll();
-  UserService.users.getAll();
-}
+// function postInitRoles(){
+//   args.scope.roles = args.scope.myroles.db;
+//   //args.scope.myusers.getAll();
+//   UserService.users.getAll();
+// }
 
 
 //-----------------------------------------------------------------------------
