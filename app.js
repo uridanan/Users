@@ -34,8 +34,22 @@ function main($scope, $http, $timeout,RestService,UserService){
   var postInitRoles = function(){
     args.scope.roles = args.scope.myroles.db;
     //args.scope.myusers.getAll();
+    UserService.next = postInitUsers;
     UserService.users.getAll();
   };
+
+  var postInitUsers = function(){
+    //Update scope data
+    args.scope.users = UserService.users.db;
+
+    //Continue to next methods
+    initControlButtons(args.scope);
+    initTagsControl(args.scope);
+    initUpdateButton(args.scope);
+    initAddButton(args.scope);
+    initNewUserForm(args.scope);
+  }
+
 
   //args.scope.myusers = new Resource(RestService, args.domain + 'users', newUser, postInitUsers);
   args.scope.myroles = new Resource(RestService, args.domain + 'roles', newRole, postInitRoles);
@@ -44,17 +58,6 @@ function main($scope, $http, $timeout,RestService,UserService){
 
 }
 
-// function postInitUsers(){
-//   //Update scope data
-//   args.scope.users = args.scope.myusers.db;
-//
-//   //Continue to next methods
-//   initControlButtons(args.scope);
-//   initTagsControl(args.scope);
-//   initUpdateButton(args.scope);
-//   initAddButton(args.scope);
-//   initNewUserForm(args.scope);
-// }
 
 
 //------------------------------------------------------------------------------

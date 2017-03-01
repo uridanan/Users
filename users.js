@@ -5,10 +5,10 @@
 //EXtend Resource behavior, use as a service to ensure single instance
 function userService(RestService){
   var domain = 'http://localhost:3000/';
-  this.next = postInitUsers;
+  //this.next = function(){};
   this.url = domain + 'users';
 
-  this.setUserColor = function(u){
+  var setUserColor = function(u){
     //Move myStyles to CSS?
     var myStyles = {
       uptodate:{'background-color':'white'},
@@ -75,17 +75,6 @@ User.prototype = {
 }
 //-----------------------------------------------------------------------------
 
-function postInitUsers(){
-  //Update scope data
-  args.scope.users = args.scope.myusers.db;
-
-  //Continue to next methods
-  initControlButtons(args.scope);
-  initTagsControl(args.scope);
-  initUpdateButton(args.scope);
-  initAddButton(args.scope);
-  initNewUserForm(args.scope);
-}
 
 // function onUpdateUser(u){
 //   console.log(u);
