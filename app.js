@@ -31,13 +31,6 @@ function main($scope, $http, $timeout,RestService,UserService){
   args.scope = $scope;
   args.http = $http;
 
-  var postInitRoles = function(){
-    args.scope.roles = args.scope.myroles.db;
-    //args.scope.myusers.getAll();
-    UserService.next = postInitUsers;
-    UserService.users.getAll();
-  };
-
   var postInitUsers = function(){
     //Update scope data
     args.scope.users = UserService.users.db;
@@ -45,10 +38,19 @@ function main($scope, $http, $timeout,RestService,UserService){
     //Continue to next methods
     initControlButtons(args.scope);
     initTagsControl(args.scope);
-    initUpdateButton(args.scope);
-    initAddButton(args.scope);
+    initUpdateButton(args.scope,UserService);
+    initAddButton(args.scope,UserService);
     initNewUserForm(args.scope);
   }
+
+  var postInitRoles = function(){
+    args.scope.roles = args.scope.myroles.db;
+    //args.scope.myusers.getAll();
+    UserService.init(postInitUsers);
+    UserService.users.getAll();
+  };
+
+
 
 
   //args.scope.myusers = new Resource(RestService, args.domain + 'users', newUser, postInitUsers);
@@ -61,23 +63,26 @@ function main($scope, $http, $timeout,RestService,UserService){
 
 
 //------------------------------------------------------------------------------
-//Init interative elements
+//Init interactive elements
 
 function initNewUserForm($scope){
   var user = {displayName: "Display Name", userName: "username@tabtale.com"};
   $scope.newUser = user;
 }
 
-function initUpdateButton($scope){
-  $scope.onUpdateUser = UserService.onUpdateUser;
-  $scope.onSelect = UserService.onSelect;
+function initUpdateButton($scope,UserService){
+  $scope.onUpdateUser = function(u){
+    UserService.onUpdateUser(u);
+  };
+  $scope.onSelect = function(u){
+    UserService.onSelect(u);
+  };
 }
 
-function initAddButton($scope){
+function initAddButton($scope,UserService){
   $scope.onAddUser = function(u){
-    console.log(u);
-    UserService.users.create(new User(u));
-  }
+    UserService.onAddUser(u);
+  };
 }
 
 function initTagsControl($scope){

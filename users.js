@@ -5,7 +5,6 @@
 //EXtend Resource behavior, use as a service to ensure single instance
 function userService(RestService){
   var domain = 'http://localhost:3000/';
-  //this.next = function(){};
   this.url = domain + 'users';
 
   var setUserColor = function(u){
@@ -33,6 +32,11 @@ function userService(RestService){
     return u;
   };
 
+  this.onAddUser = function(u){
+    console.log(u);
+    this.users.create(new User(u));
+  };
+
   this.onUpdateUser = function(u){
     console.log(u);
     u.enableUpdate = false;
@@ -45,7 +49,13 @@ function userService(RestService){
     setUserColor(u);
   };
 
-  this.users = new Resource(RestService, this.url, this.newUser, this.next);
+  this.setNext = function(next){
+    this.users.postInit = next;
+  };
+
+  this.init = function(next){
+      this.users = new Resource(RestService, this.url, this.newUser, next);
+  };
 
 }
 
