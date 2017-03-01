@@ -25,9 +25,13 @@ app.service('RestService',restService);
 app.service('UserService',['RestService',userService]);
 
 //-----------------------------------------------------------------------------
+//Encapsulate Roles functionality in a service
+app.service('RoleService',['RestService',roleService]);
+
+//-----------------------------------------------------------------------------
 app.controller('UsersCtrl', main);
 
-function main($scope, $http, $timeout,RestService,UserService){
+function main($scope, $http, $timeout,RestService,UserService,RoleService){
   args.scope = $scope;
   args.http = $http;
 
@@ -44,18 +48,16 @@ function main($scope, $http, $timeout,RestService,UserService){
   }
 
   var postInitRoles = function(){
-    args.scope.roles = args.scope.myroles.db;
+    args.scope.roles = RoleService.roles.db;
     //args.scope.myusers.getAll();
     UserService.init(postInitUsers);
     UserService.users.getAll();
   };
 
-
-
-
-  //args.scope.myusers = new Resource(RestService, args.domain + 'users', newUser, postInitUsers);
-  args.scope.myroles = new Resource(RestService, args.domain + 'roles', newRole, postInitRoles);
-  args.scope.myroles.getAll();
+  RoleService.init(postInitRoles);
+  RoleService.roles.getAll();
+  //args.scope.myroles = new Resource(RestService, args.domain + 'roles', newRole, postInitRoles);
+  //args.scope.myroles.getAll();
 
 
 }
@@ -134,23 +136,6 @@ function initControlButtons($scope){
 }
 //------------------------------------------------------------------------------
 
-
-
-
-function newRole(r){
-  return {
-    roleId: r.id,
-    roleName: r.name
-  };
-}
-
-// function postInitRoles(){
-//   args.scope.roles = args.scope.myroles.db;
-//   //args.scope.myusers.getAll();
-//   UserService.users.getAll();
-// }
-
-
 //-----------------------------------------------------------------------------
 
 function loadJsonFile($http, filename, processResponse){
@@ -195,36 +180,7 @@ function addUserRow(){
   };
 }
 
-// function onUpdateUser(u){
-//   console.log(u);
-//   u.enableUpdate = false;
-//   setUserColor(u);
-//   args.scope.myusers.update(new User(u));
-// }
-//
-// function onSelect(u){
-//   u.enableUpdate=true;
-//   setUserColor(u);
-// }
-//
-// function setUserColor(u){
-//   //Move myStyles to CSS?
-//   var myStyles = {
-//     uptodate:{'background-color':'white'},
-//     pending:{'background-color':'#64d0f4'},
-//     noaccess:{'background-color':'grey'}
-//   };
-//
-//   if(u.enableUpdate==true){
-//     u.userStyle=myStyles.pending;
-//   }
-//   else if (u.roles.length==1 && u.roles[0].roleName=="NO_ACCESS") {
-//     u.userStyle=myStyles.noaccess;
-//   }
-//   else{
-//     u.userStyle=myStyles.uptodate;
-//   }
-// }
+
 //-----------------------------------------------------------------------------
 
 //TODO
