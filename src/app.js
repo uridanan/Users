@@ -56,11 +56,8 @@ app.controller('UsersCtrl', main);
 // Add a delete / remove access button ?
 
 
+//Use json-server (npm) to create a file based REST service to manage users
 
+//Other options
 //Createing a CRUD app: https://www.sitepoint.com/creating-crud-app-minutes-angulars-resource/
 //Another example with a REST Service Backend : http://draptik.github.io/blog/2013/07/28/restful-crud-with-angularjs/
-//Create a file based REST service to manage users using json-server (npm)
-//Rewrite front-end as a CRUD app
-
-// Demo
-// https://angular-ui.github.io/ui-select/demo-multiple-selection.html
