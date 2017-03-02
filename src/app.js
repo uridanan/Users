@@ -54,10 +54,11 @@ app.controller('UsersCtrl', main);
 // Define styles in CSS?
 // Disable scope if user != admin/urid
 // Add a delete / remove access button ?
+// Use ngResource instead of my own REST implementation
+//https://www.sitepoint.com/creating-crud-app-minutes-angulars-resource/
 
 
 //Use json-server (npm) to create a file based REST service to manage users
 
 //Other options
-//Createing a CRUD app: https://www.sitepoint.com/creating-crud-app-minutes-angulars-resource/
 //Another example with a REST Service Backend : http://draptik.github.io/blog/2013/07/28/restful-crud-with-angularjs/
