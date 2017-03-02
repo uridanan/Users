@@ -4,10 +4,8 @@
 //-----------------------------------------------------------------------------
 //EXtend Resource behavior, use as a service to ensure single instance
 function roleService(RestService){
-  var domain = 'http://localhost:3000/';
-  this.url = domain + 'roles';
 
-  this.newRole = function(r){
+  this.newEntry = function(r){
     return {
       roleId: r.id,
       roleName: r.name
@@ -18,8 +16,9 @@ function roleService(RestService){
     this.roles.postInit = next;
   };
 
-  this.init = function(next){
-      this.roles = new Resource(RestService, this.url, this.newRole, next);
+  this.init = function(next, domain){
+    var url = domain + 'roles';
+    this.roles = new Resource(RestService, url, this.newEntry, next);
   };
 
 }

@@ -14,14 +14,6 @@ function Resource(RestService, resUrl, newEntry, postInit){
 
 Resource.prototype = {
   constructor: Resource,
-  init:function(data, param){
-    //this is called as a static callback outside of the scope of the object.
-    //Refer to the global instance or pass the object in the callback
-    for(var i=0 ; i < data.length ; i++){
-      param.db.push(param.newEntry(data[i]));
-    }
-    param.postInit();
-  },
   callback:function(data){
     //this is called as a static callback outside of the scope of the object.
     //Refer to the global instance or pass the object in the callback

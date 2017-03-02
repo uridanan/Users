@@ -1,19 +1,13 @@
 'use strict';
 
+var global = {
+  domain: 'http://localhost:3000/'
+}
+
 var app = angular.module('UsersApp', ['ngSanitize', 'ui.select']);
 
-var args = {
-  scope:  null,
-  http: null,
-  domain: 'http://localhost:3000/'
-};
-
-/**
- * AngularJS default filter with the following expression:
- * "person in people | filter: {name: $select.search, age: $select.search}"
- * performs a AND between 'name: $select.search' and 'age: $select.search'.
- * We want to perform a OR.
- */
+//-----------------------------------------------------------------------------
+//Filter for the UI select elements
 app.filter('propsFilter', getUISelectFilter);
 
 //-----------------------------------------------------------------------------
@@ -29,169 +23,22 @@ app.service('UserService',['RestService',userService]);
 app.service('RoleService',['RestService',roleService]);
 
 //-----------------------------------------------------------------------------
-app.controller('UsersCtrl', main);
-
-function main($scope, $http, $timeout,RestService,UserService,RoleService){
-  args.scope = $scope;
-  args.http = $http;
-
-  var postInitUsers = function(){
-    //Update scope data
-    args.scope.users = UserService.users.db;
-
-    //Continue to next methods
-    initControlButtons(args.scope);
-    initTagsControl(args.scope);
-    initUpdateButton(args.scope,UserService);
-    initAddButton(args.scope,UserService);
-    initNewUserForm(args.scope);
-  }
-
-  var postInitRoles = function(){
-    args.scope.roles = RoleService.roles.db;
-    //args.scope.myusers.getAll();
-    UserService.init(postInitUsers);
-    UserService.users.getAll();
-  };
-
-  RoleService.init(postInitRoles);
-  RoleService.roles.getAll();
-  //args.scope.myroles = new Resource(RestService, args.domain + 'roles', newRole, postInitRoles);
-  //args.scope.myroles.getAll();
-
-
-}
-
-
-
-//------------------------------------------------------------------------------
-//Init interactive elements
-
-function initNewUserForm($scope){
-  var user = {displayName: "Display Name", userName: "username@tabtale.com"};
-  $scope.newUser = user;
-}
-
-function initUpdateButton($scope,UserService){
-  $scope.onUpdateUser = function(u){
-    UserService.onUpdateUser(u);
-  };
-  $scope.onSelect = function(u){
-    UserService.onSelect(u);
-  };
-}
-
-function initAddButton($scope,UserService){
-  $scope.onAddUser = function(u){
-    UserService.onAddUser(u);
-  };
-}
-
-function initTagsControl($scope){
-
-  $scope.someGroupFn = function (item){
-
-    if (item.name[0] >= 'A' && item.name[0] <= 'M')
-        return 'From A - M';
-
-    if (item.name[0] >= 'N' && item.name[0] <= 'Z')
-        return 'From N - Z';
-
-  };
-
-  $scope.counter = 0;
-  $scope.someFunction = function (item, model){
-    $scope.counter++;
-    $scope.eventResult = {item: item, model: model};
-  };
-
-  $scope.removed = function (item, model) {
-    $scope.lastRemoved = {
-        item: item,
-        model: model
-    };
-  };
-
-  $scope.tagTransform = function (newTag) {
-    var item = {
-        name: newTag,
-        id: "0"
-    };
-
-    return item;
-  };
-}
-
-function initControlButtons($scope){
-  $scope.disabled = undefined;
-
-  $scope.enable = function() {
-    $scope.disabled = false;
-  };
-
-  $scope.disable = function() {
-    $scope.disabled = true;
-  };
-
-}
-//------------------------------------------------------------------------------
-
-//-----------------------------------------------------------------------------
-
-function loadJsonFile($http, filename, processResponse){
-  console.log("Load data from file: "+filename);
-  $http.get(filename,
-    {
-        cache: false,
-        transformResponse: function (data, headersGetter) {
-            try {
-                var jsonObject = JSON.parse(data); // verify that json is valid
-                return jsonObject;
-            }
-            catch (e) {
-                console.log("did not receive a valid Json: " + e)
-            }
-            return {};
-        }
-    }
-  ).then(function(response){
-      var data = response.data;
-      console.log(data);
-      processResponse(data);
-  });
-
-  //Example
-  // function fetchUsers(){
-  //   loadJsonFile(args.http, 'http://localhost:8000/users.json',initUsers);
-  // }
-}
-//-----------------------------------------------------------------------------
-
-
-
-//-----------------------------------------------------------------------------
 //Directive for ng-repeat and supporting methods
 app.directive('myUserRow', addUserRow);
 
-function addUserRow(){
-  return {
-    replace: 'true',
-    templateUrl: 'my-user-row.html'
-  };
-}
+//-----------------------------------------------------------------------------
+//Controller
+app.controller('UsersCtrl', main);
 
 
 //-----------------------------------------------------------------------------
 
 //TODO
-// 7. Refactor REST call, Extract all rest calls to separate module
-// Use factory for Resource and Services for users and roles?
 // Add format validation to email
-// Add alerts on on invalid input
-// Add new user to users without refreshing the page from REST?
+// Display error popups
 // Define styles in CSS?
-// Add disable control to the add user form
-// 3. Add a delete / remove access button ?
+// Disable scope if user != admin/urid
+// Add a delete / remove access button ?
 
 
 

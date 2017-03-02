@@ -26,6 +26,7 @@ function restService($http){
 
   this.onError = function(response){
     console.log("onError: " + response);
+    //alert("Error: " +  response);
   };
 
 }

@@ -4,8 +4,6 @@
 //-----------------------------------------------------------------------------
 //EXtend Resource behavior, use as a service to ensure single instance
 function userService(RestService){
-  var domain = 'http://localhost:3000/';
-  this.url = domain + 'users';
 
   var setUserColor = function(u){
     //Move myStyles to CSS?
@@ -26,7 +24,7 @@ function userService(RestService){
     }
   };
 
-  this.newUser = function(u){
+  this.newEntry = function(u){
     u.enableUpdate = false;
     setUserColor(u);
     return u;
@@ -35,6 +33,7 @@ function userService(RestService){
   this.onAddUser = function(u){
     console.log(u);
     this.users.create(new User(u));
+    //this.users.db.push(this.newEntry(u));
   };
 
   this.onUpdateUser = function(u){
@@ -53,8 +52,9 @@ function userService(RestService){
     this.users.postInit = next;
   };
 
-  this.init = function(next){
-      this.users = new Resource(RestService, this.url, this.newUser, next);
+  this.init = function(next, domain){
+    var url = domain + 'users';
+    this.users = new Resource(RestService, url, this.newEntry, next);
   };
 
 }
